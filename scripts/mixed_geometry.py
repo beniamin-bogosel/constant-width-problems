@@ -16,7 +16,10 @@ def hull(points):
 
 def area(vertices):
     vertices = np.asarray(vertices)
-    return abs(np.sum(np.cross(vertices, np.roll(vertices, -1, axis=0)))) / 2
+    following = np.roll(vertices, -1, axis=0)
+    # Planar determinants also work with NumPy versions requiring 3D np.cross inputs.
+    determinants = vertices[:, 0] * following[:, 1] - vertices[:, 1] * following[:, 0]
+    return abs(np.sum(determinants)) / 2
 
 
 def mixed_area(first, second):
