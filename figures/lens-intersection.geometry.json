@@ -1,0 +1,11 @@
+{
+  "scene_title": "Intersection support is smaller than the minimum",
+  "diagnostics": [
+    {
+      "type": "disk-polygon",
+      "area": 1.2283696986087564,
+      "arc_count": 2
+    }
+  ],
+  "rendering": "Floating-point geometry; samples or triangular facets used only for display."
+}

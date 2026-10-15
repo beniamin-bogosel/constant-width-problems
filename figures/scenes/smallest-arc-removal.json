@@ -1,0 +1,17 @@
+{
+  "renderer": "scripts/make_blaschke_figures.py",
+  "n": 7,
+  "perturb": [
+    0.035,
+    -0.02,
+    0.015,
+    -0.01
+  ],
+  "caption": "A shortest arc cd (purple) and opposite corner q are replaced using the unit-circle intersection p. The new body has five arcs; c and d become smooth points. Dashed blue is the previous boundary. Both bodies are constructed and checked as width-one Reuleaux polygons.",
+  "alt": "An irregular seven-arc Reuleaux polygon and its five-arc replacement, with the shortest arc and points a, b, c, d, p, q labeled.",
+  "problems": [
+    "cw-shortest-arc-chord-lemma",
+    "cw-smallest-arc-removal",
+    "cw-polygon-descent-limit"
+  ]
+}

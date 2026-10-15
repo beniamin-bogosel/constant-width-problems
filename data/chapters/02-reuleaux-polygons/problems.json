@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "02-reuleaux-polygons",
+  "problems": [
+    {
+      "id": "cw-triangle-measures",
+      "title": "Area, perimeter, and radii of a Reuleaux triangle",
+      "chapter_id": "02-reuleaux-polygons",
+      "order": 1,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "reuleaux-triangle",
+        "area"
+      ],
+      "statement_md": "Let $T$ be the intersection of radius-$w$ disks centered at the vertices of an equilateral triangle of side $w$. Verify its constant width and compute its perimeter, area, circumradius, and inradius.",
+      "hint_md": "Decompose the region into the equilateral vertex triangle and three circular segments. Use the common center of the inball and circumcircle for the radii.",
+      "prerequisites": [
+        "cw-concentric-balls"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-1, printed p. 73",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-radii",
+          "path": "figures/triangle-radii.svg",
+          "caption_md": "The incircle and circumcircle share the symmetry center; their radii sum to the width.",
+          "alt": "Reuleaux triangle with vertex triangle, concentric inscribed and enclosing circles, and labeled radii."
+        }
+      ]
+    },
+    {
+      "id": "cw-arc-polygon-area",
+      "title": "Area of a convex circular-arc polygon",
+      "chapter_id": "02-reuleaux-polygons",
+      "order": 2,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "disk-polygons",
+        "area",
+        "computation"
+      ],
+      "statement_md": "A convex region is bounded counterclockwise by minor circular arcs joining $v_i$ to $v_{i+1}$, all of radius $r$, with central angles $0<\\alpha_i<\\pi$. Each arc bulges outside the chord polygon. Prove $A=\\frac12\\sum_i\\det(v_i,v_{i+1})+\\frac{r^2}{2}\\sum_i(\\alpha_i-\\sin\\alpha_i)$.",
+      "hint_md": "For each boundary arc, add the sector and subtract the isosceles triangle below it. The remaining central polygon has a shoelace area.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Exercise 2.3(ii), reformulated for arbitrary arc polygons",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "irregular-pentagon",
+          "path": "figures/irregular-pentagon.svg",
+          "caption_md": "A perturbed and exactly closed unit-edge pentagram gives unequal boundary arc angles. The support lines remain one unit apart.",
+          "alt": "Irregular five-arc Reuleaux polygon with labeled vertices, chord polygon, and parallel supporting lines."
+        }
+      ]
+    },
+    {
+      "id": "cw-regular-reuleaux",
+      "title": "Regular Reuleaux polygons approach the disk",
+      "chapter_id": "02-reuleaux-polygons",
+      "order": 3,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "regular-polygons",
+        "area",
+        "limits"
+      ],
+      "statement_md": "For odd $n\\geq3$, construct a width-$w$ regular Reuleaux $n$-gon from a regular vertex polygon. Show that its vertex circumradius is $R_n=w/[2\\cos(\\pi/(2n))]$, its perimeter is $\\pi w$, and its area is $A_n=\\frac{w^2}{2}[\\pi-n\\tan(\\pi/(2n))]$. Prove $A_n$ increases to $\\pi w^2/4$.",
+      "hint_md": "The longest chord of the regular vertex polygon must have length $w$. After computing the area, study $\\tan x/x$ to obtain the monotonicity.",
+      "prerequisites": [
+        "cw-arc-polygon-area",
+        "cw-concentric-balls"
+      ],
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Exercise 2.3(i), monotonicity corrected",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "regular-family",
+          "path": "figures/regular-family.svg",
+          "caption_md": "Regular Reuleaux polygons of width one; their areas increase toward the disk.",
+          "alt": "Three equal-width outlines: Reuleaux triangle, regular pentagon, and regular nonagon."
+        }
+      ]
+    },
+    {
+      "id": "cw-turning-budget",
+      "title": "The turning-angle budget for disk polygons",
+      "chapter_id": "02-reuleaux-polygons",
+      "order": 4,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "turning-angles",
+        "disk-polygons"
+      ],
+      "statement_md": "A convex disk polygon has boundary arcs of radius $r$ and central angles $\\alpha_i$, with exterior turning angles $\\beta_i$ at its vertices. Prove $\\sum_i(\\alpha_i+\\beta_i)=2\\pi$. If it is a Reuleaux polygon of width $r$, show that both sums equal $\\pi$.",
+      "hint_md": "Follow the tangent once around the boundary: it turns continuously on each arc and jumps at every corner.",
+      "prerequisites": [
+        "cw-binormals"
+      ],
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Exercise 2.10; Cheeger manuscript §2.2",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-erosion-disks",
+      "title": "Eroding a disk polygon preserves the centers",
+      "chapter_id": "02-reuleaux-polygons",
+      "order": 5,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "inner-parallel-sets",
+        "disk-polygons"
+      ],
+      "statement_md": "For $D=\\bigcap_i B(c_i,w)$ define $D_{-t}=\\{x:x+tB\\subset D\\}$, where $0\\leq t<w$. Prove $D_{-t}=\\bigcap_i B(c_i,w-t)$. Explain why the list of active boundary arcs can change as $t$ increases.",
+      "hint_md": "For a fixed center $c_i$, what is the farthest distance from $c_i$ to a point of $x+tB$?",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, Step I; definition of inner parallel sets",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-erosion",
+          "path": "figures/triangle-erosion.svg",
+          "caption_md": "Erosion retains the three disk centers and reduces every disk radius from one to 1−t.",
+          "alt": "Four nested rounded triangles illustrating increasing erosion distances."
+        }
+      ]
+    },
+    {
+      "id": "cw-regular-inner-parallel",
+      "title": "Perimeter and area after eroding a regular Reuleaux polygon",
+      "chapter_id": "02-reuleaux-polygons",
+      "order": 6,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "inner-parallel-sets",
+        "computation"
+      ],
+      "statement_md": "For odd $n\\geq3$ and width one let $\\delta=\\pi/(2n)$, $R=1/(2\\cos\\delta)$ and $0\\leq t<1-R$. Set $q=1-t$ and $\\alpha=\\arcsin(\\sin\\delta/q)-\\delta$. Show that the eroded regular Reuleaux polygon has arc angle $\\beta=2\\delta-2\\alpha$, perimeter $nq\\beta$, and vertex radius $r_t=\\sqrt{q^2-\\sin^2\\delta}-R\\cos(\\pi/n)$. Compute its area by circular segments.",
+      "hint_md": "Intersect two neighboring circles of radius $1-t$. Their common chord is perpendicular to the line of centers; use the resulting right triangle.",
+      "prerequisites": [
+        "cw-arc-polygon-area",
+        "cw-erosion-disks"
+      ],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, equation labelled eq:regular-reuleaux-perim; area derived here",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-erosion",
+          "path": "figures/triangle-erosion.svg",
+          "caption_md": "Erosion retains the three disk centers and reduces every disk radius from one to 1−t.",
+          "alt": "Four nested rounded triangles illustrating increasing erosion distances."
+        }
+      ]
+    },
+    {
+      "id": "cw-irregular-construction",
+      "title": "Constructing genuinely irregular Reuleaux pentagons",
+      "chapter_id": "02-reuleaux-polygons",
+      "order": 7,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "irregular-polygons",
+        "constructions"
+      ],
+      "statement_md": "Give a concrete construction of a nonregular width-one Reuleaux pentagon. One method is to build an equilateral five-edge star walk $q_0q_1q_2q_3q_4q_0$, reorder its vertices around their convex hull, and intersect the five unit disks. Verify the additional pairwise-distance, convexity and active-arc conditions needed to ensure that the result has constant width. An exact-coordinate example or a perturbation construction with a justified admissible range is acceptable.",
+      "hint_md": "Keep the first star edge fixed, perturb the next directions, then close the last two edges by intersecting two unit circles. Stay on the branch near the regular configuration.",
+      "prerequisites": [
+        "cw-binormals"
+      ],
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Constructive exercise inspired by outline §2; circle-intersection closure",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "irregular-pentagon",
+          "path": "figures/irregular-pentagon.svg",
+          "caption_md": "A perturbed and exactly closed unit-edge pentagram gives unequal boundary arc angles. The support lines remain one unit apart.",
+          "alt": "Irregular five-arc Reuleaux polygon with labeled vertices, chord polygon, and parallel supporting lines."
+        }
+      ]
+    }
+  ]
+}

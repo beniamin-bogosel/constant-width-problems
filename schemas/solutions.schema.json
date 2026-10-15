@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cwdata.local/schemas/solutions.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "chapter_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "solutions": {
+      "type": "array",
+      "items": {
+        "$ref": "https://cwdata.local/schemas/common.schema.json#/$defs/solution"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "chapter_id",
+    "solutions"
+  ],
+  "additionalProperties": false
+}

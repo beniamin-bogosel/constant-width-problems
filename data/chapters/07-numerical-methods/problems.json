@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "07-numerical-methods",
+  "problems": [
+    {
+      "id": "cw-fourier-area",
+      "title": "Fourier coefficients turn area into a quadratic expression",
+      "chapter_id": "07-numerical-methods",
+      "order": 1,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "fourier-series",
+        "numerical-optimization"
+      ],
+      "statement_md": "Let a planar width-$w$ support function be a finite Fourier sum $h=w/2+\\sum_{k\\text{ odd}}(a_k\\cos k\\theta+b_k\\sin k\\theta)$ with $h+h''\\geq0$. Prove $A=\\pi w^2/4-\\frac\\pi2\\sum_{k\\geq3,\\,k\\text{ odd}}(k^2-1)(a_k^2+b_k^2)$. Explain the role of the $k=1$ terms.",
+      "hint_md": "Fourier orthogonality eliminates cross terms. Differentiation multiplies the energy of the $k$th mode by $k^2$.",
+      "prerequisites": [
+        "cw-support-parametrization"
+      ],
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Derived from support calculus; cf. outline Chapter 7",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "smooth-support",
+          "path": "figures/smooth-support.svg",
+          "caption_md": "Support function h(θ)=1/2+0.045 cos(3θ); curvature radius stays positive.",
+          "alt": "Rounded threefold constant-width curve with two pairs of parallel supporting lines."
+        }
+      ]
+    },
+    {
+      "id": "cw-convexity-certificate",
+      "title": "Certifying convexity between sampled angles",
+      "chapter_id": "07-numerical-methods",
+      "order": 2,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "certification",
+        "fourier-series"
+      ],
+      "statement_md": "Let $\\rho=h+h''$ be a differentiable trigonometric polynomial, and suppose $|\\rho'|\\leq L$. At equally spaced grid angles with spacing $\\Delta$, assume $\\rho\\geq\\varepsilon$. Prove $\\rho(\\theta)\\geq\\varepsilon-L\\Delta/2$ everywhere. Give a computable coefficient bound for $L$.",
+      "hint_md": "Every angle lies within half a grid spacing of a sampled angle. Bound the derivative using the amplitudes of the Fourier modes.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "A priori Lipschitz estimate for numerical support constraints",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "smooth-support",
+          "path": "figures/smooth-support.svg",
+          "caption_md": "Support function h(θ)=1/2+0.045 cos(3θ); curvature radius stays positive.",
+          "alt": "Rounded threefold constant-width curve with two pairs of parallel supporting lines."
+        },
+        {
+          "figure_id": "curvature-aliasing",
+          "path": "figures/curvature-aliasing.svg",
+          "caption_md": "For N=8 and k=2N+3=19, the two sine modes agree at every grid direction, so all sampled curvature values are 1/2. Between them the candidate curvature is negative on open intervals. This function cannot be the curvature radius of a convex support function despite passing the sampled inequalities.",
+          "alt": "An oscillating curvature candidate crossing below zero between eight positive sample points; negative regions are shaded."
+        }
+      ]
+    },
+    {
+      "id": "cw-grid-failure",
+      "title": "Positive curvature samples can hide nonconvexity",
+      "chapter_id": "07-numerical-methods",
+      "order": 3,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "counterexample",
+        "discretization"
+      ],
+      "statement_md": "For an even grid size $N\\geq4$ and angles $\\theta_j=2\\pi j/N$, construct a trigonometric polynomial support candidate with constant antipodal sum one, such that $h+h''=1/2$ at every grid point but is negative somewhere between them.",
+      "hint_md": "Choose two odd frequencies at least three that agree on the grid. Their difference can vanish at every sample without vanishing between samples.",
+      "prerequisites": [
+        "cw-convexity-certificate"
+      ],
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Constructed aliasing example for constant-width Fourier models",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "curvature-aliasing",
+          "path": "figures/curvature-aliasing.svg",
+          "caption_md": "For N=8 and k=2N+3=19, the two sine modes agree at every grid direction, so all sampled curvature values are 1/2. Between them the candidate curvature is negative on open intervals. This function cannot be the curvature radius of a convex support function despite passing the sampled inequalities.",
+          "alt": "An oscillating curvature candidate crossing below zero between eight positive sample points; negative regions are shaded."
+        }
+      ]
+    },
+    {
+      "id": "cw-cheeger-bisection",
+      "title": "Compute the Reuleaux triangle’s Cheeger constant",
+      "chapter_id": "07-numerical-methods",
+      "order": 4,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "bisection",
+        "cheeger-constant"
+      ],
+      "statement_md": "Using the explicit eroded regular-polygon area for $n=3$, implement bisection on $A(T_{-t})-\\pi t^2=0$ in $[0,1-1/\\sqrt3]$. Explain how an interval for $t$ gives an interval for $h_C(T)$.",
+      "hint_md": "Keep endpoints with opposite signs for the root equation. Remember that taking reciprocals reverses the order of positive endpoints.",
+      "prerequisites": [
+        "cw-regular-inner-parallel",
+        "cw-cheeger-root"
+      ],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§4, inner-radius equation; numerical exercise derived here",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-erosion",
+          "path": "figures/triangle-erosion.svg",
+          "caption_md": "Erosion retains the three disk centers and reduces every disk radius from one to 1−t.",
+          "alt": "Four nested rounded triangles illustrating increasing erosion distances."
+        }
+      ]
+    },
+    {
+      "id": "cw-spherical-partition-check",
+      "title": "Check a spherical area computation using two helper points",
+      "chapter_id": "07-numerical-methods",
+      "order": 5,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "spherical-geometry",
+        "validation"
+      ],
+      "statement_md": "For the geodesic triangle whose vertices are the three positive coordinate unit vectors, compute its area directly and by triangulating from $q=(1,1,1)/\\sqrt3$. Repeat with $q'=(2,1,1)/\\sqrt6$. Describe useful checks for a program summing Meissner face areas.",
+      "hint_md": "The coordinate triangle occupies one of eight equal octants. Use this independent area value to check both helper-point triangulations.",
+      "prerequisites": [
+        "cw-spherical-helper"
+      ],
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Numerical companion to auxiliary-point spherical triangulation",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "spherical-helper",
+          "path": "figures/spherical-helper.png",
+          "caption_md": "An auxiliary interior point divides the spherical octant into three geodesic triangles.",
+          "alt": "Spherical octant with its three coordinate-axis vertices and geodesic spokes from an interior helper point."
+        }
+      ]
+    },
+    {
+      "id": "cw-scaling-checks",
+      "title": "Dimensionless quantities as debugging tests",
+      "chapter_id": "07-numerical-methods",
+      "order": 6,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "scaling",
+        "validation"
+      ],
+      "statement_md": "If a planar constant-width body is rescaled by $a>0$, identify the invariant combinations of width $w$, area $A$, perimeter $P$, Cheeger constant $h_C$, first Dirichlet eigenvalue $\\lambda_1$, and torsional rigidity $T=\\int_Ku$ (with $-\\Delta u=1$ in the interior and $u=0$ on the boundary). Give the analogous area and volume combinations in three dimensions.",
+      "hint_md": "Change variables $x=ay$ in the integrals. For torsion, also determine how the solution of $-\\Delta u=1$ scales.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Dimensional analysis of the functionals in outline Chapters 5–7",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    }
+  ]
+}

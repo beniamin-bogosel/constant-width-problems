@@ -1,0 +1,9 @@
+{
+  "geometry": "Exact disk and horizontal-segment sum; sampled curves only for rendering",
+  "radius": 1.0,
+  "segment_length": 0.9,
+  "perpendicular_width": 2.0,
+  "added_area": 1.8,
+  "mixed_area": 0.9,
+  "disk_diameter_mixed_area": 2.0
+}

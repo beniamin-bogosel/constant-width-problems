@@ -1,0 +1,11 @@
+{
+  "type": "spherical-triangle",
+  "title": "Triangulating a spherical face from q",
+  "helper": [
+    1,
+    1,
+    1
+  ],
+  "elevation": 24,
+  "azimuth": 35
+}

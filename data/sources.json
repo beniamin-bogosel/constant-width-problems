@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "outline",
+      "title": "Shapes of constant width: An introduction through exercises",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2025,
+      "type": "book-draft",
+      "url": null,
+      "notes": "Doc/CWbook2.pdf; chapter framework and exercise seeds, with corrections recorded in docs/outline-corrections.md."
+    },
+    {
+      "id": "yaglom",
+      "title": "Convex Figures",
+      "authors": [
+        "I. M. Yaglom",
+        "V. G. Boltyanskii"
+      ],
+      "year": 1961,
+      "type": "book",
+      "url": null,
+      "notes": "English Holt edition; §7 extract, printed pp. 70–82, converted from mislabeled PostScript and OCR inspected. §6 is a follow-up source; not claimed fully extracted."
+    },
+    {
+      "id": "martini",
+      "title": "Bodies of Constant Width: An Introduction to Convex Geometry with Applications",
+      "authors": [
+        "Horst Martini",
+        "Luis Montejano",
+        "Déborah Oliveros"
+      ],
+      "year": 2019,
+      "type": "book",
+      "url": "https://doi.org/10.1007/978-3-030-03868-7",
+      "notes": "Local full text inspected in relevant sections; chapter-level bibliography, not a wholesale exercise transcription."
+    },
+    {
+      "id": "schneider",
+      "title": "Convex Bodies: The Brunn–Minkowski Theory, second expanded edition",
+      "authors": [
+        "Rolf Schneider"
+      ],
+      "year": 2014,
+      "type": "book",
+      "url": null,
+      "notes": "Local book, especially §§1.7–1.8, 4.2 and 5.1; file name uses 2013."
+    },
+    {
+      "id": "cheeger",
+      "title": "A geometric proof of the Blaschke–Lebesgue theorem for the Cheeger constant",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2025,
+      "type": "article",
+      "url": "https://arxiv.org/abs/2303.15559",
+      "notes": "Local Cheeger_BL.tex inspected; arXiv earlier title: On the Blaschke–Lebesgue theorem for the Cheeger constant via areas and perimeters of inner parallel sets. The Reuleaux triangle maximizes the Cheeger constant."
+    },
+    {
+      "id": "meissner-volume",
+      "title": "Volume computation for Meissner polyhedra and applications",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2026,
+      "type": "article",
+      "url": "https://doi.org/10.1007/s00454-024-00688-0",
+      "notes": "Local Volume_Meissner.tex inspected; arXiv:2310.17672; online 2024, journal volume 75 (2026), pp. 48–72. Convention here uses S=2π−2Σf."
+    },
+    {
+      "id": "intermediary",
+      "title": "Intermediary points and strong criticality of Meissner bases",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2026,
+      "type": "local-research",
+      "url": null,
+      "notes": "Unpublished local working note inspected; short counting arguments independently checked; conjectures retained as local questions."
+    },
+    {
+      "id": "kernels",
+      "title": "Reuleaux kernel investigation",
+      "authors": [
+        "Local research workspace"
+      ],
+      "year": 2026,
+      "type": "local-research",
+      "url": null,
+      "notes": "ConstantWidth/research, dated 18 September 2026; use explicit normalization and distinguish proofs from computations."
+    },
+    {
+      "id": "blog-hexagon",
+      "title": "Every constant width set has a circumscribed regular hexagon",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2013,
+      "type": "blog",
+      "url": "https://mathproblems123.wordpress.com/2013/10/06/every-constant-width-set-has-a-circumscribed-hexagon/",
+      "notes": "Read 2026-10-15; entry uses an independently written support-function proof."
+    },
+    {
+      "id": "blog-bl",
+      "title": "Blaschke–Lebesgue Theorem",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2013,
+      "type": "blog",
+      "url": "https://mathproblems123.wordpress.com/2013/10/06/blaschke-lebesgue-theorem/",
+      "notes": "Read 2026-10-15; mixed-area proof adapted in concise form."
+    },
+    {
+      "id": "blog-cover",
+      "title": "Shapes with minimal area circumscribed around all bodies of constant width",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2020,
+      "type": "blog",
+      "url": "https://mathproblems123.wordpress.com/2020/11/26/shapes-with-minimal-area-circumscribed-around-all-bodies-of-constant-width/",
+      "notes": "Read 2026-10-15; central symmetry is retained in the exercise statement and conclusion."
+    },
+    {
+      "id": "blog-properties",
+      "title": "Some properties of constant width shapes in the plane",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2023,
+      "type": "blog",
+      "url": "https://mathproblems123.wordpress.com/2023/03/17/some-properties-of-constant-width-shapes-in-the-plane/",
+      "notes": "Read 2026-10-15; discovery and cross-check source; overlapping entries use the local books."
+    },
+    {
+      "id": "nishioka",
+      "title": "An Improved Lower Bound for the Three-Dimensional Blaschke–Lebesgue Problem from Spectral and Dual Perspectives",
+      "authors": [
+        "Akatsuki Nishioka"
+      ],
+      "year": 2026,
+      "type": "preprint",
+      "url": "https://arxiv.org/abs/2606.01754",
+      "notes": "Abstract checked 2026-10-15 for open status; reported new lower bound not independently verified."
+    },
+    {
+      "id": "width-optimization",
+      "title": "Shape optimization under width constraint: the Cheeger constant and the torsional rigidity",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2025,
+      "type": "preprint",
+      "url": "https://arxiv.org/abs/2506.07708",
+      "notes": "Introduction inspected 2026-10-15. Minimal width and constant width are different constraints."
+    },
+    {
+      "id": "dangling",
+      "title": "Dangling points in area-minimizing Meissner polyhedra",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2026,
+      "type": "preprint",
+      "url": "https://arxiv.org/abs/2608.19747",
+      "notes": "Abstract checked 2026-10-15. Deletion theorem is known; it is not listed as an open problem."
+    },
+    {
+      "id": "hynd-density",
+      "title": "The density of Meissner polyhedra",
+      "authors": [
+        "Ryan Hynd"
+      ],
+      "year": 2024,
+      "type": "article",
+      "url": "https://doi.org/10.1007/s10711-024-00933-z",
+      "notes": "Web discovery and cross-check for tetrahedral volume; full density theorem left as a reading lead."
+    },
+    {
+      "id": "editorial",
+      "title": "Original exercises and derivations for this collection",
+      "authors": [
+        "Codex, prepared for Beniamin Bogosel"
+      ],
+      "year": 2026,
+      "type": "editorial",
+      "url": null,
+      "notes": "New pedagogical formulations of standard mathematics; this attribution is not a claim of mathematical novelty."
+    },
+    {
+      "id": "henrot-lucardesi",
+      "title": "A Blaschke–Lebesgue theorem for the Cheeger constant",
+      "authors": [
+        "Antoine Henrot",
+        "Ilaria Lucardesi"
+      ],
+      "year": 2023,
+      "type": "article",
+      "url": "https://arxiv.org/abs/2011.07244",
+      "notes": "Abstract checked 2026-10-15; explicitly conjectures Reuleaux-triangle maximality for the first p-Laplacian eigenvalue, including p=2."
+    },
+    {
+      "id": "bogosel-mixed",
+      "title": "Mixed volumes and the Blaschke–Lebesgue theorem",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2024,
+      "type": "article",
+      "url": "https://arxiv.org/abs/2311.14618",
+      "notes": "Acta Mathematica Hungarica 173, 122–138 (2024), DOI 10.1007/s10474-024-01435-w. Exercises use the local 16-page preprint dated 2 May 2024; page and theorem locators refer to that version. See sources/mixed-volume-extraction.md for coverage and normalization notes."
+    },
+    {
+      "id": "packing-discussion",
+      "title": "Unit-width bodies packed in a unit disk: problem proposed by the author",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2026,
+      "type": "local-research",
+      "url": null,
+      "notes": "Problem and 120-degree-sector idea supplied in conversation on 15 October 2026. Companion exercises developed in this collection from support functions, the difference body, corner bounds and inradius bounds. No publication or novelty claim; see sources/packing-exploration.md."
+    },
+    {
+      "id": "henrot-pierre",
+      "title": "Shape Variation and Optimization: A Geometrical Analysis",
+      "authors": [
+        "Antoine Henrot",
+        "Michel Pierre"
+      ],
+      "year": 2018,
+      "type": "book",
+      "url": null,
+      "notes": "EMS Tracts in Mathematics 28, ISBN 978-3-03719-178-1. Local English PDF inspected: Chapter 2, especially §§2.2.2–2.2.6 and selected exercises in §2.5. Printed page numbers are used. Support-function extensions are labeled separately; see sources/henrot-pierre-extraction.md."
+    },
+    {
+      "id": "hynd-bl-v1",
+      "title": "The Blaschke–Lebesgue theorem revisited — version 1 (two proof approaches)",
+      "authors": [
+        "Ryan Hynd"
+      ],
+      "year": 2023,
+      "type": "article",
+      "url": "https://arxiv.org/abs/2303.04359v1",
+      "notes": "Local 27-page preprint inspected, especially §§3–4. The variational exercises enforce closure moments explicitly and use a duality lemma; do not copy the projected perturbation admissibility claim unchecked. See sources/blaschke-proof-routes.md."
+    },
+    {
+      "id": "hynd-bl-v2",
+      "title": "The Blaschke–Lebesgue theorem revisited — version 2",
+      "authors": [
+        "Ryan Hynd"
+      ],
+      "year": 2024,
+      "type": "article",
+      "url": "https://arxiv.org/html/2303.04359v2",
+      "notes": "Version dated 10 July 2024; §3 Lemma 3.3 inspected for the shortest-chord safeguard. This version retains the polygon proof; it does not contain the first version’s variational section. Published in Expositiones Mathematicae 42 (2024), article 125617."
+    },
+    {
+      "id": "bogosel-variational",
+      "title": "New variational arguments regarding the Blaschke–Lebesgue theorem",
+      "authors": [
+        "Beniamin Bogosel"
+      ],
+      "year": 2024,
+      "type": "article",
+      "url": "https://arxiv.org/abs/2412.13808",
+      "notes": "Exercises use the local BL2D_optim.tex manuscript, especially §2 finite-class existence, §3 area sensitivities and §4 center formulation. Local file fingerprint retained; numbering may differ from published editions."
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "title": "Three unit-width Reuleaux triangles in a unit disk",
+  "figsize": [
+    7,
+    7
+  ],
+  "bodies": [
+    {
+      "type": "reuleaux",
+      "translation": [
+        -3.5352507957496895e-17,
+        -0.5773502691896257
+      ],
+      "color": "#177e89",
+      "fill_alpha": 0.17,
+      "show_vertices": false
+    },
+    {
+      "type": "reuleaux",
+      "translation": [
+        0.5000000000000001,
+        0.2886751345948127
+      ],
+      "color": "#b65b35",
+      "fill_alpha": 0.17,
+      "show_vertices": false
+    },
+    {
+      "type": "reuleaux",
+      "translation": [
+        -0.49999999999999983,
+        0.28867513459481314
+      ],
+      "color": "#735ba5",
+      "fill_alpha": 0.17,
+      "show_vertices": false
+    }
+  ],
+  "objects": [
+    {
+      "type": "circle",
+      "center": [
+        0,
+        0
+      ],
+      "radius": 1,
+      "color": "#263238",
+      "linestyle": "-"
+    },
+    {
+      "type": "point",
+      "at": [
+        0,
+        0
+      ],
+      "label": "O",
+      "offset": [
+        5,
+        5
+      ]
+    },
+    {
+      "type": "segment",
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        6.123233995736766e-17,
+        1.0
+      ],
+      "linestyle": "--",
+      "color": "#7a8589"
+    },
+    {
+      "type": "angle",
+      "center": [
+        0,
+        0
+      ],
+      "radius": 0.17,
+      "start": 1.5707963267948966,
+      "end": 3.665191429188092
+    },
+    {
+      "type": "text",
+      "at": [
+        -0.2944486372867091,
+        0.17000000000000012
+      ],
+      "text": "$120^\\circ$",
+      "offset": [
+        -13,
+        -4
+      ]
+    },
+    {
+      "type": "segment",
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        -0.8660254037844388,
+        -0.4999999999999997
+      ],
+      "linestyle": "--",
+      "color": "#7a8589"
+    },
+    {
+      "type": "angle",
+      "center": [
+        0,
+        0
+      ],
+      "radius": 0.17,
+      "start": 3.665191429188092,
+      "end": 5.759586531581287
+    },
+    {
+      "type": "text",
+      "at": [
+        -6.245698675651501e-17,
+        -0.34
+      ],
+      "text": "$120^\\circ$",
+      "offset": [
+        -13,
+        -4
+      ]
+    },
+    {
+      "type": "segment",
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0.8660254037844384,
+        -0.5000000000000004
+      ],
+      "linestyle": "--",
+      "color": "#7a8589"
+    },
+    {
+      "type": "angle",
+      "center": [
+        0,
+        0
+      ],
+      "radius": 0.17,
+      "start": 5.759586531581287,
+      "end": 7.853981633974483
+    },
+    {
+      "type": "text",
+      "at": [
+        0.2944486372867093,
+        0.16999999999999976
+      ],
+      "text": "$120^\\circ$",
+      "offset": [
+        -13,
+        -4
+      ]
+    }
+  ],
+  "limits": [
+    -1.13,
+    1.13,
+    -1.13,
+    1.13
+  ]
+}

@@ -1,0 +1,371 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "04-mixed-volumes",
+  "solutions": [
+    {
+      "problem_id": "cw-mixed-area-polarization",
+      "kind": "proof",
+      "body_md": "Minkowski addition adds support functions, so insert $h+tk$ into the area identity:\n$$A(K+tL)=\\frac12\\int_0^{2\\pi}(h^2-h'^2)\\,d\\theta+t\\int_0^{2\\pi}(hk-h'k')\\,d\\theta+\\frac{t^2}{2}\\int_0^{2\\pi}(k^2-k'^2)\\,d\\theta.$$\nComparison with the specified coefficient $2tA(K,L)$ proves the formula and fixes its normalization. Symmetry in $h,k$ is immediate.\n\nTranslating $K$ by $v$ replaces $h$ by $h+f$, where $f(\\theta)=v\\cdot(\\cos\\theta,\\sin\\theta)$ and $f''=-f$. Periodic integration by parts gives\n$$2\\,\\Delta A(K,L)=\\int_0^{2\\pi}(fk-f'k')\\,d\\theta=\\int_0^{2\\pi}(f+f'')k\\,d\\theta=0.$$\nSymmetry handles translation of $L$. There are no endpoint terms because all functions are $2\\pi$-periodic. For nonsmooth bodies the corresponding formula is $2A(K,L)=\\int h_K\\,dS_L$, with $S_L$ the boundary-length measure on normal directions; the derivative expression also extends to Lipschitz support functions by approximation.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§5.1, planar specialization",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-mixed-area-monotonicity",
+      "kind": "proof",
+      "body_md": "First suppose the bodies are smooth. Integration by parts gives\n$$A(K',L)-A(K,L)=\\frac12\\int_0^{2\\pi}(h_{K'}-h_K)(h_L+h_L'')\\,d\\theta.$$\nInclusion is equivalent to $h_K\\leq h_{K'}$, while $h_L+h_L''\\geq0$ is the curvature-radius density, so the difference is nonnegative. If this density is everywhere positive, a proper inclusion gives a strict inequality: the continuous support difference is positive on some interval. Mere smooth strict convexity should not be confused with an everywhere positive density; the nonnegative argument is sufficient for monotonicity.\n\nFor general bodies, convolve both $h_K$ and $h_{K'}$ with the same nonnegative smooth approximate identity on the angle circle, then add the same small positive constant. These operations are Minkowski averages of rotations followed by disk addition, so they produce support functions, preserve inclusion, and converge uniformly to the originals. Smooth $L$ in the same way. Continuity of mixed area passes the inequality to the limit. Symmetry gives monotonicity in the other argument. Strictness need not survive this passage: the triangle-to-hexagon plateau supplies explicit proper inclusions with equality.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§5.1, monotonicity of mixed volumes",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-polygon-mixed-edge-sum",
+      "kind": "proof",
+      "body_md": "On the interior of the $i$th edge the outward normal is $u_i$, so $S_Q=\\sum_i\\ell_i\\delta_{u_i}$. Substitution gives the formula. If $K$ is translated by $v$, the change is $\\sum_i\\ell_i v\\cdot u_i$. Rotating the closed edge-vector sum by a right angle gives $\\sum_i\\ell_i u_i=0$, so the change vanishes. Vertices carry no boundary length.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§2.2, support-measure tool for Theorem 2; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-segment-mixed-area",
+      "kind": "proof",
+      "body_md": "By translation invariance take $I=[0,\\ell]e$ and choose orthonormal coordinates $(x,y)$ with the $x$-axis parallel to $e$. At each height $y$ for which the slice $K_y$ is nonempty, convexity makes $K_y$ a closed interval, possibly a singleton. Minkowski addition by the horizontal segment gives the exact slice identity\n$$(K+tI)_y=K_y+[0,t\\ell].$$\nIts one-dimensional length therefore increases by $t\\ell$. The set of such heights is the orthogonal projection of $K$, an interval of length $b$. Fubini's theorem yields\n$$A(K+tI)-A(K)=t\\ell b.$$\nSince $A(I)=0$, comparison with $A(K+tI)=A(K)+2tA(K,I)+t^2A(I)$ gives $A(K,I)=\\ell b/2$.\n\nFor a second segment $J$ of length $m$ making angle $\\alpha$ with $e$, its perpendicular width is $m|\\sin\\alpha|$, giving $A(I,J)=\\ell m|\\sin\\alpha|/2$. Parallel segments give zero, consistently with the fact that their Minkowski sum is again a segment. A zero-area summand can therefore have positive mixed area; its contribution is the first-order area increase, not its own area.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Lemma 1(a), p. 6; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-valuation-segment-correction",
+      "kind": "proof",
+      "body_md": "Steiner’s formula gives $A(B,L)=P(L)/2$ for the unit disk $B$, hence $A(D,L)=rP(L)/2$. The half-disk perimeter is $(\\pi+2)r$, so each half-disk contributes $(\\pi+2)r^2/2$. The segment formula gives $A(D,I)=(2r)(2r)/2=2r^2$, whereas $A(D,D)=\\pi r^2$. Both sides are $(\\pi+2)r^2$. Thus the intersection has positive mixed area despite having zero ordinary area. For $r=1$ the correction is $2$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§2.2, half-disk example across pp. 5–6 (normalization corrected); inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-cap-chord-replacement",
+      "kind": "proof",
+      "body_md": "Translate $K$ so $x=0$. Then $h_K\\geq0$, and $h_K(u)=0$ for almost every normal contributed by $\\partial L\\setminus I$. Therefore $2A(K,L)=\\ell h_K(n)$. Balance of boundary normals gives $\\int_{\\partial L\\setminus I}u\\,ds=-\\ell n$. For every $y\\in K$, the normal-cone assumption says $y\\cdot u\\leq0$ on this part of the boundary. Integration gives $y\\cdot(-n)\\leq0$; since $0\\in K$, this proves $h_K(-n)=0$. The width perpendicular to $I$ is consequently $h_K(n)+h_K(-n)=h_K(n)$. The segment formula finishes the proof. Translation invariance removes the chosen normalization.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Lemma 1(b), p. 6; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-mixed-area-complement",
+      "kind": "proof",
+      "body_md": "Expand $A(K+(-K))=\\pi w^2$ and use $A(-K)=A(K)$. The mixed area is $\\pi w^2/4$ for the radius-$w/2$ disk, and $\\sqrt3w^2/2$ for the Reuleaux triangle. The identity is affine with negative coefficient between the two objectives, proving the equivalence.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Chapter 4, item 2",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "equations (2)–(3), p. 3; preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-triangle-hexagon-plateau",
+      "kind": "proof",
+      "body_md": "The difference body $T+(-T)$ is a regular hexagon of side $w$, whose area is $3\\sqrt3w^2/2=6A(T)$. Thus\n$$6A(T)=2A(T)+2A(T,-T),\\qquad A(T,-T)=2A(T)=\\frac{\\sqrt3}{2}w^2.$$\nMeanwhile, the six vertices of $T$ and $-T$ alternate on their common circumcircle. Hence $H$ is a regular hexagon of circumradius and side $w/\\sqrt3$, so $H=-H$ and $A(H)=\\sqrt3w^2/2$.\n\nReflecting the inclusions gives $-T\\subset-K\\subset-H$. Apply monotonicity separately in both arguments:\n$$A(T,-T)\\leq A(K,-K)\\leq A(H,-H)=A(H).$$\nThe equal endpoint values force equality throughout. To see strict inclusions concretely, the Reuleaux triangle with vertex triangle $T$ lies between $T$ and $H$: each side of $H$ is an endpoint tangent to one of its circular arcs. Its curved boundary differs from both polygonal boundaries, so both inclusions are proper. Thus reflected mixed area can remain constant over an entire inclusion interval; its ordinary area generally changes.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§2.1–2.2, pp. 3–4, Figures 1–2; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-reuleaux-skeleton-plateau",
+      "kind": "proof",
+      "body_md": "For the arc centered at vertex $x_i$, write $I_i$ for its closed interval of outward unit normals. By the constant-width pairing, the opposite interval $-I_i$ is exactly the normal cone of $P$ at $x_i$, restricted to the unit circle. Its two endpoint directions are the normals of the incident arcs at $x_i$. The corresponding tangent half-planes are among those defining $C$, and their boundary lines meet at $x_i$. Every direction in $-I_i$ is a positive linear combination of those endpoint directions, so their inequalities imply\n$$h_C(u)=h_S(u)=x_i\\cdot u\\qquad(u\\in-I_i).$$\nHere $S\\subset P\\subset C$ supplies the opposite inequality. The tangent normals surround the origin, so $C$ is a bounded convex polygon.\n\nThe skeleton edge joining the endpoints of the arc centered at $x_i$ has outward normal $m_i$ at the midpoint of $I_i$. Therefore $h_{-C}(m_i)=h_C(-m_i)=h_S(-m_i)=h_{-S}(m_i)$. The edge formula, with $S$ as its polygon argument, gives\n$$2A(S,-C)=\\sum_i\\ell_i h_{-C}(m_i)=\\sum_i\\ell_i h_{-S}(m_i)=2A(S,-S).$$\n\nLet $E$ be the finite set of endpoint tangent normals. The endpoints of every corner-normal interval are also incident arc endpoints, and the opposite-interval pairing therefore gives $E=-E$. Every edge normal of $C$ belongs to $E$; at every direction in $E$, a defining tangent touches $P$ at an original vertex, so $h_C=h_S$. Thus every edge normal of $-C$ also belongs to $E$ and sees equal support values of $C$ and $S$. Applying the edge formula with polygon $-C$ yields $A(C,-C)=A(S,-C)$.\n\nWe have proved equality at the endpoints of\n$$A(S,-S)\\leq A(K,-K)\\leq A(C,-C).$$\nMonotonicity proves the plateau for all intermediate $K$, including $P$. Equality is determined by the finitely many normals in the polygon measures, not by equality of the whole bodies.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 2, pp. 4–5; alternative edge-measure proof; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-skeleton-difference-area",
+      "kind": "proof",
+      "body_md": "The cap on an arc of angle $\\theta_i$ has area $w^2(\\theta_i-\\sin\\theta_i)/2$. The caps have disjoint interiors and fill $P\\setminus S$, so\n$$2A(P)-2A(S)=w^2\\sum_i(\\theta_i-\\sin\\theta_i).$$\nThe reflected mixed-area terms agree. Subtracting the expansions of $A(P+(-P))$ and $A(S+(-S))$ therefore gives exactly this difference of ordinary areas. Since $P+(-P)=wB$ and $\\sum_i\\theta_i=\\pi$, the result follows.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 4, second proof, p. 7; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-skeleton-area-extrema",
+      "kind": "proof",
+      "body_md": "Concavity of sine gives $\\sin\\theta\\geq(3\\sqrt3/(2\\pi))\\theta$ on $[0,\\pi/3]$, strictly in the interior. The arc restrictions are the allowed geometric input here; Rogers–Shephard is also used as an external theorem, rather than proved in this short exercise. The sine-sum identity and Rogers–Shephard yield\n$$6A(S)\\geq A(S+(-S))=w^2\\sum_i\\sin\\theta_i\\geq\\frac{3\\sqrt3}{2}w^2.$$\nEquality forces every positive arc angle to be $\\pi/3$; there are exactly three, and the centers form an equilateral triangle of side $w$. That triangle attains the bound.\n\nThe skeleton omits positive-area circular caps, so $A(S)<A(P)\\leq\\pi w^2/4$, using the fixed-width maximum-area inequality. For a regular odd $n$-gon skeleton, its circumradius is $R_n=w/(2\\cos(\\pi/(2n)))$ and its area is $nR_n^2\\sin(2\\pi/n)/2\\to\\pi w^2/4$. No finite skeleton attains the supremum.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 4, pp. 7–8; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-steiner-parallel",
+      "kind": "proof",
+      "body_md": "Supports add: $h_{K+tB}=h_K+t$. Opposite sums give width $w+2t$, and Barbier gives the perimeter. Steiner’s formula $A(K+tB)=A(K)+tP(K)+\\pi t^2$ gives the area. The normalized support is $[w/(w+2t)]h_K+wt/(w+2t)$, converging uniformly to $w/2$. Uniform support convergence is Hausdorff convergence.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§4.2, Steiner formula",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-convex-hull-mixed-identity",
+      "kind": "proof",
+      "body_md": "Since $h_H=\\max(h_K,h_L)$, put $f=(h_L-h_K)_+$ and $g=(h_K-h_L)_+$. Then $fg=0$. The derivative rule for the positive part of a Lipschitz function gives $f'g'=0$ almost everywhere as well; on the zero set the derivative of $h_K-h_L$ is zero almost everywhere. Thus $\\mathcal B(f,g)=0$. Expanding this bilinear expression gives\n$$0=\\mathcal B(h_H-h_K,h_H-h_L)=A(H)-A(H,L)-A(K,H)+A(K,L).$$\nSymmetry of mixed area proves the claim. This argument accommodates nonsmooth hulls without treating them as $C^2$ curves.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§3, convex-hull formula preceding equation (7), p. 8; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-planar-hull-objective",
+      "kind": "proof",
+      "body_md": "The hull identity and bilinearity give\n$$A(K,-K)=A(H,K)+A(H,-K)-A(H)=A(H,wB)-A(H).$$\nSteiner’s formula gives $A(H,B)=P(H)/2$, establishing the first identity. Combine it with $A(K)+A(K,-K)=\\pi w^2/2$ for the second. At fixed $w$ the objectives sum to a constant, so their optimizers correspond through this construction. Mixed area is invariant under separate translations of its arguments; applying the identity to $K+v$ and $-K-v$ proves the translation assertion. This equivalence concerns hulls of constant-width bodies, not all convex sets.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equation (7) and Theorem 7, pp. 8–9; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-symmetric-hull-annulus",
+      "kind": "proof",
+      "body_md": "The identities $h_{-K}(u)=h_K(-u)=w-h_K(u)$ and $h_H=\\max(h_K,h_{-K})$ give the displayed formula. It implies $h_H\\geq w/2$, hence the inner inclusion by support-function comparison. Both $K$ and $-K$ lie in $RB$, and the ball is convex, so their hull does too. The diameter of $K$ is $w$; applying the stated Jung bound in dimensions two and three gives the claimed outer radii. Only the outer inclusion requires the circumcenter normalization.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§3, annulus observations, p. 9; §4 after Theorem 10, p. 12; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-annulus-both-constraints",
+      "kind": "proof",
+      "body_md": "The unit square centered at zero contains $\\tfrac12B$ and has $F=4/2-1=1>\\sqrt3/2$. For the other constraint put $R=1/\\sqrt3$ and take rectangles with vertices $(\\pm\\sqrt{R^2-\\varepsilon^2},\\pm\\varepsilon)$, $0<\\varepsilon<R$. They lie in $RB$. Writing $a=\\sqrt{R^2-\\varepsilon^2}$ gives $P=4(a+\\varepsilon)$, $A=4a\\varepsilon$, so $F\\to2R=2/\\sqrt3>\\sqrt3/2$. For small positive $\\varepsilon$ the desired strict inequality already holds for a full-dimensional rectangle. The hexagon has side $1/\\sqrt3$, perimeter $2\\sqrt3$, and area $\\sqrt3/2$, giving the stated reference value.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Remark 8, p. 9; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-symmetric-cover",
+      "kind": "proof",
+      "body_md": "Center $C$ at zero and place a copy $T'$ of the Reuleaux triangle in it. Then $-T'\\subset C$ too. Mixed-area monotonicity gives $A(T',-T')\\leq A(C,C)=A(C)$. Translation and simultaneous rotation preserve the left side, which equals $\\sqrt3/2$. Pál’s circumscription theorem shows that a regular hexagon whose opposite sides are one unit apart is a universal cover for this class, and its area is $\\sqrt3/2$. Thus it attains the bound. The hexagon does not itself have constant width in every direction. Without $C=-C$, reflecting the contained triangle does not put its reflection in the same container; the argument therefore makes no assertion for general universal covers.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "blog-cover",
+          "locator": "2020 post, central-symmetry hypothesis retained throughout",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 6, p. 8; preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-blaschke-volume",
+      "kind": "proof",
+      "body_md": "Put $a=V(K,K,-K)$. Reflection invariance gives $V(K,-K,-K)=a$. Expand $V(K+(-K))$: $4\\pi w^3/3=2V+6a$. Also $wB=K+(-K)$ implies $wS=3V(K,K,wB)=3(V+a)$. Eliminate $a$ to obtain $wS=2V+2\\pi w^3/3$. At fixed width, area and volume therefore have exactly the same minimizers. The identity uses the surface-area normalization of mixed volume specified in the question.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§12.1, Blaschke formula; Volume_Meissner.tex introduction",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§4, pp. 10–11; preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-spatial-mixed-objectives",
+      "kind": "proof",
+      "body_md": "Since $K+(-K)=wB$, trilinearity and reflection give\n$$V(wB)=2v+6a.$$\nLikewise $V(B,wB,wB)=2V(B,K,K)+2V(B,K,-K)$, and $3V(B,K,K)=s$, proving the second identity. The coefficients show that minimizing $v$ maximizes $a$, while minimizing $s$ maximizes $b$. Blaschke’s relation $v=ws/2-\\pi w^3/3$ identifies the two minimizations. All scalings are consistent: $a,v$ scale cubically in $K$, while $b,s$ scale quadratically because the first argument $B$ stays fixed.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equations (11)–(12), p. 11; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-projected-hull-identity",
+      "kind": "proof",
+      "body_md": "For $Q=K+tL$, Cauchy's formula and the mixed-volume surface-area formula give\n$$3\\{V(B,K,K)+2tV(B,K,L)+t^2V(B,L,L)\\}=4\\left\\langle A(K_u)+2tA(K_u,L_u)+t^2A(L_u)\\right\\rangle,$$\nwhere $K_u=K|u^\\perp$ and $L_u=L|u^\\perp$. Comparing coefficients of $t$ gives $6V(B,K,L)=8\\langle A(K_u,L_u)\\rangle$, or\n$$V(B,K,L)=\\frac43\\left\\langle A(K_u,L_u)\\right\\rangle.$$\nThe average is normalized by the spherical area $4\\pi$; changing this convention would change the displayed coefficient.\n\nProjection commutes with Minkowski sum and with convex hull, so $H|u^\\perp=\\operatorname{conv}(K_u\\cup L_u)$. Apply the planar hull identity in each plane and average its zero left-hand side. Multiplying by $4/3$ proves the desired identity. The fixed unit ball in the first mixed-volume argument is essential to this projection proof: it does not establish a corresponding formula for ordinary three-dimensional hull volume.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equation (14), p. 12; projection-based proof of the needed special case; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-spatial-hull-objective",
+      "kind": "proof",
+      "body_md": "The displayed support integral and symmetry of spherical measure imply $V(B,B,H)=2\\pi M(H)/3$. The hull identity with $L=-K$ gives\n$$V(B,K,-K)=V(B,H,K)+V(B,H,-K)-V(B,H,H)\n=wV(B,B,H)-V(B,H,H).$$\nMultiplication by three and $3V(B,H,H)=\\operatorname{area}(\\partial H)$ prove the formula. The previous mixed-volume identities show that maximizing its right side over hulls of width-$w$ bodies is equivalent to minimizing the volume of $K$. Enlarging the admissible family to all symmetric bodies in an annulus gives a relaxation, whose exactness requires an additional argument.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equations (13)–(15) and Theorem 10, p. 12; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-annulus-inner-contact",
+      "kind": "proof",
+      "body_md": "Put $a=V(B,B,H)>0$ and $b=V(B,H,H)$. If $r=\\min h_H>w/2$, then $rB\\subset H$, so monotonicity gives $b\\geq ra$. For $f(\\lambda)=G(\\lambda H)=w\\lambda a-\\lambda^2b$,\n$$f'(1)=wa-2b\\leq(w-2r)a<0.$$\nA sufficiently small contraction $\\lambda<1$ consequently increases the objective. It remains admissible because $\\lambda r\\geq w/2$ can be maintained and the outer inclusion is preserved. This contradicts maximality. The argument needs a strict gap $r>w/2$; inclusion at equality alone only gives a nonpositive derivative.\n\nFor completeness, a maximizer exists in the stated annulus class: it is nonempty (take $(w/2)B$), uniformly bounded, and closed under Hausdorff limits; the inner ball prevents degeneration. Blaschke selection and continuity of mixed volumes therefore give attainment. This existence statement concerns the annulus relaxation, not the still smaller family of hulls of constant-width bodies.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§4, scaling argument after equation (16), p. 12 (strictness made explicit); inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-spatial-cover-obstruction",
+      "kind": "proof",
+      "body_md": "After placing $K$ inside $D=-D$, both $K$ and $-K$ are contained in $D$. Hence $V(K,K,-K)\\leq V(D,D,D)=w^3/\\sqrt2$. Substitute in $2V(K)+6V(K,K,-K)=4\\pi w^3/3$ and divide by two. The coefficient is approximately $-0.0269252$, so the inequality is weaker than nonnegativity of volume. It shows that this particular monotonicity estimate using this container is too coarse; it does not refute other spatial mixed-volume approaches.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§4, rhombic-dodecahedron calculation, p. 11; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-spatial-inradius-volume",
+      "kind": "proof",
+      "body_md": "With the incenter at zero, $h_K\\geq r$ in every support direction. Integrating against the nonnegative surface-area measure gives $3V\\geq rS$; corners and nonsmooth boundary points cause no extra term. Blaschke’s formula gives $S=2V/w+2\\pi w^2/3$. Therefore\n$$(3-2r/w)V\\geq2\\pi r w^2/3.$$\nSince $r\\leq w/2$, the coefficient on the left is positive, giving the first bound. The function $r\\mapsto r/(3w-2r)$ is increasing because its derivative is $3w/(3w-2r)^2$. For a constant-width body, the concentric-ball identity gives $r=w-R$ and Jung’s theorem gives $R\\leq w\\sqrt{3/8}$. Substitute the resulting lower bound $r\\geq w(1-\\sqrt{3/8})$ into the increasing function and simplify to obtain $\\pi(3\\sqrt6-7)w^3/3$ (approximately $0.364916w^3$). This is a valid bound, without claiming that it is the best currently known one.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equation (10), p. 10; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-minimizer-inradius-threshold",
+      "kind": "proof",
+      "body_md": "The inradius estimate gives $2\\pi r/[3(3-2r)]\\leq V(K)\\leq v_M$. Multiplying by the positive denominator yields $(2\\pi+6v_M)r\\leq9v_M$, proving the upper bound. The lower bound is the stated three-dimensional Jung consequence for constant width. Numerically $v_M\\approx0.419860$ and $r_M\\approx0.429288$. For $r>r_M$ the lower bound already exceeds the competitor volume, which is impossible for a minimizer. At $r=r_M$ it merely equals that volume; excluding this endpoint needs a separate equality analysis. Thus the closed interval is exactly what this argument establishes.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 9 and preceding comparison, pp. 10–11; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    }
+  ]
+}

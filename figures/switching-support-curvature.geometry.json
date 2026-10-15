@@ -1,0 +1,11 @@
+{
+  "vertex_count": 5,
+  "width": 1.0,
+  "max_width_error": 4.440892098500626e-16,
+  "area": 0.7584970862126307,
+  "perimeter": 3.141592653589793,
+  "check": "floating-point analytic arcs; sampled directions",
+  "interval_length": 0.6283185307179586,
+  "endpoint_slope": 0.16245984811645314,
+  "qualification": "Piecewise analytic support and curvature; jump values of curvature are irrelevant a.e."
+}

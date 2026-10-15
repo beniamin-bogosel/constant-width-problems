@@ -1,0 +1,15 @@
+{
+  "renderer": "scripts/make_review_figures.py",
+  "n": 7,
+  "perturb": [
+    0.035,
+    -0.02,
+    0.015,
+    -0.01
+  ],
+  "caption": "The orange region is removed near q and the purple region is added near p. The line pq splits them into the paired curvilinear pieces used in the comparison lemma. Their boundaries include circular arcs, so straight-triangle areas would give the wrong subtraction. Dashes show the original boundary; the solid gray curve is the replacement.",
+  "alt": "Two views of the same shortest-arc replacement, with the removed curved cap shaded orange and the added curved cap shaded purple; points p, q, r, s, a, b, c, d are marked.",
+  "problems": [
+    "cw-smallest-arc-removal"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "figsize": [
+    12,
+    4
+  ],
+  "panels": [
+    {
+      "title": "Reuleaux 3-gon",
+      "bodies": [
+        {
+          "type": "reuleaux",
+          "n": 3,
+          "show_vertices": false,
+          "vertex_polygon": true
+        }
+      ]
+    },
+    {
+      "title": "Reuleaux 5-gon",
+      "bodies": [
+        {
+          "type": "reuleaux",
+          "n": 5,
+          "show_vertices": false,
+          "vertex_polygon": true
+        }
+      ]
+    },
+    {
+      "title": "Reuleaux 9-gon",
+      "bodies": [
+        {
+          "type": "reuleaux",
+          "n": 9,
+          "show_vertices": false,
+          "vertex_polygon": true
+        }
+      ]
+    }
+  ]
+}

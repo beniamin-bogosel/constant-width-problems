@@ -1,0 +1,18 @@
+{
+  "renderer": "scripts/make_topology_figures.py",
+  "endpoints": [
+    -1,
+    1
+  ],
+  "x_limits": [
+    -2.3,
+    2.3
+  ],
+  "caption": "The endpoints and the filled interval have the same convex hull and support function, but different distance functions. Their Hausdorff distance is one, attained by the distance-function gap at x=0.",
+  "alt": "Graphs of distance to two endpoints and distance to the interval between them; their maximum vertical difference is one at the origin.",
+  "problems": [
+    "cw-distance-function-basics",
+    "cw-hausdorff-distance-functions",
+    "cw-hausdorff-support"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "scene_title": "Triangulating a spherical face from q",
+  "diagnostics": [
+    {
+      "area": 1.5707963267948966,
+      "helper": [
+        0.5773502691896258,
+        0.5773502691896258,
+        0.5773502691896258
+      ]
+    }
+  ],
+  "rendering": "Floating-point geometry; samples or triangular facets used only for display."
+}

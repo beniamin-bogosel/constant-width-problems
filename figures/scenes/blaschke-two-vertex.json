@@ -1,0 +1,14 @@
+{
+  "renderer": "scripts/make_blaschke_figures.py",
+  "n": 5,
+  "index": 0,
+  "parameter": 0.09,
+  "caption": "An exact two-vertex Blaschke motion of the regular width-one pentagon. Blue is the initial body, orange the perturbed body. Areas are computed by circular-arc integration; the plot illustrates, rather than proves, the negative second variation.",
+  "alt": "Initial and deformed Reuleaux pentagons beside a graph of area with a strict local maximum at the undeformed pentagon.",
+  "problems": [
+    "cw-arc-normal-integral",
+    "cw-blaschke-two-vertex-motion",
+    "cw-blaschke-negative-second-variation",
+    "cw-reuleaux-finite-compactness"
+  ]
+}

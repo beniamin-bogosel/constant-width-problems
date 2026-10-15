@@ -1,0 +1,12 @@
+{
+  "renderer": "scripts/make_mixed_review_figure.py",
+  "radius": 1.0,
+  "segment_length": 0.9,
+  "curve_samples": 301,
+  "caption": "Adding a horizontal segment of length ℓ extends every nonempty horizontal slice by ℓ. The shaded curved band therefore has area ℓb, where b is the perpendicular width. For a radius-r disk and its diameter segment, ℓ=b=2r, giving mixed area 2r² despite the segment having zero area. Circle arcs are sampled only for rendering.",
+  "alt": "A disk before and after adding a horizontal segment. In the sum, two horizontal arrows across the added curved band both have length ell; a vertical dimension marks the disk width b.",
+  "problems": [
+    "cw-segment-mixed-area",
+    "cw-valuation-segment-correction"
+  ]
+}

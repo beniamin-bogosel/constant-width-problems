@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0",
+  "figures": [
+    {
+      "id": "triangle-radii",
+      "path": "figures/triangle-radii.svg",
+      "scene": "figures/scenes/triangle-radii.json",
+      "caption": "The incircle and circumcircle share the symmetry center; their radii sum to the width.",
+      "alt": "Reuleaux triangle with vertex triangle, concentric inscribed and enclosing circles, and labeled radii.",
+      "problem_ids": [
+        "cw-triangle-measures",
+        "cw-concentric-balls",
+        "cw-inradius-extrema",
+        "cw-high-moment-counterexample"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "regular-family",
+      "path": "figures/regular-family.svg",
+      "scene": "figures/scenes/regular-family.json",
+      "caption": "Regular Reuleaux polygons of width one; their areas increase toward the disk.",
+      "alt": "Three equal-width outlines: Reuleaux triangle, regular pentagon, and regular nonagon.",
+      "problem_ids": [
+        "cw-regular-reuleaux",
+        "cw-disk-maximizes-area"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "irregular-pentagon",
+      "path": "figures/irregular-pentagon.svg",
+      "scene": "figures/scenes/irregular-pentagon.json",
+      "caption": "A perturbed and exactly closed unit-edge pentagram gives unequal boundary arc angles. The support lines remain one unit apart.",
+      "alt": "Irregular five-arc Reuleaux polygon with labeled vertices, chord polygon, and parallel supporting lines.",
+      "problem_ids": [
+        "cw-irregular-construction",
+        "cw-arc-polygon-area",
+        "cw-binormals"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "lens-intersection",
+      "path": "figures/lens-intersection.svg",
+      "scene": "figures/scenes/lens-intersection.json",
+      "caption": "Two unit disks centered at \u00b1a on the horizontal axis; here a=1/2.",
+      "alt": "Lens formed by two overlapping unit disks, with horizontal support lines at heights one and square root of one minus a squared.",
+      "problem_ids": [
+        "cw-intersection-trap"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "smooth-support",
+      "path": "figures/smooth-support.svg",
+      "scene": "figures/scenes/smooth-support.json",
+      "caption": "Support function h(\u03b8)=1/2+0.045 cos(3\u03b8); curvature radius stays positive.",
+      "alt": "Rounded threefold constant-width curve with two pairs of parallel supporting lines.",
+      "problem_ids": [
+        "cw-odd-harmonics",
+        "cw-support-parametrization",
+        "cw-fourier-area",
+        "cw-convexity-certificate"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "triangle-erosion",
+      "path": "figures/triangle-erosion.svg",
+      "scene": "figures/scenes/triangle-erosion.json",
+      "caption": "Erosion retains the three disk centers and reduces every disk radius from one to 1\u2212t.",
+      "alt": "Four nested rounded triangles illustrating increasing erosion distances.",
+      "problem_ids": [
+        "cw-erosion-disks",
+        "cw-regular-inner-parallel",
+        "cw-perimeter-to-area",
+        "cw-cheeger-root",
+        "cw-cheeger-bisection",
+        "cw-cheeger-extrema",
+        "cw-covering-center-locus"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "pal-hexagon",
+      "path": "figures/pal-hexagon.svg",
+      "scene": "figures/scenes/pal-hexagon.json",
+      "caption": "Six equally spaced supporting lines can be chosen at equal distance from a common center.",
+      "alt": "A width-one Reuleaux triangle inside its circumscribed regular hexagon.",
+      "problem_ids": [
+        "cw-pal-hexagon",
+        "cw-blaschke-lebesgue",
+        "cw-symmetric-cover"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "outer-parallel",
+      "path": "figures/outer-parallel.svg",
+      "scene": "figures/scenes/outer-parallel.json",
+      "caption": "Adding a radius-0.15 disk adds 0.15 to the support function and 0.30 to the width.",
+      "alt": "Nested smooth constant-width curves representing a body and its outer parallel body.",
+      "problem_ids": [
+        "cw-steiner-parallel"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "dual-edge-helpers",
+      "path": "figures/dual-edge-helpers.png",
+      "scene": "figures/scenes/dual-edge-helpers.json",
+      "caption": "The midpoints O and H reduce the four cross-distance constraints to h\u00b2+u\u00b2+v\u00b2=1.",
+      "alt": "Three-dimensional diagram of two perpendicular opposite edges, their midpoints, and four dashed unit cross edges.",
+      "problem_ids": [
+        "cw-dual-edge-coordinates",
+        "cw-dual-dihedral",
+        "cw-extremal-bookkeeping"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "meissner-two-types",
+      "path": "figures/meissner-two-types.png",
+      "scene": "figures/scenes/meissner-two-types.json",
+      "caption": "Spherical patches are blue, wedges pale green, and spindle patches orange. Both choices have the same exact area and volume. Triangulated illustrations.",
+      "alt": "Side-by-side rendered Meissner tetrahedra with the star and face choices of smoothed edges.",
+      "problem_ids": [
+        "cw-meissner-tetra-volume",
+        "cw-tetra-smoothings",
+        "cw-open-meissner",
+        "cw-blaschke-volume"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "spherical-helper",
+      "path": "figures/spherical-helper.png",
+      "scene": "figures/scenes/spherical-helper.json",
+      "caption": "An auxiliary interior point divides the spherical octant into three geodesic triangles.",
+      "alt": "Spherical octant with its three coordinate-axis vertices and geodesic spokes from an interior helper point.",
+      "problem_ids": [
+        "cw-spherical-helper",
+        "cw-spherical-partition-check"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "spindle-generator",
+      "path": "figures/spindle-generator.svg",
+      "scene": "figures/scenes/spindle-generator.json",
+      "caption": "Rotate the minor arc AB around its chord; the distance from C to the chord is cos(\u03b8/2).",
+      "alt": "Unit circle center below a horizontal chord, with two unit radii and the central angle marked.",
+      "problem_ids": [
+        "cw-spindle-area"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "mixed-skeleton-tangents",
+      "path": "figures/mixed-skeleton-tangents.svg",
+      "scene": "figures/scenes/mixed-skeleton-tangents.json",
+      "caption": "The skeleton S lies inside P, which lies inside the endpoint-tangent polygon C. Every convex K between S and C has the same reflected mixed area. Both panels have width-one Reuleaux polygons.",
+      "alt": "Triangle and irregular Reuleaux pentagon, each overlaid with its inner skeleton and outer tangent polygon.",
+      "problem_ids": [
+        "cw-triangle-hexagon-plateau",
+        "cw-reuleaux-skeleton-plateau",
+        "cw-skeleton-difference-area",
+        "cw-skeleton-area-extrema",
+        "cw-polygon-mixed-edge-sum"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "symmetric-hull-annulus",
+      "path": "figures/symmetric-hull-annulus.svg",
+      "scene": "figures/scenes/symmetric-hull-annulus.json",
+      "caption": "The hull H is a regular hexagon between concentric circles of radii 1/2 and 1/\u221a3. The inner disk belongs to the hull, not necessarily to either Reuleaux triangle.",
+      "alt": "Two reflected Reuleaux triangles inside their common hexagonal convex hull, with inner and outer concentric circles.",
+      "problem_ids": [
+        "cw-convex-hull-mixed-identity",
+        "cw-planar-hull-objective",
+        "cw-symmetric-hull-annulus",
+        "cw-annulus-both-constraints"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "three-in-unit-disk",
+      "path": "figures/three-in-unit-disk.svg",
+      "scene": "figures/scenes/three-in-unit-disk.json",
+      "caption": "Three translates share only the disk center O. Their tangent sectors have angle 120\u00b0 and partition the full angle; the curved bodies leave gaps farther from O. Boundary contacts are allowed.",
+      "alt": "Three differently colored Reuleaux triangles in a unit-radius circle, touching at its center, with three dashed tangent rays and 120-degree angle marks.",
+      "problem_ids": [
+        "cw-unit-disk-packing",
+        "cw-common-point-packing",
+        "cw-fixed-shape-disk-packing"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "two-translates-in-disk",
+      "path": "figures/two-translates-in-disk.svg",
+      "scene": "figures/scenes/two-translates-in-disk.json",
+      "caption": "Moving each endpoint of a diameter to O gives two translates in the unit disk. They lie on opposite sides of a common supporting line and touch only at O.",
+      "alt": "Two identical irregular Reuleaux pentagons, translated to touch at the center of a unit circle, with a dashed separating tangent line.",
+      "problem_ids": [
+        "cw-fixed-shape-disk-packing",
+        "cw-translate-collision",
+        "cw-enclosing-ball-core"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "distance-functions",
+      "path": "figures/distance-functions.svg",
+      "scene": "figures/scenes/distance-functions.json",
+      "caption": "The endpoints and the filled interval have the same convex hull and support function, but different distance functions. Their Hausdorff distance is one, attained by the distance-function gap at x=0.",
+      "alt": "Graphs of distance to two endpoints and distance to the interval between them; their maximum vertical difference is one at the origin.",
+      "problem_ids": [
+        "cw-distance-function-basics",
+        "cw-hausdorff-distance-functions",
+        "cw-hausdorff-support"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "grid-domain-topologies",
+      "path": "figures/grid-domain-topologies.svg",
+      "scene": "figures/scenes/grid-domain-topologies.json",
+      "caption": "Filled dots represent G_n; hollow dots are removed from the open interval \u03a9_n. As n grows, the compact grids fill [0,1], while the domain clearances shrink uniformly to zero. Removed points are shown with enlarged markers, not positive-length holes.",
+      "alt": "Three progressively finer grids, the corresponding punctured intervals, and their triangular clearance graphs decreasing in height.",
+      "problem_ids": [
+        "cw-grid-topology-counterexample",
+        "cw-complementary-hausdorff",
+        "cw-domain-interior-persistence",
+        "cw-convex-boundary-distance"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "blaschke-two-vertex",
+      "path": "figures/blaschke-two-vertex.svg",
+      "scene": "figures/scenes/blaschke-two-vertex.json",
+      "caption": "An exact two-vertex Blaschke motion of the regular width-one pentagon. Blue is the initial body, orange the perturbed body. Areas are computed by circular-arc integration; the plot illustrates, rather than proves, the negative second variation.",
+      "alt": "Initial and deformed Reuleaux pentagons beside a graph of area with a strict local maximum at the undeformed pentagon.",
+      "problem_ids": [
+        "cw-arc-normal-integral",
+        "cw-blaschke-two-vertex-motion",
+        "cw-blaschke-negative-second-variation",
+        "cw-reuleaux-finite-compactness"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "smallest-arc-removal",
+      "path": "figures/smallest-arc-removal.svg",
+      "scene": "figures/scenes/smallest-arc-removal.json",
+      "caption": "A shortest arc cd (purple) and opposite corner q are replaced using the unit-circle intersection p. The new body has five arcs; c and d become smooth points. Dashed blue is the previous boundary. Both bodies are constructed and checked as width-one Reuleaux polygons.",
+      "alt": "An irregular seven-arc Reuleaux polygon and its five-arc replacement, with the shortest arc and points a, b, c, d, p, q labeled.",
+      "problem_ids": [
+        "cw-shortest-arc-chord-lemma",
+        "cw-smallest-arc-removal",
+        "cw-polygon-descent-limit"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "equiangular-supports",
+      "path": "figures/equiangular-supports.svg",
+      "scene": "figures/scenes/equiangular-supports.json",
+      "caption": "The same Reuleaux triangle inside intersections of 6, 12 and 24 equally spaced supporting half-planes. At a corner several successive support lines can meet at one point, producing zero-length sides in the indexed polygon.",
+      "alt": "Three increasingly fine circumscribed equiangular supporting polygons around one Reuleaux triangle.",
+      "problem_ids": [
+        "cw-equiangular-support-perimeter",
+        "cw-equiangular-area-quadratic",
+        "cw-equiangular-mesh-error",
+        "cw-reuleaux-approximation-support-splice"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "hexagon-strip-sliding",
+      "path": "figures/hexagon-strip-sliding.svg",
+      "scene": "figures/scenes/hexagon-strip-sliding.json",
+      "caption": "Opposite supports remain one unit apart while the three strips slide. At the endpoint three sides vanish and an equilateral triangle remains. These straight-sided polygons are not constant-width bodies.",
+      "alt": "A regular hexagon, an alternating-side hexagon, and a limiting equilateral triangle obtained by sliding three strips.",
+      "problem_ids": [
+        "cw-hexagon-strip-sliding",
+        "cw-pal-hexagon"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "shortest-arc-caps",
+      "path": "figures/shortest-arc-caps.svg",
+      "scene": "figures/scenes/shortest-arc-caps.json",
+      "caption": "The orange region is removed near q and the purple region is added near p. The line pq splits them into the paired curvilinear pieces used in the comparison lemma. Their boundaries include circular arcs, so straight-triangle areas would give the wrong subtraction. Dashes show the original boundary; the solid gray curve is the replacement.",
+      "alt": "Two views of the same shortest-arc replacement, with the removed curved cap shaded orange and the added curved cap shaded purple; points p, q, r, s, a, b, c, d are marked.",
+      "problem_ids": [
+        "cw-smallest-arc-removal"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "switching-support-curvature",
+      "path": "figures/switching-support-curvature.svg",
+      "scene": "figures/scenes/switching-support-curvature.json",
+      "caption": "A piecewise analytic support function for a width-one regular Reuleaux pentagon. Equal intervals alternate between curvature radius zero and one: zero intervals map to single vertices, while unit intervals trace unit-circle arcs. Curvature values at the finitely many jumps are immaterial.",
+      "alt": "Support and stepwise curvature-radius graphs with equal switching intervals beside the corresponding Reuleaux pentagon, whose vertices are orange and arcs blue.",
+      "problem_ids": [
+        "cw-curvature-bang-bang",
+        "cw-variational-switching-rule",
+        "cw-switching-ode-regularity",
+        "cw-blaschke-lebesgue-variational"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "curvature-aliasing",
+      "path": "figures/curvature-aliasing.svg",
+      "scene": "figures/scenes/curvature-aliasing.json",
+      "caption": "For N=8 and k=2N+3=19, the two sine modes agree at every grid direction, so all sampled curvature values are 1/2. Between them the candidate curvature is negative on open intervals. This function cannot be the curvature radius of a convex support function despite passing the sampled inequalities.",
+      "alt": "An oscillating curvature candidate crossing below zero between eight positive sample points; negative regions are shaded.",
+      "problem_ids": [
+        "cw-grid-failure",
+        "cw-convexity-certificate"
+      ],
+      "role": "illustration"
+    },
+    {
+      "id": "mixed-segment-sweep",
+      "path": "figures/mixed-segment-sweep.svg",
+      "scene": "figures/scenes/mixed-segment-sweep.json",
+      "caption": "Adding a horizontal segment of length \u2113 extends every nonempty horizontal slice by \u2113. The shaded curved band therefore has area \u2113b, where b is the perpendicular width. For a radius-r disk and its diameter segment, \u2113=b=2r, giving mixed area 2r\u00b2 despite the segment having zero area. Circle arcs are sampled only for rendering.",
+      "alt": "A disk before and after adding a horizontal segment. In the sum, two horizontal arrows across the added curved band both have length ell; a vertical dimension marks the disk width b.",
+      "problem_ids": [
+        "cw-segment-mixed-area",
+        "cw-valuation-segment-correction"
+      ],
+      "role": "illustration"
+    }
+  ]
+}

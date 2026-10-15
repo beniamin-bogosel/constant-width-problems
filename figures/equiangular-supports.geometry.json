@@ -1,0 +1,20 @@
+{
+  "samples": [
+    {
+      "normal_count": 6,
+      "area": 0.8545684501455926,
+      "perimeter": 3.4641016151377553
+    },
+    {
+      "normal_count": 12,
+      "area": 0.7377984249667036,
+      "perimeter": 3.2153903091734723
+    },
+    {
+      "normal_count": 24,
+      "area": 0.7129562895948778,
+      "perimeter": 3.159659942097506
+    }
+  ],
+  "qualification": "Exact support-line intersections; zero-length sides may occur at corners."
+}

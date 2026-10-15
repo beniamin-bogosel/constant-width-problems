@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "08-open-problems",
+  "solutions": [
+    {
+      "problem_id": "cw-open-meissner",
+      "kind": "discussion",
+      "body_md": "This is the three-dimensional Blaschke–Lebesgue problem. The two classical Meissner tetrahedra are candidate minimizers. Blaschke’s relation makes least surface area equivalent to least volume. A 2026 preprint by Nishioka explicitly treats the problem as open and reports the lower bound $4\\pi/33$; that new bound is recorded as a preprint claim, not independently proved here. A finite numerical search among Meissner polyhedra cannot establish the conjecture for all bodies. At width one, $V=S/2-\\pi/3$, so these two minimization objectives are related by a strictly increasing affine function. The conjectured value is approximately $0.419860$; both classical smoothing types have that value. Existence of a minimizer follows from constant-width compactness and volume continuity, but neither existence nor equality of the two candidates' volumes identifies all minimizers.",
+      "proof_status": "not-applicable",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "nishioka",
+          "locator": "2026 preprint abstract, arXiv:2606.01754",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-open-eigenvalue",
+      "kind": "discussion",
+      "body_md": "Define $\\lambda_1(K)=\\inf_{0\\ne u\\in H_0^1(\\operatorname{int}K)}\\int_K|\\nabla u|^2/\\int_Ku^2$. Numerical work motivates the conjecture, and Bogosel’s 2025 width-constraint paper discusses it separately from the minimal-width problem. The proved Cheeger comparison does not imply the desired eigenvalue ordering: Cheeger’s inequality is a lower bound for each individual eigenvalue. The question here concerns the first eigenvalue only, not an assertion about the entire spectrum. With unit width fixed, no rescaling is implicit; for a general width $w$ the invariant comparison is $w^2\\lambda_1(K)\\leq\\lambda_1(T_1)$, where $T_1$ has width one. For a membrane with fixed material parameters, frequency is proportional to $\\sqrt{\\lambda_1}$, so maximizing the eigenvalue and maximizing the fundamental frequency are equivalent.",
+      "proof_status": "not-applicable",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "width-optimization",
+          "locator": "Introduction of arXiv:2506.07708v1, constant-width motivation",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "henrot-lucardesi",
+          "locator": "Concluding conjecture; arXiv abstract",
+          "relationship": "status-evidence"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-open-helper-monotonicity",
+      "kind": "discussion",
+      "body_md": "This is exactly the strong-criticality comparison posed in the supplied intermediary-point manuscript. A critical base has every degree at least three; a strongly critical base has no proper extremal subset. These are different conditions, and the latter would exclude the inclusion under study.\n\nFor each dual pair with angular lengths $(s_i,t_i)$, let\n$$f(s,t)=t\\cos(t/2)\\arcsin\\frac{\\sin(s/2)}{\\cos(t/2)},\\qquad H(s,t)=\\max\\{f(s,t),f(t,s)\\}.$$\nWriting $\\Phi(Z)=\\sum_iH(s_i,t_i)$, the supplied area formula gives $S_{\\min}(Z)=2\\pi-2\\Phi(Z)$. The question is therefore $\\Phi(X)\\leq\\Phi(Y)$: the inequality reverses because of the negative coefficient.\n\nDeleting a degree-two dangling point has a separate comparison result in the cited work, but it does not settle the critical case. Nor does scalar superadditivity of $f$ alone compare arbitrary geometric refinements: introducing generators changes the dual pairing and both angular variables. The local note proves special refinement inequalities and isolates remaining configurations. This entry records that local unresolved question under its stated hypothesis, with no literature-wide priority claim. The discussion uses the general smoothing convention of that note; definitions that reserve “Reuleaux polyhedron” for a standard strongly critical base describe a narrower class.",
+      "proof_status": "not-applicable",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "intermediary",
+          "locator": "Problem prob:comparison and subsequent refinements; compare arXiv:2608.19747",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-open-pair-distance",
+      "kind": "discussion",
+      "body_md": "The supplied September 2026 kernel investigation reports numerical evidence and explicitly leaves this pure distance-kernel minimum unproved. This functional is translation and rotation invariant; single-center radial moments are different quantities and can have counterexamples. Dividing by area squared changes the problem, so any experiment must state its normalization. The present entry is a local research question with numerical motivation, not a theorem or a claim that no related result exists elsewhere. A change of variables gives $E(aK)=a^5E(K)$ in the plane, whereas the mean pairwise distance $E(K)/A(K)^2$ scales as $a$. The width-one condition therefore fixes a meaningful scale for either question, but minimizing one does not imply minimizing the other: the areas of constant-width competitors differ. All pairs are measured within the same body; there is no distinguished center in this functional.",
+      "proof_status": "not-applicable",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "kernels",
+          "locator": "README and pair-energy sections of reuleaux_kernels.tex",
+          "relationship": "adapted"
+        }
+      ]
+    }
+  ]
+}

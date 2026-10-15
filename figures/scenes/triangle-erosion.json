@@ -1,0 +1,34 @@
+{
+  "title": "Inner parallel sets of the Reuleaux triangle",
+  "legend": true,
+  "bodies": [
+    {
+      "type": "reuleaux",
+      "erosion": 0,
+      "color": "#177e89",
+      "fill_alpha": 0.035,
+      "legend": "t = 0"
+    },
+    {
+      "type": "reuleaux",
+      "erosion": 0.12,
+      "color": "#735ba5",
+      "fill_alpha": 0.035,
+      "legend": "t = 0.12"
+    },
+    {
+      "type": "reuleaux",
+      "erosion": 0.23,
+      "color": "#b65b35",
+      "fill_alpha": 0.035,
+      "legend": "t = 0.23"
+    },
+    {
+      "type": "reuleaux",
+      "erosion": 0.34,
+      "color": "#7e9638",
+      "fill_alpha": 0.035,
+      "legend": "t = 0.34"
+    }
+  ]
+}

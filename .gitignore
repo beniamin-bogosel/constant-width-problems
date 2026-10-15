@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+build/
+.venv/
+html/
+
+# Local source material and machine-specific provenance.
+/Doc/
+/sources/local-inventory.json
+
+# Environment-owned state and local credentials.
+/.agents/
+/.aws/
+/.codex/
+.env
+.env.*
+!.env.example

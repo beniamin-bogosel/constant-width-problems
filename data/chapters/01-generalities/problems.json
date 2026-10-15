@@ -1,0 +1,1061 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "01-generalities",
+  "problems": [
+    {
+      "id": "cw-distance-function-basics",
+      "title": "A set encoded by its distance function",
+      "chapter_id": "01-generalities",
+      "order": 1,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "distance-functions",
+        "set-inclusion"
+      ],
+      "statement_md": "For a nonempty set $E\\subset\\mathbb R^d$, define $d_E(x)=\\inf_{y\\in E}|x-y|$. Prove that $d_E$ is 1-Lipschitz, $d_E=d_{\\overline E}$, and $\\{d_E=0\\}=\\overline E$. For nonempty closed sets $E,F$, prove\n$$E\\subset F\\iff d_E\\geq d_F,\\qquad d_{E\\cup F}=\\min(d_E,d_F).$$\nExplain why distance functions cannot distinguish an open ball from its closure.",
+      "hint_md": "Apply the triangle inequality before taking the infimum. Test an inequality of distance functions on their zero sets.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "§2.2.3.1, Definition 2.2.7, p. 30; proof of Theorem 2.2.25, p. 44; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "distance-functions",
+          "path": "figures/distance-functions.svg",
+          "caption_md": "The endpoints and the filled interval have the same convex hull and support function, but different distance functions. Their Hausdorff distance is one, attained by the distance-function gap at x=0.",
+          "alt": "Graphs of distance to two endpoints and distance to the interval between them; their maximum vertical difference is one at the origin."
+        }
+      ]
+    },
+    {
+      "id": "cw-hausdorff-distance-functions",
+      "title": "Hausdorff distance is uniform distance between distance functions",
+      "chapter_id": "01-generalities",
+      "order": 2,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "hausdorff-distance",
+        "distance-functions"
+      ],
+      "statement_md": "For nonempty compact $K,L\\subset\\mathbb R^d$, define\n$$d_H(K,L)=\\max\\{\\max_{x\\in K}d_L(x),\\max_{y\\in L}d_K(y)\\}.$$\nProve\n$$d_H(K,L)=\\sup_{x\\in\\mathbb R^d}|d_K(x)-d_L(x)|=\\max_{x\\in K\\cup L}|d_K(x)-d_L(x)|.$$\nDeduce the triangle inequality and\n$$d_H(K,L)\\leq\\varepsilon\\iff K\\subset L+\\varepsilon B,\\ L\\subset K+\\varepsilon B$$\nfor $\\varepsilon\\geq0$, where $B$ is the closed unit ball. No convexity is assumed.",
+      "hint_md": "Use a nearest point in one set to compare the two distances at an arbitrary point. On either set, one distance is zero.",
+      "prerequisites": [
+        "cw-distance-function-basics"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Proposition 2.2.27 and equation (2.28), p. 43; equation (2.15), p. 33; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "distance-functions",
+          "path": "figures/distance-functions.svg",
+          "caption_md": "The endpoints and the filled interval have the same convex hull and support function, but different distance functions. Their Hausdorff distance is one, attained by the distance-function gap at x=0.",
+          "alt": "Graphs of distance to two endpoints and distance to the interval between them; their maximum vertical difference is one at the origin."
+        }
+      ]
+    },
+    {
+      "id": "cw-support-calculus",
+      "title": "Support functions as a geometry calculator",
+      "chapter_id": "01-generalities",
+      "order": 3,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "support-functions",
+        "convexity"
+      ],
+      "statement_md": "For a nonempty compact convex set $K\\subset\\mathbb R^d$, put $h_K(u)=\\max_{x\\in K}x\\cdot u$. Compute the support functions of a ball $B(c,r)$, a segment $[a,b]$, and $\\operatorname{conv}\\{v_1,\\ldots,v_m\\}$. Prove $h_{K+L}=h_K+h_L$ and $h_{\\operatorname{conv}(K\\cup L)}=\\max(h_K,h_L)$. Finally prove the half-space representation $K=\\bigcap_{|u|=1}\\{x:x\\cdot u\\leq h_K(u)\\}$, and deduce $K\\subset L\\iff h_K\\leq h_L$. You may use separation of a point from a closed convex set.",
+      "hint_md": "A linear functional cannot exceed its largest value on the vertices of a convex combination. In a Minkowski sum, maximize over the two summands independently.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§1.7; outline Exercises 1.1, 1.4(i), 1.5",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-hausdorff-support",
+      "title": "Hausdorff distance and support functions",
+      "chapter_id": "01-generalities",
+      "order": 4,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "hausdorff-distance",
+        "support-functions"
+      ],
+      "statement_md": "For nonempty compact convex sets $K,L\\subset\\mathbb R^d$, prove the three-way identity\n$$d_H(K,L)=\\|h_K-h_L\\|_{L^\\infty(\\mathbb S^{d-1})}=\\|d_K-d_L\\|_{L^\\infty(\\mathbb R^d)}.$$\nDeduce that widths in any direction change by at most $2d_H(K,L)$. Explain why convexity is essential for the support-function equality by comparing the unit circle with the closed unit disk. You may use separation of a point from a closed convex set.",
+      "hint_md": "Express Hausdorff distance through two parallel-neighborhood inclusions, then translate inclusion into support inequalities. Support functions see only a set’s convex hull.",
+      "prerequisites": [
+        "cw-support-calculus",
+        "cw-hausdorff-distance-functions"
+      ],
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§1.8; outline Exercise 1.7",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Proposition 2.2.27, p. 43, for the distance-function equality; support-function equality retained from Schneider §1.8",
+          "relationship": "background"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "distance-functions",
+          "path": "figures/distance-functions.svg",
+          "caption_md": "The endpoints and the filled interval have the same convex hull and support function, but different distance functions. Their Hausdorff distance is one, attained by the distance-function gap at x=0.",
+          "alt": "Graphs of distance to two endpoints and distance to the interval between them; their maximum vertical difference is one at the origin."
+        }
+      ]
+    },
+    {
+      "id": "cw-distance-from-support",
+      "title": "Distance to a convex body from its support function",
+      "chapter_id": "01-generalities",
+      "order": 5,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "distance-functions",
+        "support-functions",
+        "convexity"
+      ],
+      "statement_md": "Let $K$ be nonempty, compact and convex. Prove\n$$d_K(x)=\\max\\left\\{0,\\max_{u\\in\\mathbb S^{d-1}}(x\\cdot u-h_K(u))\\right\\}.$$\nIf $K$ has nonempty interior, prove that the maximum without the outer zero equals the signed distance\n$$s_K(x)=\\begin{cases}d_K(x),&x\\notin K,\\\\-\\operatorname{dist}(x,\\partial K),&x\\in K.\\end{cases}$$\nThe sign convention is negative inside.",
+      "hint_md": "Outside $K$, use the supporting plane through a nearest point. Inside $K$, find the largest ball centered at $x$ lying in $K$.",
+      "prerequisites": [
+        "cw-support-calculus",
+        "cw-distance-function-basics"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Distance-function framework, §2.2.6.1, pp. 43–44; convex support-function companion; English edition (2018), printed pages",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-hausdorff-sequential",
+      "title": "Recognizing a Hausdorff limit by convergent points",
+      "chapter_id": "01-generalities",
+      "order": 6,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "hausdorff-distance",
+        "convexity",
+        "set-convergence"
+      ],
+      "statement_md": "Suppose nonempty compact sets $K_n,K$ all lie in one fixed compact set $Q\\subset\\mathbb R^d$. Prove that $d_H(K_n,K)\\to0$ is equivalent to both conditions:\n\n1. Whenever $n_j\\to\\infty$, $x_j\\in K_{n_j}$ and $x_j\\to x$, then $x\\in K$.\n2. Every $x\\in K$ admits points $x_n\\in K_n$ with $x_n\\to x$.\n\nDeduce that inclusion and convexity are preserved under compact-set Hausdorff convergence.",
+      "hint_md": "If either directed distance stays positive, choose points witnessing that gap and use compactness of $Q$.",
+      "prerequisites": [
+        "cw-hausdorff-distance-functions"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "§2.2.3.2, properties (3)–(4), pp. 32–33; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-hausdorff-set-operations",
+      "title": "Convex hull and union are stable; intersection need not be",
+      "chapter_id": "01-generalities",
+      "order": 7,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "hausdorff-distance",
+        "convex-hulls",
+        "counterexamples"
+      ],
+      "statement_md": "For nonempty compact sets, prove\n$$d_H(K_1\\cup K_2,L_1\\cup L_2)\\leq\\max_i d_H(K_i,L_i),$$\n$$d_H(\\operatorname{conv}K,\\operatorname{conv}L)\\leq d_H(K,L).$$\nYou may use Carathéodory’s theorem to establish compactness of the convex hulls. Give compact convex $K_n,L_n$ with nonempty intersections such that $K_n\\to K$, $L_n\\to L$, but $K_n\\cap L_n$ does not tend to $K\\cap L$.",
+      "hint_md": "Approximate the points in a convex combination by points in the other set with the same coefficients. For failure of intersection, tilt one segment toward another.",
+      "prerequisites": [
+        "cw-hausdorff-distance-functions"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.5, p. 63; compact-set Hausdorff properties in §2.2.3.2; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-nested-compact-limits",
+      "title": "Nested compact sets converge to the expected limit",
+      "chapter_id": "01-generalities",
+      "order": 8,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "hausdorff-distance",
+        "compactness"
+      ],
+      "statement_md": "Prove that a decreasing sequence of nonempty compact sets $K_n$ converges in Hausdorff distance to $\\bigcap_nK_n$. Prove that an increasing sequence of nonempty compact sets confined to a fixed compact set converges to $\\overline{\\bigcup_nK_n}$. Explain why confinement matters in the increasing case.",
+      "hint_md": "Use the convergent-points criterion. For an increasing family, once a point is well approximated it remains well approximated.",
+      "prerequisites": [
+        "cw-hausdorff-sequential"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "§2.2.3.2, compact-set properties (1)–(2), p. 32; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-hausdorff-selection",
+      "title": "Compactness of sets from Arzelà–Ascoli",
+      "chapter_id": "01-generalities",
+      "order": 9,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "hausdorff-distance",
+        "compactness"
+      ],
+      "statement_md": "Let $Q\\subset\\mathbb R^d$ be compact. Prove that every sequence of nonempty compact subsets $K_n\\subset Q$ has a Hausdorff-convergent subsequence with nonempty compact limit in $Q$. Use Arzelà–Ascoli on the distance functions on $Q$; in particular, justify why a uniform limit of these functions is still a distance function.",
+      "hint_md": "Let the candidate limit set be the zero set of the limiting function. Take limits of nearest points to recover the function.",
+      "prerequisites": [
+        "cw-distance-function-basics",
+        "cw-hausdorff-distance-functions"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Theorem 2.2.25 and Proposition 2.2.27, pp. 42–44; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-complementary-hausdorff",
+      "title": "Open domains: measure distance between the complements",
+      "chapter_id": "01-generalities",
+      "order": 10,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "open-domains",
+        "hausdorff-distance",
+        "distance-functions"
+      ],
+      "statement_md": "For bounded open sets $\\Omega,\\Lambda\\subset\\mathbb R^d$, choose a closed ball $Q$ containing both and define\n$$d_H^c(\\Omega,\\Lambda)=d_H(Q\\setminus\\Omega,Q\\setminus\\Lambda).$$\nSet $q_\\Omega(x)=\\operatorname{dist}(x,\\mathbb R^d\\setminus\\Omega)$. Prove\n$$d_H^c(\\Omega,\\Lambda)=\\|q_\\Omega-q_\\Lambda\\|_{L^\\infty(\\mathbb R^d)},$$\nso the definition is independent of $Q$. Show that $d_H^c(\\varnothing,\\Omega)$ is the supremal radius of balls contained in $\\Omega$. Compute this distance between the open unit ball $U$ and the punctured ball $U\\setminus\\{0\\}$, whose closures coincide.",
+      "hint_md": "Inside the open set, a nearest complement point lies on its boundary; outside it the distance is zero.",
+      "prerequisites": [
+        "cw-hausdorff-distance-functions"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Definitions 2.2.8–2.2.10, pp. 30–31; Lemma 2.2.12 and Remarks 2.2.11–2.2.14, pp. 31–32; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "grid-domain-topologies",
+          "path": "figures/grid-domain-topologies.svg",
+          "caption_md": "Filled dots represent G_n; hollow dots are removed from the open interval Ω_n. As n grows, the compact grids fill [0,1], while the domain clearances shrink uniformly to zero. Removed points are shown with enlarged markers, not positive-length holes.",
+          "alt": "Three progressively finer grids, the corresponding punctured intervals, and their triangular clearance graphs decreasing in height."
+        }
+      ]
+    },
+    {
+      "id": "cw-domain-interior-persistence",
+      "title": "Compact subsets survive domain convergence",
+      "chapter_id": "01-generalities",
+      "order": 11,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "open-domains",
+        "volume",
+        "set-convergence"
+      ],
+      "statement_md": "Suppose bounded open sets $\\Omega_n,\\Omega$ lie in one fixed ball and $d_H^c(\\Omega_n,\\Omega)\\to0$. Show that every compact $F\\subset\\Omega$ eventually lies in $\\Omega_n$. Deduce\n$$|\\Omega\\setminus\\Omega_n|\\to0,\\qquad |\\Omega|\\leq\\liminf_n|\\Omega_n|.$$\nGive the same persistence conclusion for the support of a continuous function compactly supported in $\\Omega$.",
+      "hint_md": "The clearance $q_\\Omega$ has a positive minimum on $F$. Then use pointwise eventual membership inside $\\Omega$.",
+      "prerequisites": [
+        "cw-complementary-hausdorff"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Proposition 2.2.17 and Remark 2.2.18, p. 35; Proposition 2.2.23, pp. 41–42; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "grid-domain-topologies",
+          "path": "figures/grid-domain-topologies.svg",
+          "caption_md": "Filled dots represent G_n; hollow dots are removed from the open interval Ω_n. As n grows, the compact grids fill [0,1], while the domain clearances shrink uniformly to zero. Removed points are shown with enlarged markers, not positive-length holes.",
+          "alt": "Three progressively finer grids, the corresponding punctured intervals, and their triangular clearance graphs decreasing in height."
+        }
+      ]
+    },
+    {
+      "id": "cw-grid-topology-counterexample",
+      "title": "One grid, three different notions of convergence",
+      "chapter_id": "01-generalities",
+      "order": 12,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "set-convergence",
+        "counterexamples",
+        "volume"
+      ],
+      "statement_md": "In $[0,1]$, let $G_n=\\{j/n:0\\leq j\\leq n\\}$ and $\\Omega_n=(0,1)\\setminus G_n$. Prove\n$$d_H(G_n,[0,1])=\\frac1{2n},\\qquad d_H^c(\\Omega_n,\\varnothing)=\\frac1{2n}.$$\nCompare the Lebesgue measures of the limits with those of the approximating sets. Explain why all $\\overline{\\Omega_n}=[0,1]$ and all $1_{\\Omega_n}=1_{(0,1)}$ almost everywhere, while $\\Omega_n$ converges to the empty set in complementary Hausdorff distance.",
+      "hint_md": "The farthest point from the grid is the midpoint of a grid interval. Each open component has inradius $1/(2n)$.",
+      "prerequisites": [
+        "cw-complementary-hausdorff"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "§2.2.5, third counterexample and equation (2.24), pp. 40–41; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "grid-domain-topologies",
+          "path": "figures/grid-domain-topologies.svg",
+          "caption_md": "Filled dots represent G_n; hollow dots are removed from the open interval Ω_n. As n grows, the compact grids fill [0,1], while the domain clearances shrink uniformly to zero. Removed points are shown with enlarged markers, not positive-length holes.",
+          "alt": "Three progressively finer grids, the corresponding punctured intervals, and their triangular clearance graphs decreasing in height."
+        }
+      ]
+    },
+    {
+      "id": "cw-compact-domain-convergence",
+      "title": "Compact convergence can have two different open limits",
+      "chapter_id": "01-generalities",
+      "order": 13,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "open-domains",
+        "set-convergence",
+        "counterexamples"
+      ],
+      "statement_md": "Use the following definition: $\\Omega_n$ converges compactly to open $\\Omega$ if every compact $F\\subset\\Omega$ eventually lies in $\\Omega_n$, and every compact $G\\subset\\mathbb R^d\\setminus\\overline\\Omega$ eventually lies in $\\mathbb R^d\\setminus\\overline{\\Omega_n}$. Show that the open balls $\\Omega_n=\\{x:|x|<1+1/n\\}$ converge compactly both to the open unit ball $U$ and to $U\\setminus\\{0\\}$. Then prove: if $\\Omega_n$ converges compactly to $\\Omega$ and $|\\partial\\Omega|=0$, its indicators converge in $L^p_{\\rm loc}$ for every finite $p\\geq1$.",
+      "hint_md": "The two candidate limits have the same closure. Away from the boundary, singleton compact sets decide eventual membership.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Definition 2.2.21, p. 38; §2.2.5, first counterexample, p. 39; Exercise 2.7, p. 63; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-indicator-set-distance",
+      "title": "Symmetric difference and convergence of indicators",
+      "chapter_id": "01-generalities",
+      "order": 14,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "measure-convergence",
+        "symmetric-difference"
+      ],
+      "statement_md": "Let measurable $E,F$ lie in a fixed bounded measurable set $Q$. Prove for $1\\leq p<\\infty$ that\n$$\\|1_E-1_F\\|_{L^p}^p=|E\\mathbin\\triangle F|.$$\nShow that $|E\\triangle F|$ is a metric on sets modulo equality almost everywhere, whereas the $L^\\infty$ distance is either zero or one. Finally, if $1_{E_n}$ converges weak-* in $L^\\infty(Q)$ to $1_E$, prove convergence in every finite $L^p(Q)$ and the existence of an almost-everywhere convergent subsequence. Do not assume almost-everywhere convergence of the whole sequence.",
+      "hint_md": "The absolute indicator difference is itself an indicator. For the weak-* assertion, test against $1$ and $1_E$.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Proposition 2.2.1 and Remarks 2.2.4–2.2.5, pp. 27–29; Exercise 2.10(1)–(2), p. 64; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-oscillating-indicators",
+      "title": "Fine alternating intervals converge to a density, not a set",
+      "chapter_id": "01-generalities",
+      "order": 15,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "measure-convergence",
+        "counterexamples"
+      ],
+      "statement_md": "Let $E_n=\\bigcup_{j=0}^{n-1}(j/n,(j+1/2)/n)\\subset(0,1)$. Prove $1_{E_n}\\rightharpoonup^*1/2$ in $L^\\infty(0,1)$, but that there is no strong $L^p$ limit for any finite $p\\geq1$. Determine the complementary Hausdorff limit of $E_n$. You may use density of continuous functions in $L^1(0,1)$.",
+      "hint_md": "On each cell of length $1/n$, compare a continuous test function with its value at the cell’s left endpoint.",
+      "prerequisites": [
+        "cw-complementary-hausdorff",
+        "cw-indicator-set-distance"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.1, p. 61; Proposition 2.2.28, p. 45 (uniform-cell variant); English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-convex-hausdorff-volume",
+      "title": "Convexity restores volume convergence",
+      "chapter_id": "01-generalities",
+      "order": 16,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "hausdorff-distance",
+        "convexity",
+        "volume"
+      ],
+      "statement_md": "Let compact convex $K_n$ converge in Hausdorff distance to a convex body $K\\subset\\mathbb R^d$ with nonempty interior. After translating, suppose $rB\\subset K$ for some $r>0$. With $\\delta_n=d_H(K_n,K)<r$, prove\n$$(1-\\delta_n/r)K\\subset K_n\\subset(1+\\delta_n/r)K.$$\nDeduce $|K_n\\triangle K|\\to0$, volume convergence, and eventual inclusion of every compact subset of $\\operatorname{int}K$ in $\\operatorname{int}K_n$.",
+      "hint_md": "Use $h_K\\geq r$ to turn an additive support error into a multiplicative one.",
+      "prerequisites": [
+        "cw-hausdorff-support"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.2, p. 61; volume counterexamples in §2.2.3.2, p. 37; convex specialization; English edition (2018), printed pages",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-convex-boundary-distance",
+      "title": "For convex bodies, boundary distance equals body distance",
+      "chapter_id": "01-generalities",
+      "order": 17,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "hausdorff-distance",
+        "boundaries",
+        "convexity"
+      ],
+      "statement_md": "For compact convex bodies $K,L\\subset\\mathbb R^d$ with nonempty interior, prove\n$$d_H(\\partial K,\\partial L)=d_H(K,L).$$\nYou may use the signed-distance formula from support functions. Explain why the result fails for general compact sets, using the grids $G_n\\subset[0,1]$.",
+      "hint_md": "Bound signed-distance differences by support-function differences. For the reverse inequality, take convex hulls of the boundaries.",
+      "prerequisites": [
+        "cw-distance-from-support",
+        "cw-hausdorff-support",
+        "cw-hausdorff-set-operations",
+        "cw-grid-topology-counterexample"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.4(1)–(2), p. 62; convex specialization; English edition (2018), printed pages",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "grid-domain-topologies",
+          "path": "figures/grid-domain-topologies.svg",
+          "caption_md": "Filled dots represent G_n; hollow dots are removed from the open interval Ω_n. As n grows, the compact grids fill [0,1], while the domain clearances shrink uniformly to zero. Removed points are shown with enlarged markers, not positive-length holes.",
+          "alt": "Three progressively finer grids, the corresponding punctured intervals, and their triangular clearance graphs decreasing in height."
+        }
+      ]
+    },
+    {
+      "id": "cw-hausdorff-geometric-stability",
+      "title": "Diameter and enclosing radius are Lipschitz stable",
+      "chapter_id": "01-generalities",
+      "order": 18,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "hausdorff-distance",
+        "inradius",
+        "circumradius"
+      ],
+      "statement_md": "For nonempty compact $K,L$, prove\n$$|\\operatorname{diam}K-\\operatorname{diam}L|\\leq2d_H(K,L),\\qquad |R(K)-R(L)|\\leq d_H(K,L),$$\nwhere $R$ is the smallest enclosing-ball radius. If $K,L$ are convex bodies, prove also $|r(K)-r(L)|\\leq d_H(K,L)$ for the inradius. Show the constants are sharp using concentric balls.",
+      "hint_md": "Approximate a pair of diameter endpoints, enlarge an enclosing ball, and use the support characterization of a contained ball.",
+      "prerequisites": [
+        "cw-hausdorff-distance-functions",
+        "cw-hausdorff-support"
+      ],
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.2, p. 61; compact-set topology in §2.2.3.2; radius companions; English edition (2018), printed pages",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-intersection-trap",
+      "title": "Why intersection is not pointwise minimum",
+      "chapter_id": "01-generalities",
+      "order": 19,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "support-functions",
+        "counterexample"
+      ],
+      "statement_md": "Let $K,L$ be nonempty compact convex sets with $K\\cap L\\ne\\varnothing$. Show that $h_{K\\cap L}\\leq\\min(h_K,h_L)$, and give intersecting planar disks for which the inequality is strict in some direction.",
+      "hint_md": "Try two unit disks with centers $(\\pm a,0)$, where $0<a<1$, and compare their highest points with the highest point of their lens.",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Exercise 1.4(ii), corrected",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "lens-intersection",
+          "path": "figures/lens-intersection.svg",
+          "caption_md": "Two unit disks centered at ±a on the horizontal axis; here a=1/2.",
+          "alt": "Lens formed by two overlapping unit disks, with horizontal support lines at heights one and square root of one minus a squared."
+        }
+      ]
+    },
+    {
+      "id": "cw-difference-body",
+      "title": "Constant width through the difference body",
+      "chapter_id": "01-generalities",
+      "order": 20,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "minkowski-sums",
+        "constant-width"
+      ],
+      "statement_md": "Prove that a compact convex body $K$ has constant width $w>0$ if and only if $K+(-K)=wB$, where $B$ is the unit ball. Deduce that positive Minkowski combinations of constant-width bodies have width equal to the same combination of their widths.",
+      "hint_md": "Compute the support function of $-K$ first. The support of the difference body records the width in each direction.",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercises 7-15 and 7-16, printed p. 75",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-binormals",
+      "title": "Diameter, strict convexity, and opposite contact points",
+      "chapter_id": "01-generalities",
+      "order": 21,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "diameter",
+        "strict-convexity"
+      ],
+      "statement_md": "Let $K\\subset\\mathbb R^d$ be a compact convex body of constant width $w>0$. Show that its diameter is $w$, each supporting hyperplane meets $K$ at just one point, and the two opposite contact points differ by $wu$ in normal direction $u$.",
+      "hint_md": "Project any chord onto its own direction. For opposite contact points, compare the length of the chord with the length of its projection onto the support normal.",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercises 7-3–7-5, printed pp. 73–74",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "irregular-pentagon",
+          "path": "figures/irregular-pentagon.svg",
+          "caption_md": "A perturbed and exactly closed unit-edge pentagram gives unequal boundary arc angles. The support lines remain one unit apart.",
+          "alt": "Irregular five-arc Reuleaux polygon with labeled vertices, chord polygon, and parallel supporting lines."
+        }
+      ]
+    },
+    {
+      "id": "cw-central-symmetry",
+      "title": "The only centrally symmetric constant-width body",
+      "chapter_id": "01-generalities",
+      "order": 22,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "symmetry",
+        "support-functions"
+      ],
+      "statement_md": "Prove that a centrally symmetric constant-width body of width $w$ is a ball of radius $w/2$.",
+      "hint_md": "Translate the center of symmetry to the origin. What does symmetry do to $h_K(u)$ and $h_K(-u)$?",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-7, printed p. 74",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-projections",
+      "title": "Constant width survives orthogonal projection",
+      "chapter_id": "01-generalities",
+      "order": 23,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "projections",
+        "three-dimensional"
+      ],
+      "statement_md": "Let $E$ be a linear subspace of positive dimension; widths of subsets of $E$ are measured within $E$. Prove that the orthogonal projection of a body of width $w$ onto $E$ has width $w$. Deduce that every planar shadow of a three-dimensional constant-width body has perimeter $\\pi w$, using Barbier’s theorem.",
+      "hint_md": "For a unit vector $u$ in the projection plane, compare $x\\cdot u$ with $(\\operatorname{proj}_E x)\\cdot u$.",
+      "prerequisites": [
+        "cw-support-calculus",
+        "cw-barbier"
+      ],
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§3.3, Theorem 3.3.1, printed p. 67",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-concentric-balls",
+      "title": "Concentric incircle and circumcircle",
+      "chapter_id": "01-generalities",
+      "order": 24,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "inradius",
+        "circumradius"
+      ],
+      "statement_md": "For a constant-width body $K$ of width $w$, prove that an inball and a smallest enclosing ball can be chosen with the same center and that $r(K)+R(K)=w$.",
+      "hint_md": "For a proposed center $c$, look at the maximum and minimum of $h_K(u)-c\\cdot u$. The constant-width identity relates these two extrema.",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§3.4; Yaglom Exercise 7-13",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-radii",
+          "path": "figures/triangle-radii.svg",
+          "caption_md": "The incircle and circumcircle share the symmetry center; their radii sum to the width.",
+          "alt": "Reuleaux triangle with vertex triangle, concentric inscribed and enclosing circles, and labeled radii."
+        }
+      ]
+    },
+    {
+      "id": "cw-ball-intersection",
+      "title": "A constant-width body is an intersection of balls",
+      "chapter_id": "01-generalities",
+      "order": 25,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "spindle-convexity",
+        "ball-intersections"
+      ],
+      "statement_md": "Prove $K=\\bigcap_{x\\in K}B(x,w)$ for a body of width $w$. Deduce spindle convexity: the intersection of all radius-$w$ balls containing two points of $K$ lies in $K$.",
+      "hint_md": "The diameter bound proves one inclusion. To exclude a point outside $K$, separate it by a support plane and use the opposite contact point as a ball center.",
+      "prerequisites": [
+        "cw-binormals"
+      ],
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§6.1; outline Exercise 1.19",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-support-parametrization",
+      "title": "Boundary, curvature, perimeter, and area from support",
+      "chapter_id": "01-generalities",
+      "order": 26,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "support-functions",
+        "curvature",
+        "area"
+      ],
+      "statement_md": "Suppose $h$ is a $C^2$, $2\\pi$-periodic planar support function with $\\rho=h+h''>0$. Put $n=(\\cos\\theta,\\sin\\theta)$ and $t=(-\\sin\\theta,\\cos\\theta)$. Derive $X=hn+h't$, $X'=\\rho t$, $P=\\int_0^{2\\pi}h$, and $A=\\frac12\\int_0^{2\\pi}(h^2-h'^2)$.",
+      "hint_md": "Differentiate $X(\\theta)\\cdot n(\\theta)=h(\\theta)$, remembering that $X\\prime$ is tangent to the curve. Use Green’s formula for the area.",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§§1.7, 2.5; outline Exercise 1.2 (area factor corrected)",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "smooth-support",
+          "path": "figures/smooth-support.svg",
+          "caption_md": "Support function h(θ)=1/2+0.045 cos(3θ); curvature radius stays positive.",
+          "alt": "Rounded threefold constant-width curve with two pairs of parallel supporting lines."
+        }
+      ]
+    },
+    {
+      "id": "cw-barbier",
+      "title": "Barbier’s theorem from projected variation",
+      "chapter_id": "01-generalities",
+      "order": 27,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "perimeter",
+        "cauchy-formula"
+      ],
+      "statement_md": "Prove that a planar convex body of constant width $w$ has perimeter $\\pi w$. You may approximate convex bodies by convex polygons, with perimeter continuous under Hausdorff convergence.",
+      "hint_md": "First work with a convex polygon. Its boundary projection onto a line travels from the minimum to the maximum and back. Integrate this total variation over directions.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§5.1.2; Yaglom Exercise 7-11",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-odd-harmonics",
+      "title": "A smooth noncircular family of constant-width curves",
+      "chapter_id": "01-generalities",
+      "order": 28,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "fourier-series",
+        "constructions"
+      ],
+      "statement_md": "Fix $w>0$. For an odd integer $m\\geq3$, consider $h(\\theta)=w/2+a\\cos(m\\theta)$. Find the exact range of $a$ for which $h$ is a support function, and compute its area. Explain why this gives uncountably many noncircular examples with reflection symmetry.",
+      "hint_md": "Check the antipodal sum and the sign of $h+h\\prime\\prime$ separately. Orthogonality of Fourier modes simplifies the area integral.",
+      "prerequisites": [
+        "cw-support-parametrization",
+        "cw-convex-hausdorff-volume"
+      ],
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Derived from the planar support criterion; cf. Martini §5.1",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "smooth-support",
+          "path": "figures/smooth-support.svg",
+          "caption_md": "Support function h(θ)=1/2+0.045 cos(3θ); curvature radius stays positive.",
+          "alt": "Rounded threefold constant-width curve with two pairs of parallel supporting lines."
+        }
+      ]
+    },
+    {
+      "id": "cw-corner-angle",
+      "title": "The 120-degree corner bound",
+      "chapter_id": "01-generalities",
+      "order": 29,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "corners",
+        "reuleaux-triangle"
+      ],
+      "statement_md": "Let a planar convex body have constant width $w>0$. Show that any corner has interior angle at least $120^\\circ$. If equality occurs, prove that the body is a Reuleaux triangle.",
+      "hint_md": "The normal directions at a corner produce an opposite circular arc. Apply the diameter bound to the two endpoints of that arc.",
+      "prerequisites": [
+        "cw-binormals"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercises 7-8–7-9, printed p. 74",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-pal-hexagon",
+      "title": "Pál’s theorem: a circumscribed regular hexagon",
+      "chapter_id": "01-generalities",
+      "order": 30,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "universal-covers",
+        "hexagons",
+        "pal-theorem",
+        "circumscription"
+      ],
+      "statement_md": "Prove Pál's theorem: every planar body of constant width $w$ admits a circumscribed regular hexagon whose opposite sides are distance $w$ apart. In particular, every unit constant-width body admits such a hexagon with opposite-side separation one. Compute its side length and area. The hexagon itself is not a body of constant width: here “width $w$” means its minimum width (the distance between opposite sides).",
+      "hint_md": "Write $h=w/2+g$ with $g(\\theta+\\pi)=-g(\\theta)$. Look for an orientation where the sum of $g$ at three normals separated by $2\\pi/3$ vanishes.",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "blog-hexagon",
+          "locator": "2013 post, reformulated with support functions",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "martini",
+          "locator": "Theorem 15.2.3 (Pál); Theorem 12.1.5 uses it in the mixed-area proof",
+          "relationship": "background"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "pal-hexagon",
+          "path": "figures/pal-hexagon.svg",
+          "caption_md": "Six equally spaced supporting lines can be chosen at equal distance from a common center.",
+          "alt": "A width-one Reuleaux triangle inside its circumscribed regular hexagon."
+        },
+        {
+          "figure_id": "hexagon-strip-sliding",
+          "path": "figures/hexagon-strip-sliding.svg",
+          "caption_md": "Opposite supports remain one unit apart while the three strips slide. At the endpoint three sides vanish and an equilateral triangle remains. These straight-sided polygons are not constant-width bodies.",
+          "alt": "A regular hexagon, an alternating-side hexagon, and a limiting equilateral triangle obtained by sliding three strips."
+        }
+      ]
+    },
+    {
+      "id": "cw-packing-two",
+      "title": "Two similar copies cannot have greater total perimeter",
+      "chapter_id": "01-generalities",
+      "order": 31,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "packing",
+        "perimeter"
+      ],
+      "statement_md": "Let $K$ be a planar constant-width body, and let $K_1,K_2\\subset K$ be similar copies of $K$ with positive similarity ratios and disjoint interiors. Prove $P(K_1)+P(K_2)\\leq P(K)$. Rotations of the copies are allowed.",
+      "hint_md": "Separate the interiors of the two copies by a line. Compare their widths in its normal direction with the width of the container.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§3.2, Theorem 3.2.3, printed pp. 66–67",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-compactness",
+      "title": "Existence of a least-volume constant-width body",
+      "chapter_id": "01-generalities",
+      "order": 32,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "compactness",
+        "optimization"
+      ],
+      "statement_md": "Fix $d\\geq2$ and $w>0$. Prove that volume attains its minimum among width-$w$ convex bodies. You may use Hausdorff compactness of nonempty compact subsets of a fixed compact set, stability of convexity, and continuity of volume for convex bodies.",
+      "hint_md": "Translate each candidate to contain the origin. The diameter bound gives a common containing ball; pass constant width to the Hausdorff limit through the support functions.",
+      "prerequisites": [
+        "cw-hausdorff-support",
+        "cw-binormals",
+        "cw-hausdorff-sequential",
+        "cw-hausdorff-selection",
+        "cw-convex-hausdorff-volume"
+      ],
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§1.8; outline Exercises 1.8–1.9 (compactness added)",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Theorem 2.2.25, pp. 42–44, for compact-set selection; constant-width specialization",
+          "relationship": "background"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-enclosing-ball-core",
+      "title": "An enclosing ball forces a concentric ball inside",
+      "chapter_id": "01-generalities",
+      "order": 33,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "support-functions",
+        "containment",
+        "packing"
+      ],
+      "statement_md": "Let $K\\subset\\mathbb R^d$ be a convex body of constant width $w>0$ and suppose $K\\subset B(c,R)$ with $0\\leq R\\leq w$. Prove\n$$B(c,w-R)\\subset K.$$\nIn particular, a width-$w$ body inside a radius-$w$ ball contains the center. Show that two width-$w$ bodies with disjoint interiors cannot both fit in a ball of radius strictly less than $w$.",
+      "hint_md": "Translate $c$ to zero. An upper bound on one support value gives a lower bound on its opposite.",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "two-translates-in-disk",
+          "path": "figures/two-translates-in-disk.svg",
+          "caption_md": "Moving each endpoint of a diameter to O gives two translates in the unit disk. They lie on opposite sides of a common supporting line and touch only at O.",
+          "alt": "Two identical irregular Reuleaux pentagons, translated to touch at the center of a unit circle, with a dashed separating tangent line."
+        }
+      ]
+    },
+    {
+      "id": "cw-farthest-nearest-duality",
+      "title": "Farthest distance and signed distance to the body",
+      "chapter_id": "01-generalities",
+      "order": 34,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "distance",
+        "support-functions",
+        "circumradius"
+      ],
+      "statement_md": "For a width-$w$ convex body $K\\subset\\mathbb R^d$, set $F(c)=\\max_{x\\in K}|x-c|$. Prove\n$$F(c)=\\begin{cases}w+\\operatorname{dist}(c,K),&c\\notin K,\\\\w-\\operatorname{dist}(c,\\partial K),&c\\in K.\\end{cases}$$\nDeduce $F(c)=w$ exactly on $\\partial K$.",
+      "hint_md": "Express the farthest distance as the maximum of translated support values, then replace $u$ by $-u$.",
+      "prerequisites": [
+        "cw-support-calculus",
+        "cw-distance-from-support"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-covering-center-locus",
+      "title": "Where may the center of a covering ball move?",
+      "chapter_id": "01-generalities",
+      "order": 35,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "containment",
+        "parallel-bodies",
+        "packing"
+      ],
+      "statement_md": "For a fixed width-$w$ body $K$, let $E_R(K)=\\{c:K\\subset B(c,R)\\}$ be the set of centers of radius-$R$ covering balls. Prove\n$$E_R(K)=\\begin{cases}K\\ominus(w-R)B,&0\\leq R\\leq w,\\\\K+(R-w)B,&R\\geq w,\\end{cases}$$\nwhere $K\\ominus tB=\\{c:c+tB\\subset K\\}$. Thus $E_w(K)=K$. The eroded set may be empty.",
+      "hint_md": "Write containment in support form and use the constant-width identity to solve the inequalities for the center.",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-erosion",
+          "path": "figures/triangle-erosion.svg",
+          "caption_md": "Erosion retains the three disk centers and reduces every disk radius from one to 1−t.",
+          "alt": "Four nested rounded triangles illustrating increasing erosion distances."
+        }
+      ]
+    }
+  ]
+}

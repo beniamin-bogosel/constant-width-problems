@@ -1,0 +1,81 @@
+{
+  "title": "Intersection support is smaller than the minimum",
+  "bodies": [
+    {
+      "type": "disk-polygon",
+      "centers": [
+        [
+          -0.5,
+          0
+        ],
+        [
+          0.5,
+          0
+        ]
+      ],
+      "radius": 1,
+      "construction_disks": true
+    }
+  ],
+  "objects": [
+    {
+      "type": "segment",
+      "a": [
+        -1.4,
+        1
+      ],
+      "b": [
+        1.4,
+        1
+      ],
+      "linestyle": "--",
+      "color": "#b65b35"
+    },
+    {
+      "type": "segment",
+      "a": [
+        -0.95,
+        0.8660254037844386
+      ],
+      "b": [
+        0.95,
+        0.8660254037844386
+      ],
+      "linestyle": "--"
+    },
+    {
+      "type": "point",
+      "at": [
+        0,
+        0.8660254037844386
+      ],
+      "label": "$\\sqrt{1-a^2}$",
+      "offset": [
+        8,
+        -18
+      ]
+    },
+    {
+      "type": "point",
+      "at": [
+        -0.5,
+        0
+      ],
+      "label": "$(-a,0)$"
+    },
+    {
+      "type": "point",
+      "at": [
+        0.5,
+        0
+      ],
+      "label": "$(a,0)$"
+    }
+  ],
+  "limits": [
+    -1.65,
+    1.65,
+    -1.15,
+    1.35
+  ]
+}

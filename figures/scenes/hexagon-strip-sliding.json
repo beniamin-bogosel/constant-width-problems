@@ -1,0 +1,14 @@
+{
+  "renderer": "scripts/make_blaschke_figures.py",
+  "parameters": [
+    0,
+    0.09,
+    0.16666666666666666
+  ],
+  "caption": "Opposite supports remain one unit apart while the three strips slide. At the endpoint three sides vanish and an equilateral triangle remains. These straight-sided polygons are not constant-width bodies.",
+  "alt": "A regular hexagon, an alternating-side hexagon, and a limiting equilateral triangle obtained by sliding three strips.",
+  "problems": [
+    "cw-hexagon-strip-sliding",
+    "cw-pal-hexagon"
+  ]
+}

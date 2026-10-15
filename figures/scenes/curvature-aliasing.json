@@ -1,0 +1,10 @@
+{
+  "renderer": "scripts/make_review_figures.py",
+  "grid_size": 8,
+  "caption": "For N=8 and k=2N+3=19, the two sine modes agree at every grid direction, so all sampled curvature values are 1/2. Between them the candidate curvature is negative on open intervals. This function cannot be the curvature radius of a convex support function despite passing the sampled inequalities.",
+  "alt": "An oscillating curvature candidate crossing below zero between eight positive sample points; negative regions are shaded.",
+  "problems": [
+    "cw-grid-failure",
+    "cw-convexity-certificate"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "vertex_count": 5,
+  "width": 1.0,
+  "max_width_error": 4.440892098500626e-16,
+  "area": 0.7569853539223397,
+  "perimeter": 3.1415926535897927,
+  "check": "floating-point analytic arcs; sampled directions"
+}

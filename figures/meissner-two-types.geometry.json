@@ -1,0 +1,22 @@
+{
+  "scene_title": "",
+  "diagnostics": [
+    {
+      "type": "meissner",
+      "mesh_area": 2.9326554613251075,
+      "triangles": 23352,
+      "approximation": "Parametric patches triangulated for illustration; unwelded seams. Not a certified watertight solid.",
+      "exact_area": 2.934115194323356,
+      "area_error": -0.0014597329982484197
+    },
+    {
+      "type": "meissner",
+      "mesh_area": 2.9326554613251075,
+      "triangles": 23352,
+      "approximation": "Parametric patches triangulated for illustration; unwelded seams. Not a certified watertight solid.",
+      "exact_area": 2.934115194323356,
+      "area_error": -0.0014597329982484197
+    }
+  ],
+  "rendering": "Floating-point geometry; samples or triangular facets used only for display."
+}

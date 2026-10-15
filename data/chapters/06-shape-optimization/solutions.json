@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "06-shape-optimization",
+  "solutions": [
+    {
+      "problem_id": "cw-jung-plane",
+      "kind": "proof",
+      "body_md": "Translate the smallest enclosing-circle center to zero. By the supplied optimality fact and Carathéodory's theorem, there are $m\\leq3$ contact points $x_i$ and positive weights $\\lambda_i$ with $\\sum_i\\lambda_i=1$ and $\\sum_i\\lambda_ix_i=0$. Each contact has $|x_i|=R$, so expanding squares gives\n$$\\sum_{i,j}\\lambda_i\\lambda_j|x_i-x_j|^2\n=2\\sum_i\\lambda_i|x_i|^2-2\\left|\\sum_i\\lambda_ix_i\\right|^2=2R^2.$$\nThe diagonal summands vanish; every other distance is at most $w$. Cauchy–Schwarz gives $\\sum_i\\lambda_i^2\\geq1/m\\geq1/3$, hence\n$$2R^2\\leq w^2\\left(1-\\sum_i\\lambda_i^2\\right)\\leq\\frac{2w^2}{3}.$$\nThis proves $R\\leq w/\\sqrt3$.\n\nEquality forces $m=3$, all weights $1/3$, and every mutual contact distance equal to $w$: the contacts form an equilateral triangle. Conversely, an equilateral triangle of side $w$ requires enclosing radius $w/\\sqrt3$, so any diameter-$w$ set containing one attains equality. If the set is also a constant-width body $K$, its diameter bound puts it in the three radius-$w$ disks centered at these contacts. Their intersection is the width-$w$ Reuleaux triangle $T$. Inclusion $K\\subset T$ between equal-width bodies forces equality: $h_T-h_K\\geq0$ and its antipodal sum is zero. Thus the constant-width equality case is exactly the Reuleaux triangle.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§3.4, Jung bound; outline Exercise 2.9 corrected",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-inradius-extrema",
+      "kind": "proof",
+      "body_md": "The lower bound follows from $r+R=w$ and planar Jung’s bound. Equality there forces the Reuleaux triangle by the preceding equality analysis. For the upper bound, an inscribed radius-$r$ disk has width $2r$, so inclusion gives $2r\\leq w$. At equality, inclusion of two equal-width bodies forces equality of their support functions, hence the body is the disk.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-14, printed p. 75",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-cheeger-scaling",
+      "kind": "proof",
+      "body_md": "The dilation $E\\mapsto aE$ bijects the admissible competitors for $\\Omega$ and $a\\Omega$. Planar finite-perimeter scaling gives $P(aE)=aP(E)$ and $|aE|=a^2|E|$; taking infima proves $h_C(a\\Omega)=h_C(\\Omega)/a$. If $\\Omega\\subset\\Lambda$, every competitor in $\\Omega$ is admissible in $\\Lambda$, proving $h_C(\\Omega)\\geq h_C(\\Lambda)$.\n\nFor $E\\subset B_R\\subset\\mathbb R^2$, the isoperimetric inequality gives\n$$\\frac{P(E)}{|E|}\\geq\\frac{2\\sqrt\\pi}{\\sqrt{|E|}}\\geq\\frac2R.$$\nThe choice $E=B_R$ attains the bound, so $h_C(B_R)=2/R$. Here perimeter means the full Euclidean perimeter, not relative perimeter measured only inside $\\Omega$; the latter convention would give a different problem.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§4, definition of the Cheeger constant",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-cheeger-root",
+      "kind": "proof",
+      "body_md": "The erosions $K_{-t}$ decrease with $t$. Their areas are continuous on $[0,r]$. One way to see the only nontrivial interior step is to choose an incenter $c$: for $0\\leq t<t+\\varepsilon\\leq r$,\n$$c+\\left(1-\\frac{\\varepsilon}{r-t}\\right)(K_{-t}-c)\\subset K_{-(t+\\varepsilon)}\\subset K_{-t}.$$\nIndeed every support inequality for $K_{-t}$ has an available margin at least $r-t$ at $c$. The inclusions squeeze the areas, and also give left continuity by starting at $t-\\varepsilon$. At $r$, continuity from above follows from continuity of measure for the decreasing compact erosions. The terminal set $K_{-r}$ has zero area: if a convex set of centers had interior, it would contain some ball $B(c,\\varepsilon)$, forcing $B(c,r+\\varepsilon)\\subset K$ and contradicting the inradius.\n\nThus $F_K(t)=A(K_{-t})-\\pi t^2$ is continuous and strictly decreasing on $[0,r]$: its first term is nonincreasing, while $-\\pi t^2$ is strictly decreasing for $t\\geq0$. Moreover $F_K(0)=A(K)>0$ and $F_K(r)=-\\pi r^2<0$. The intermediate value theorem and strict monotonicity give exactly one root $t_K\\in(0,r)$.\n\nFor comparing bodies, set eroded area equal to zero after an erosion becomes empty. If $A(K_{-t})\\geq A(L_{-t})$ for $0\\leq t\\leq t_L$, then at $t_L$ the right side is $\\pi t_L^2>0$, so $t_L<r(K)$. Therefore $F_K(t_L)\\geq0$ implies $t_K\\geq t_L$ and, by the supplied Cheeger characterization, $h_C(K)\\leq h_C(L)$. The geometric comparison determines the ordering; the characterization itself is a theorem assumed in the question.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§4, Cheeger characterization and comparison argument",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-cheeger-extrema",
+      "kind": "proof",
+      "body_md": "The upper bound follows from the inner-radius equation and area comparison: $t_K\\geq t_T$. For the lower bound, any admissible $E\\subset K$ satisfies $P(E)/|E|\\geq2\\sqrt\\pi/\\sqrt{|E|}\\geq2\\sqrt\\pi/\\sqrt{|K|}\\geq4/w$, using the disk’s maximal area at fixed width. Taking the infimum proves the bound. The radius-$w/2$ disk has Cheeger constant $4/w$; $T$ attains the upper bound. The lower-bound equality forces $A(K)=\\pi w^2/4$, hence $K$ is the disk by the fixed-width maximum-area equality case. The supplied non-strict erosion comparison identifies $T$ as an upper-bound attainer; uniqueness of that upper equality would require further equality information and is not asserted here.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§4, main theorem; lower bound derived using isoperimetry",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-layer-cake",
+      "kind": "proof",
+      "body_md": "Write $g(s)=g(R)-\\int_s^R g'(t)\\,dt$ and integrate with $s=|x|$. Fubini is valid because $|K|\\int_0^R|g'|<\\infty$. The set contributing to the integral at $t$ is exactly $K\\cap B_t(0)$, yielding the formula. Translating $K$ changes distances to the chosen origin, so this is not a rigid-motion-invariant shape functional until a center convention, such as the Steiner point, is specified.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "kernels",
+          "locator": "§2, indicator kernels and layer cake",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-high-moment-counterexample",
+      "kind": "proof",
+      "body_md": "The circumradius of $T$ is $1/\\sqrt3>1/2$. Choose $b$ strictly between these values. The set $T\\setminus B_b$ has positive area $c$, since neighborhoods just inside a vertex contain interior points outside $B_b$. Therefore $\\int_T|x|^p\\geq cb^p$. Meanwhile $\\int_D|x|^p\\leq|D|2^{-p}$. Their ratio is at least $(c/|D|)(2b)^p\\to\\infty$. For $p\\geq1$, the function $r^p$ is increasing and convex. This proves existence of counterexamples without relying on a numerical crossing exponent. As an independent normalization check, polar coordinates give $\\int_D|x|^p\\,dx=2\\pi(1/2)^{p+2}/(p+2)$ for $p>-2$. The proof needs only the simpler upper bound, and compares unnormalized integrals with both symmetry centers fixed.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "kernels",
+          "locator": "§ on counterexamples and large powers, following Proposition prop:counter",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-translate-collision",
+      "kind": "proof",
+      "body_md": "The sets intersect precisely when $b-a\\in K-K=wB$. For interiors, use the convex-body identity $\\operatorname{int}(K-K)=\\operatorname{int}K-\\operatorname{int}K$. One quick justification is that the right side is open and convex, and its closure is $K-K$ (approximate each boundary point from the interior); an open convex set is the interior of its closure. Thus interior intersection occurs exactly for $|a-b|<w$.\n\nAt equality the intersection is nonempty but has empty interior. A separating hyperplane between the two interiors supports both bodies at any point of contact. Constant-width bodies are strictly convex, so that hyperplane meets each body in only one point. Consequently the contact is unique. For larger displacement even the closed bodies do not meet.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-common-point-packing",
+      "kind": "proof",
+      "body_md": "If $N\\geq2$, the common point is on the boundary of every body: an interior neighborhood in one body would intersect interior points of any other body arbitrarily near $p$. Each tangent cone at $p$ is a closed sector of angle $\\alpha_i\\in[2\\pi/3,\\pi]$ by the corner bound; a smooth point has angle $\\pi$.\n\nThe interiors of these angular sectors are disjoint. To see this, a ray direction in the interior of a convex body's tangent sector enters its interior for all sufficiently small positive distances from $p$. This follows by choosing two nearby directions realized by points of the body on opposite sides of the ray and taking their convex hull with $p$. A direction interior to two sectors would therefore produce an interior overlap near $p$.\n\nHence $\\sum_i\\alpha_i\\leq2\\pi$, and $N\\leq3$. If $N=3$, all three angles equal $2\\pi/3$ and no angular gap remains. The equality case of the corner theorem makes each body a Reuleaux triangle with vertex $p$. Their widths may differ; the angular conclusion does not require equal size.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-unit-disk-packing",
+      "kind": "proof",
+      "body_md": "Every admissible body contains $0$ by the enclosing-ball core lemma. The common-point packing theorem gives at most three; in an arrangement of three, each is a Reuleaux triangle with its $120^\\circ$ vertex at $0$, and the three tangent sectors partition the full angle.\n\nFor existence, take a centered equilateral triangle with vertices $v_1,v_2,v_3$ and side one, and let $T=\\bigcap_iB(v_i,1)$ be its Reuleaux triangle. Use the three translates $T-v_i$. Each contains $0$ and lies in $B(0,1)$ because $T$ has diameter one. Their tangent sectors at $0$ have angle $120^\\circ$ and equally spaced bisectors directed along $-v_i$; they therefore have disjoint interiors. Equivalently, the translation differences all have length one. Each pair meets only at $0$.\n\nThe equality case already fixes a Reuleaux triangle from its vertex and its two extreme tangent rays. Thus, up to a common rotation or reflection and relabeling, this is the only three-body arrangement.\n\nIts occupied area is $3(\\pi-\\sqrt3)/2$, a fraction $3(\\pi-\\sqrt3)/(2\\pi)\\approx0.673007$ of the disk. An arrangement of at most two bodies has total area at most $2(\\pi/4)=\\pi/2$, which is smaller. Thus the same three triangles maximize total occupied area. Finally, if boundary contact is forbidden, at most one body is possible because every pair contains $0$; a single radius-$1/2$ disk shows this bound is attained.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Author’s proposed problem: three unit-width bodies in a unit-radius disk; 120-degree sector argument (15 October 2026)",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-fixed-shape-disk-packing",
+      "kind": "proof",
+      "body_md": "Choose $p,q\\in K$ with $|p-q|=w$. Both $K-p$ and $K-q$ lie in $B(0,w)$ by the diameter bound, and their translation difference has length $w$, so their interiors are disjoint. The three-body classification in the disk proves that three congruent copies can fit only when $K$ is a Reuleaux triangle. The construction in the preceding exercise proves sufficiency, even using translations only.\n\nHere is an independent translation formulation. The condition $K+t\\subset B(0,w)$ says $-t\\in E_w(K)=K$, so $t\\in-K$. Pairwise nonoverlap says $|t_i-t_j|\\geq w$. Since $-K$ has diameter $w$, all such distances must equal $w$. A planar equidistant set has at most three points: after placing two points, the two possible third points are at distance $\\sqrt3w$ from each other and cannot both be used. If three exist, their negatives form an equilateral triangle inside $K$. The diameter-$w$ bound puts $K$ inside the Reuleaux triangle determined by those vertices. Inclusion of two bodies of the same constant width forces equality, because their nonnegative support difference has zero antipodal sum. Thus again $K$ must be the Reuleaux triangle. In particular every smooth prescribed shape has packing number two in this disk.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-four-body-disk-radius",
+      "kind": "proof",
+      "body_md": "Put $a=1-1/\\sqrt3$. Each body contains a disk of radius $a$; these four disks have disjoint interiors. If the container is $B(0,R)$, their centers $c_i$ satisfy $|c_i|\\leq R-a$ and $|c_i-c_j|\\geq2a$.\n\nIf one center is zero, another gives $2a\\leq R-a$, which is already stronger than required. Otherwise arrange the four directions cyclically. One angular gap is at most $\\pi/2$. For the corresponding pair, $c_i\\cdot c_j\\geq0$, whence\n$$4a^2\\leq|c_i-c_j|^2\\leq|c_i|^2+|c_j|^2\\leq2(R-a)^2.$$\nThus $R\\geq(1+\\sqrt2)a\\approx1.020367$.\n\nFor the upper bound, use four radius-$1/2$ disks with centers $(\\pm1/2,\\pm1/2)$. Neighboring disks touch, and all four fit in the radius-$\\sqrt2/2+1/2$ disk. Consequently $R_4\\leq1.207107\\ldots$. The argument neither determines $R_4$ nor asserts that the optimizing shapes are disks.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-lattice-translates-density",
+      "kind": "proof",
+      "body_md": "By the translation collision criterion, admissibility is exactly $|v|\\geq w$ for every nonzero $v\\in\\Lambda$. Choose a shortest nonzero vector $a$. It is primitive (otherwise it is an integer multiple of a shorter lattice vector), so it extends to a lattice basis $(a,b)$; in integer coordinates this is the elementary Bézout property for a coprime pair. Replace $b$ by $b-ma$ so its component $t$ parallel to $a$ has $|t|\\leq|a|/2$. Since $a$ is shortest, $|b|\\geq|a|$, and the perpendicular component satisfies $|b_\\perp|\\geq\\sqrt3|a|/2$. Therefore the fundamental-cell area is\n$$D=|\\det(a,b)|\\geq\\frac{\\sqrt3}{2}|a|^2\\geq\\frac{\\sqrt3}{2}w^2.$$\nThe triangular lattice generated by $(w,0)$ and $(w/2,\\sqrt3w/2)$ attains this: the squared length of an integer combination is $w^2(m^2+mn+n^2)\\geq w^2$ unless $m=n=0$.\n\nThe packing density is $A(K)/D$, proving the formula. For the disk it is $\\pi/(2\\sqrt3)\\approx0.906900$; for the Reuleaux triangle it is $\\pi/\\sqrt3-1\\approx0.813799$. The fixed-width maximum-area inequality shows that the disk uniquely maximizes this density among constant-width bodies. This conclusion concerns lattice packings of translates and does not optimize packings in which different copies can rotate independently.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-diameter-packing-counterexample",
+      "kind": "proof",
+      "body_md": "For any integer $m\\geq6$, let $u_j=(\\cos(2\\pi j/m),\\sin(2\\pi j/m))$ and take the $m$ triangles $\\operatorname{conv}\\{0,u_j,u_{j+1}\\}$ (indices modulo $m$). They lie in the unit disk and in sectors with disjoint interiors. Each has two sides of length one and a third side $2\\sin(\\pi/m)\\leq1$, so its diameter is exactly one. Each has positive area. Taking $m$ arbitrarily large, or choosing any desired number of triangles from a larger arrangement, proves the assertion. Their widths are not constant: in narrow directions they are much smaller than one. In particular their corner angles at the center can be arbitrarily small, so the $120^\\circ$ constant-width argument does not apply.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+# Shapes of constant width: a problem collection
+
+A first curated collection of **127 problems in eight chapters** following Beniamin Bogosel’s book outline: **123 solved exercises and four open questions**. Solutions are newly written, concise proof drafts, with substantial prerequisites stated explicitly. They await human mathematical review. The open chapter distinguishes literature conjectures from questions in the local research notes.
+
+The [15 October 2026 review](docs/reviews/README.md) covers every statement, hint, and solution: 81 entries received corrections, explanations, or prerequisite links, and four explanatory diagrams were added. The chapter reports record each finding and the source results still used as explicit inputs.
+
+Open the [online reader](https://beniamin-bogosel.github.io/constant-width-problems/) in a browser: navigate chapters and problems, then reveal hints and solutions independently. It works offline, including equations and figures. To create a local offline copy after editing the JSON, run:
+
+```bash
+python scripts/build_html.py
+```
+
+Open `html/index.html` after building. Pushes to `main` automatically update the public reader; see [publishing instructions](docs/publishing.md).
+
+See the [HTML reader guide](docs/html-reader.md), [chapter index](docs/index.md), and [figure gallery](figures/gallery.md). To generate a Markdown reading copy:
+
+```bash
+python scripts/validate.py
+python scripts/export.py --include-solutions
+```
+
+Open build/reading/INDEX.md (local generated file: `build/reading/INDEX.md`) after export. The JSON remains authoritative; both reading editions are generated from it.
+
+## Organization
+
+- `data/catalog.json`: chapter order and common notation.
+- `data/chapters/<chapter>/problems.json`: statements, stable IDs, tags, difficulty, prerequisites, sources, and figure references.
+- `data/chapters/<chapter>/solutions.json`: proofs or open-problem background, joined by `problem_id`.
+- `data/sources.json`: public bibliography; `sources/local-inventory.json`: optional local source paths and fingerprints, excluded from Git.
+- `data/reviews.json`: dated review flags and content fingerprints; distinguishes reviewed content from new or changed items.
+- `figures/`: reproducible SVG/PNG figures, input scenes, captions, and geometry diagnostics.
+- `schemas/`: JSON Schema contracts; `scripts/`: authoring, validation, export, and numerical checks.
+- `web/`: HTML reader styles, behavior, and vendored KaTeX; `html/`: generated offline edition.
+- `skills/constant-width-geometry/`: reusable drawing skill, including irregular Reuleaux constructions and the existing Meissner surface backend.
+
+See [how to add problems](docs/authoring.md), [the website data contract](docs/data-contract.md), [outline corrections](docs/outline-corrections.md), and [source coverage and further leads](sources/README.md).
+
+Chapter 4 now includes 19 additional exercises extracted from *Mixed volumes and the Blaschke–Lebesgue theorem*. See the [exercise-to-paper mapping and mathematical notes](sources/mixed-volume-extraction.md).
+
+Generalities now includes 16 additional exercises on set topologies and distance functions from Henrot–Pierre Chapter 2, with two new plots. See the [source mapping and topology conventions](sources/henrot-pierre-extraction.md).
+
+Chapter 3 now includes 20 additional exercises exploring support-function variations, Blaschke motions, shortest-arc removal, and equiangular supporting polygons. See the [proof routes and source-version notes](sources/blaschke-proof-routes.md). Pál’s circumscribed-hexagon theorem remains in Generalities.
+
+## Reproduce
+
+Use a Python environment containing the packages in `requirements.txt` (`python -m pip install -r requirements.txt` if needed).
+
+```bash
+python scripts/validate.py
+python scripts/review_status.py
+python skills/constant-width-geometry/scripts/check_geometry.py
+python scripts/check_formulas.py
+python scripts/check_mixed_volume.py
+python scripts/check_packing.py
+python scripts/check_topologies.py
+python scripts/check_blaschke_routes.py
+python scripts/review_status.py --self-test
+python scripts/check_workflow.py
+python scripts/make_figures.py
+python scripts/export.py --include-solutions
+python scripts/build_html.py
+python scripts/check_html.py
+```
+
+The geometry tests check widths, areas, irregular closure, erosions, helper-point invariance, and Meissner mesh-area convergence. They supplement the written proofs; they are not formal mathematical certificates. The 3D meshes are triangulated illustrations.
+
+The source books, local draft outline, private manuscripts, and machine-specific source inventory are excluded from the public repository. Citations retain the public provenance.
+
+The reusable drawing skill is maintained in [skills/constant-width-geometry](skills/constant-width-geometry/SKILL.md). Its scripts run directly from the repository; it can also be installed as `$constant-width-geometry`.
+
+## Credits
+
+Generated by ChatGPT 6 Astra. Based on Beniamin Bogosel’s book outline, source suggestions, and research.

@@ -1,0 +1,26 @@
+{
+  "scene_title": "The reflected hull of a centered Reuleaux triangle",
+  "diagnostics": [
+    {
+      "type": "reuleaux",
+      "erosion": 0.0,
+      "vertex_count": 3,
+      "width": 1.0,
+      "max_width_error": 5.551115123125783e-16,
+      "area": 0.7047709230104579,
+      "perimeter": 3.1415926535897927,
+      "check": "floating-point analytic arcs; sampled directions"
+    },
+    {
+      "type": "reuleaux",
+      "erosion": 0.0,
+      "vertex_count": 3,
+      "width": 1.0,
+      "max_width_error": 4.440892098500626e-16,
+      "area": 0.704770923010458,
+      "perimeter": 3.141592653589793,
+      "check": "floating-point analytic arcs; sampled directions"
+    }
+  ],
+  "rendering": "Floating-point geometry; samples or triangular facets used only for display."
+}

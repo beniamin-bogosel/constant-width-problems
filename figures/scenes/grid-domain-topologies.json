@@ -1,0 +1,16 @@
+{
+  "renderer": "scripts/make_topology_figures.py",
+  "grid_sizes": [
+    4,
+    8,
+    16
+  ],
+  "caption": "Filled dots represent G_n; hollow dots are removed from the open interval Ω_n. As n grows, the compact grids fill [0,1], while the domain clearances shrink uniformly to zero. Removed points are shown with enlarged markers, not positive-length holes.",
+  "alt": "Three progressively finer grids, the corresponding punctured intervals, and their triangular clearance graphs decreasing in height.",
+  "problems": [
+    "cw-grid-topology-counterexample",
+    "cw-complementary-hausdorff",
+    "cw-domain-interior-persistence",
+    "cw-convex-boundary-distance"
+  ]
+}

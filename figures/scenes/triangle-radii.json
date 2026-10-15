@@ -1,0 +1,79 @@
+{
+  "title": "A width-one Reuleaux triangle",
+  "bodies": [
+    {
+      "type": "reuleaux",
+      "show_vertices": true,
+      "vertex_polygon": true,
+      "labels": [
+        "A",
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "type": "circle",
+      "center": [
+        0,
+        0
+      ],
+      "radius": 0.5773502691896258,
+      "color": "#b65b35"
+    },
+    {
+      "type": "circle",
+      "center": [
+        0,
+        0
+      ],
+      "radius": 0.42264973081037416,
+      "color": "#735ba5"
+    },
+    {
+      "type": "point",
+      "at": [
+        0,
+        0
+      ],
+      "label": "O",
+      "offset": [
+        -16,
+        -4
+      ]
+    },
+    {
+      "type": "segment",
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        3.5352507957496895e-17,
+        0.5773502691896257
+      ],
+      "label": "$R=1/\\sqrt{3}$",
+      "offset": [
+        8,
+        -6
+      ]
+    },
+    {
+      "type": "segment",
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0.42264973081037416,
+        0
+      ],
+      "label": "$r=1-R$",
+      "offset": [
+        3,
+        10
+      ]
+    }
+  ]
+}

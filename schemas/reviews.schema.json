@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cwdata.local/schemas/reviews.schema.json",
+  "title": "Completed reviews of fingerprinted problem and solution content",
+  "type": "object",
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "fingerprint_version": {"const": "cw-content-v1"},
+    "reviews": {
+      "type": "object",
+      "propertyNames": {"pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "reviewed": {"const": true},
+          "reviewer": {"type": "string", "pattern": "\\S"},
+          "date": {"type": "string", "format": "date"},
+          "review_kind": {"enum": ["ai", "human"]},
+          "report": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+          },
+          "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        },
+        "required": ["reviewed", "reviewer", "date", "review_kind", "report", "content_sha256"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["schema_version", "fingerprint_version", "reviews"],
+  "additionalProperties": false
+}

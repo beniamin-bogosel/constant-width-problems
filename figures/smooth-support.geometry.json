@@ -1,0 +1,12 @@
+{
+  "scene_title": "A smooth noncircular body of width one",
+  "diagnostics": [
+    {
+      "type": "support",
+      "min_sample_curvature": 0.14,
+      "convexity_margin": 0.14,
+      "width": 1.0
+    }
+  ],
+  "rendering": "Floating-point geometry; samples or triangular facets used only for display."
+}

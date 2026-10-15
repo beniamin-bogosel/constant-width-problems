@@ -1,0 +1,4 @@
+interface:
+  display_name: "Constant-width geometry"
+  short_description: "Draw Reuleaux curves and Meissner geometry"
+  default_prompt: "Use $constant-width-geometry to draw a reproducible geometric figure for this constant-width problem."

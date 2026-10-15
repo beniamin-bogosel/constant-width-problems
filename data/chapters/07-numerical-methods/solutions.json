@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "07-numerical-methods",
+  "solutions": [
+    {
+      "problem_id": "cw-fourier-area",
+      "kind": "proof",
+      "body_md": "For a $C^2$ planar support function, the area identity is\n$$A=\\frac12\\int_0^{2\\pi}(h^2-h'^2)\\,d\\theta.$$\nOrthogonality eliminates all cross terms. The constant contributes $\\pi w^2/4$, while the $k$th nonconstant harmonic contributes\n$$\\frac\\pi2(1-k^2)(a_k^2+b_k^2).$$\nConsequently\n$$A=\\frac{\\pi w^2}{4}-\\frac\\pi2\\sum_{\\substack{k\\geq3\\\\k\\text{ odd}}}(k^2-1)(a_k^2+b_k^2).$$\nA translation by $(a_1,b_1)$ adds $a_1\\cos\\theta+b_1\\sin\\theta$ to $h$, explaining the cancellation at $k=1$. In particular the Steiner point $s(K)=\\pi^{-1}\\int_0^{2\\pi}h(\\theta)(\\cos\\theta,\\sin\\theta)\\,d\\theta$ equals $(a_1,b_1)$; removing those modes centers it at zero. The antipodal width equation excludes the even nonconstant modes, but does not enforce convexity: the separate condition $h+h''\\geq0$ is essential. Within the admissible class the displayed area loss vanishes exactly for translates of the radius-$w/2$ disk.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Derived from support calculus; cf. outline Chapter 7",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-convexity-certificate",
+      "kind": "proof",
+      "body_md": "Every angle is within circular distance $\\Delta/2$ of a grid point. The mean-value estimate gives the bound. If $\\rho=c+\\sum(A_k\\cos k\\theta+B_k\\sin k\\theta)$, then $|\\rho'|\\leq\\sum k\\sqrt{A_k^2+B_k^2}$ by the triangle inequality. For a support sum, $A_k=(1-k^2)a_k$ and $B_k=(1-k^2)b_k$. Thus a positive margin exceeding $L\\Delta/2$ certifies convexity analytically. Floating-point evaluations need an additional rounding-error bound if a formal machine certificate is claimed.\n\nMore explicitly, if the computed grid values $\\widehat\\rho_j$ have certified absolute errors at most $\\eta$ and $\\widehat\\rho_j\\geq\\widehat\\varepsilon$, then\n$$\\rho(\\theta)\\geq\\widehat\\varepsilon-\\eta-L\\Delta/2.$$\nA nonnegative right side certifies convexity; a positive one certifies strictly positive curvature radius. Thus the sampling margin, a derivative bound, and numerical evaluation error have distinct roles.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "A priori Lipschitz estimate for numerical support constraints",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-grid-failure",
+      "kind": "proof",
+      "body_md": "Put $k=2N+3$ and $\\rho(\\theta)=1/2+\\sin(k\\theta)-\\sin(3\\theta)$. The two sine terms agree at every grid point because $k-3=2N$. At $\\theta=3\\pi/(2k)$, the first sine is $-1$ and $0<3\\theta<\\pi$, so $\\rho<0$. Both frequencies are odd and at least three. Thus $h(\\theta)=1/2+\\sin(k\\theta)/(1-k^2)-\\sin(3\\theta)/(1-9)$ has $h+h''=\\rho$ and antipodal sum one. It is not a support function because its curvature density is negative on an interval. This example keeps the forbidden first harmonic out of $\\rho$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Constructed aliasing example for constant-width Fourier models",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-cheeger-bisection",
+      "kind": "proof",
+      "body_md": "For the unit-width Reuleaux triangle, write $r_*=1-1/\\sqrt3$, $q=1-t$,\n$$v(t)=\\sqrt{q^2-1/4}-\\frac1{2\\sqrt3},\\qquad\n\\beta(t)=\\frac{2\\pi}{3}-2\\arcsin\\frac1{2q}.$$\nThe regular-inner-parallel formula at $n=3$ becomes\n$$A(T_{-t})=\\frac{3\\sqrt3}{4}v(t)^2+\\frac{3q^2}{2}\\bigl(\\beta(t)-\\sin\\beta(t)\\bigr).$$\nIt gives $A(T)=(\\pi-\\sqrt3)/2$ at $t=0$ and zero at $t=r_*$. The strictly decreasing function $F(t)=A(T_{-t})-\\pi t^2$ therefore has opposite signs at these endpoints. This is a complete floating-point implementation:\n\n```python\nfrom math import asin, pi, sin, sqrt\n\ndef inner_area(t):\n    q = 1.0 - t\n    v = sqrt(q*q - 0.25) - 1.0/(2.0*sqrt(3.0))\n    beta = 2.0*pi/3.0 - 2.0*asin(0.5/q)\n    return 3.0*sqrt(3.0)*v*v/4.0 + 1.5*q*q*(beta - sin(beta))\n\nlo, hi = 0.0, 1.0 - 1.0/sqrt(3.0)\nfor _ in range(45):\n    mid = (lo + hi)/2.0\n    if inner_area(mid) > pi*mid*mid:\n        lo = mid\n    else:\n        hi = mid\nprint(lo, hi)\nprint(1.0/hi, 1.0/lo)\n```\n\nIn exact arithmetic, each step retains the half-interval bracketing the root, so after $m$ steps its length is $r_*2^{-m}$. If the final endpoints satisfy $0<a\\leq t_T\\leq b$, then $1/b\\leq h_C(T)\\leq1/a$. The numerical values are $t_T\\approx0.228028012974224$ and $h_C(T)\\approx4.38542610163006$.\n\nThe printed endpoints are numerical approximations, not certified enclosures: a rounded evaluation can have the wrong sign near the root. For rigorous bisection, evaluate $F$ with outward-rounded intervals, update only when its sign is certified, and increase precision when the interval contains zero. More bisection steps alone do not remedy rounding error.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§4, inner-radius equation; numerical exercise derived here",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-spherical-partition-check",
+      "kind": "proof",
+      "body_md": "The coordinate triangle occupies one eighth of the unit sphere, so its area is $4\\pi/8=\\pi/2$. Use the positive cyclic order $(e_1,e_2,e_3)$.\n\nFor $q=(1,1,1)/\\sqrt3$, every helper triangle has determinant $1/\\sqrt3$ and denominator $1+2/\\sqrt3$. Its area is\n$$2\\arctan\\frac1{\\sqrt3+2}=2\\arctan(2-\\sqrt3)=\\frac\\pi6.$$\nThe three areas sum to $\\pi/2$.\n\nFor $q'=(2,1,1)/\\sqrt6$, the consecutive helper areas are\n$$E(q',e_1,e_2)=E(q',e_3,e_1)=2\\arctan\\frac1{\\sqrt6+3},\\qquad\nE(q',e_2,e_3)=2\\arctan\\frac2{\\sqrt6+2}.$$\nThey are approximately $0.362968648606$, $0.844859029584$, and $0.362968648606$, again summing to $\\pi/2$. Algebraically, if $a=1/(\\sqrt6+3)$ and $b=2/(\\sqrt6+2)$, the tangent-addition formula gives $\\tan(2\\arctan a+\\arctan b)=1$; the angle is in $(0,\\pi/2)$, so it is $\\pi/4$. All denominators here are positive, which is why ordinary arctangents suffice for this special example.\n\nA program should check unit lengths, cyclic orientation, interior placement of the helper, invariance under a common rotation, and independence of the helper. Reversing the boundary reverses signed area. These tests detect orientation and branch mistakes; they do not by themselves validate the geometric decomposition into actual Meissner face patches.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Numerical companion to auxiliary-point spherical triangulation",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-scaling-checks",
+      "kind": "proof",
+      "body_md": "The planar scaling powers are $w\\mapsto aw$, $A\\mapsto a^2A$, $P\\mapsto aP$, $h_C\\mapsto a^{-1}h_C$, $\\lambda_1\\mapsto a^{-2}\\lambda_1$, and $T\\mapsto a^4T$. For the PDE powers use $u_a(x)=a^2u(x/a)$ for torsion and the Rayleigh quotient for the eigenvalue. Hence $A/w^2$, $P/w$, $wh_C$, $w^2\\lambda_1$, and $T/w^4$ are invariant. In three dimensions use $S/w^2$ and $V/w^3$. These identities are useful automated checks, but an incorrect formula can still scale correctly, so these tests are not sufficient alone. Indeed $u_a(x)=a^2u(x/a)$ satisfies the rescaled equation and zero boundary condition, and $\\int_{aK}u_a=a^4\\int_Ku$ in the plane. In dimension $d$ the same argument gives torsion scaling $a^{d+2}$; in particular the three-dimensional torsion invariant would be $T/w^5$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Dimensional analysis of the functionals in outline Chapters 5–7",
+          "relationship": "original-exercise"
+        }
+      ]
+    }
+  ]
+}

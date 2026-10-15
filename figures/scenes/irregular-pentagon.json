@@ -1,0 +1,25 @@
+{
+  "title": "An irregular Reuleaux pentagon",
+  "bodies": [
+    {
+      "type": "reuleaux",
+      "variant": "irregular",
+      "perturb": [
+        0.08,
+        -0.04
+      ],
+      "show_vertices": true,
+      "vertex_polygon": true,
+      "supports": [
+        0.35
+      ],
+      "width_arrow": true
+    }
+  ],
+  "limits": [
+    -0.9,
+    0.9,
+    -0.8,
+    0.8
+  ]
+}

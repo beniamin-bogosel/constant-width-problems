@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "08-open-problems",
+  "problems": [
+    {
+      "id": "cw-open-meissner",
+      "title": "Which three-dimensional constant-width body has least volume?",
+      "chapter_id": "08-open-problems",
+      "order": 1,
+      "status": "open",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "open-problem",
+        "volume"
+      ],
+      "statement_md": "Among all convex bodies in $\\mathbb R^3$ of width one, is the minimum volume $\\pi[2/3-(\\sqrt3/4)\\arccos(1/3)]$, attained by the Meissner tetrahedra? In everyday terms: which solid that fits exactly between parallel planes one unit apart in every orientation uses the least material?",
+      "hint_md": "Start by computing the candidate tetrahedron’s exact volume and comparing area through Blaschke’s identity. This is an entry point, not a known route to a full proof.",
+      "prerequisites": [
+        "cw-compactness",
+        "cw-meissner-tetra-volume",
+        "cw-blaschke-volume"
+      ],
+      "sources": [
+        {
+          "source_id": "nishioka",
+          "locator": "2026 preprint abstract, arXiv:2606.01754",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "meissner-two-types",
+          "path": "figures/meissner-two-types.png",
+          "caption_md": "Spherical patches are blue, wedges pale green, and spindle patches orange. Both choices have the same exact area and volume. Triangulated illustrations.",
+          "alt": "Side-by-side rendered Meissner tetrahedra with the star and face choices of smoothed edges."
+        }
+      ],
+      "open_status": {
+        "scope": "literature",
+        "last_checked": "2026-10-15",
+        "evidence": "The cited 2026 preprint explicitly says the three-dimensional problem remains open.",
+        "qualification": "Search found no resolution; this is a dated literature check, not a guarantee of exhaustive coverage."
+      }
+    },
+    {
+      "id": "cw-open-eigenvalue",
+      "title": "Does the Reuleaux triangle have the highest fundamental frequency?",
+      "chapter_id": "08-open-problems",
+      "order": 2,
+      "status": "open",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "open-problem",
+        "eigenvalues"
+      ],
+      "statement_md": "For planar convex bodies $K$ of constant width one, is the first Dirichlet Laplace eigenvalue always at most that of the Reuleaux triangle? Equivalently: among equally wide membranes fixed along their boundary, does the Reuleaux triangle have the highest fundamental vibration frequency (with the same material parameters)?",
+      "hint_md": "Compare the Rayleigh-quotient formulation with the known Cheeger and inradius extrema. Identify why these bounds alone do not imply the desired eigenvalue ordering.",
+      "prerequisites": [
+        "cw-cheeger-extrema",
+        "cw-scaling-checks"
+      ],
+      "sources": [
+        {
+          "source_id": "width-optimization",
+          "locator": "Introduction of arXiv:2506.07708v1, constant-width motivation",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "henrot-lucardesi",
+          "locator": "Concluding conjecture; arXiv abstract",
+          "relationship": "status-evidence"
+        }
+      ],
+      "figures": [],
+      "open_status": {
+        "scope": "literature",
+        "last_checked": "2026-10-15",
+        "evidence": "2025 author preprint presents the constant-width spectral claim as numerically motivated; targeted web search found no proof.",
+        "qualification": "Open status is supported by the cited discussion and search, with a weaker recency basis than the Meissner entry."
+      }
+    },
+    {
+      "id": "cw-open-helper-monotonicity",
+      "title": "Can extra essential generating points ever lower optimal Meissner volume?",
+      "chapter_id": "08-open-problems",
+      "order": 3,
+      "status": "open",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "open-problem",
+        "helper-points",
+        "meissner-polyhedra"
+      ],
+      "statement_md": "Let $Y\\subsetneq X\\subset\\mathbb R^3$ be finite sets of diameter one, with $2|Y|-2$ and $2|X|-2$ diametric pairs respectively. Assume that every point of $X$ belongs to at least three such pairs; this is called a critical extremal base. Use the broad Meissner construction that allows arbitrary extremal bases, not only the standard strongly critical ones. For each base $Z$, let $S_{\\min}(Z)$ be the least area among its dual-edge smoothing choices. Must\n$$S_{\\min}(X)\\geq S_{\\min}(Y)$$\nhold? By the unit-width area–volume identity, this is also the corresponding question for least volume.",
+      "hint_md": "Begin with degree-two deletion and compare it with the first configurations having no degree-two points. The counting exercise isolates which extensions can occur.",
+      "prerequisites": [
+        "cw-extremal-bookkeeping",
+        "cw-dangling-delete",
+        "cw-meissner-summand",
+        "cw-blaschke-volume"
+      ],
+      "sources": [
+        {
+          "source_id": "intermediary",
+          "locator": "Problem prob:comparison and subsequent refinements; compare arXiv:2608.19747",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [],
+      "open_status": {
+        "scope": "local-research",
+        "last_checked": "2026-10-15",
+        "evidence": "Explicitly posed as a problem in Intermediary_Points_Meissner.tex; dangling-point preprint checked separately.",
+        "qualification": "Status is relative to the supplied research notes; broader inclusion monotonicity has not been verified by an exhaustive literature review."
+      }
+    },
+    {
+      "id": "cw-open-pair-distance",
+      "title": "Does the Reuleaux triangle minimize total pairwise distance?",
+      "chapter_id": "08-open-problems",
+      "order": 4,
+      "status": "open",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "open-problem",
+        "pair-energies"
+      ],
+      "statement_md": "Among planar convex bodies $K$ of constant width one, does the Reuleaux triangle minimize $E(K)=\\int_K\\int_K|x-y|\\,dx\\,dy$? This is the unnormalized total distance over all pairs of material points, not the mean distance $E(K)/|K|^2$.",
+      "hint_md": "Keep the energy unnormalized. Test the triangle against regular and irregular Reuleaux polygons, and separate numerical evidence from any proposed global inequality.",
+      "prerequisites": [
+        "cw-layer-cake",
+        "cw-high-moment-counterexample"
+      ],
+      "sources": [
+        {
+          "source_id": "kernels",
+          "locator": "README and pair-energy sections of reuleaux_kernels.tex",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [],
+      "open_status": {
+        "scope": "local-research",
+        "last_checked": "2026-10-15",
+        "evidence": "The source README explicitly says the pure distance-kernel minimum remains unproved.",
+        "qualification": "Literature-wide novelty and status have not been established."
+      }
+    }
+  ]
+}

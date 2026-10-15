@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.0",
+  "fingerprint_version": "cw-content-v1",
+  "reviews": {
+    "cw-distance-function-basics": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "5d1e36eab16976037ed108fc75bd9ca4687026d184f291676c1296df32129959"
+    },
+    "cw-hausdorff-distance-functions": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "106714d5193d803628b4e343cd4c397f165c58ada448cb0be0f8d0bd5c89ed76"
+    },
+    "cw-support-calculus": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "9a0f4f986ffe6c30939c8f99556df618eb293d7094b186e148a5489fbe6babb0"
+    },
+    "cw-hausdorff-support": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "4f3fe435fbeb53180c07db70cdd9df435b4bdbd648780e6a2d916d22d0261aa8"
+    },
+    "cw-distance-from-support": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "6840ad6bfeff2f81ef487caa119446d011cc82d6798b198e47c36aefa73cf93b"
+    },
+    "cw-hausdorff-sequential": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "0a9989d75b9a9fa18480152ca2c70da74c1b5cef2a5446d574c1e8095624e851"
+    },
+    "cw-hausdorff-set-operations": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "9992bed95cbe54cb2be450c9d65c82daaf05400ef19bb31e59fba453b88e78bc"
+    },
+    "cw-nested-compact-limits": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "67236735d6d3ca841f3ae35534db0d81e3de3db8c3625998ee90c8e0a056adcc"
+    },
+    "cw-hausdorff-selection": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "eab200844a63c784cbb8e4df242b076c067826c552ea287c8439316fc3729055"
+    },
+    "cw-complementary-hausdorff": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "8f5c72a17b46f000a78093ab636ee4e9ed9a550f9b07742986d1d27dc405243d"
+    },
+    "cw-domain-interior-persistence": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "dd47de16fbf508cf5cce89a34a82c966d15f94bf6a2af700e06af8c34ebaf349"
+    },
+    "cw-grid-topology-counterexample": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "3a7c644842a2f70098de4444842f170eced15e22850b51372cdb76b51f72c8ad"
+    },
+    "cw-compact-domain-convergence": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "a805e9dc1760abee18734847e8e033fe7d0eaa6c6af3be8be03231daa94b066f"
+    },
+    "cw-indicator-set-distance": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "72938eed7cd3d2b59564b5f99196aac54cb677384d98664f59f3949f91098b41"
+    },
+    "cw-oscillating-indicators": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "c60e50b647b28b73d7f6148727a9c4ff854a58d5637785d5160964901715ce3f"
+    },
+    "cw-convex-hausdorff-volume": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "e0612b49a08c50bbffae97a4e87d1d23cccdc06968ec37d1b63e8ef6cbc41645"
+    },
+    "cw-convex-boundary-distance": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "bd190dce99435235fff4597477805e80846514c422aa2332f481cff989ed6242"
+    },
+    "cw-hausdorff-geometric-stability": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "9762acf31959f40306f032b657e6ea008965c468b5748aff7048ab157c197912"
+    },
+    "cw-intersection-trap": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "1568efbdb6da19b6f1906f127f88d6353c3389a19f0141a9f0dbd24641eab269"
+    },
+    "cw-difference-body": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "a75111664e25f328687225ad9a03385e060ae89265c9bca4f5c1ecdc129d8c96"
+    },
+    "cw-binormals": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "32b7558fd86e3f440ca04e1cc99b967893ba51a3b5dd91e98bc8fca446a61ebb"
+    },
+    "cw-central-symmetry": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "7baa27466e4118f710eb2992004759d0699eacbd5223eb623c0f62f06d2c7c73"
+    },
+    "cw-projections": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "315c3636f357bb89ceba3ce3e8d17830b162269c6b75bb6eef371e6a3209247d"
+    },
+    "cw-concentric-balls": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "92ab840f411b6475f1f946fcd219e06bf46ecffe51b821ed73a29169f6602f1e"
+    },
+    "cw-ball-intersection": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "b5d301e6486bbb10d0c456a4a1e96085c7b73f300d09799b0c13f88e236af5a1"
+    },
+    "cw-support-parametrization": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "72c698446ccfa61f2ab62c6b82d3603ad167d0c4953ea9c079c8d85417f3d3e0"
+    },
+    "cw-barbier": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "0cc8a09d43707886c693ee7b622dc030f6294a7a0da37164bed1559c66704ff8"
+    },
+    "cw-odd-harmonics": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "7e2e7ca8a1dcf2947d4a8647b32e90838242d1a6ca5824c584bf1076b1508ee4"
+    },
+    "cw-corner-angle": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "727f755380b4a133d1e93b2c6cce54fc27f8a02ba6c168d8da512e5804513186"
+    },
+    "cw-pal-hexagon": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "9c01920e3e0829eed6d50ed7e1933a07805e416d132a1af49a34b27e3a87a82f"
+    },
+    "cw-packing-two": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "7afa6c0495744816832b98d356e04695b021ef9631e2e1260e9d30ae3ce1bf68"
+    },
+    "cw-compactness": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "7fae4886bb5d9097b58cd71872c4b3ed61c1b604d7d67d053a71c274d8be4396"
+    },
+    "cw-enclosing-ball-core": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "518d91356c8afa9616082fe7e86faa1c0ae8de077031964d59ef9b12ab5d32aa"
+    },
+    "cw-farthest-nearest-duality": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "b2caae43d738d890fc84ffd122a982b72ed3ed5a240bb9337b8de4f867553c87"
+    },
+    "cw-covering-center-locus": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/generalities.md",
+      "content_sha256": "a7df405dd61786a0925ce28a19c4a35c994a41bd24ef72dabae8afd7fe1eb9d1"
+    },
+    "cw-triangle-measures": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "5ffb34e34f919151d97e8483ebf35aa2eb944fde395121c685e1a4ed7297bcbc"
+    },
+    "cw-arc-polygon-area": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "41b9a495b0e517fa1d5394272db1b42e32d9b2227815bd78f5c0c8d8820d4838"
+    },
+    "cw-regular-reuleaux": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "2ecf3bb040ed03ad0bc97bbcabce5e80180bbe5b3050f542a9abdb081b8b8b52"
+    },
+    "cw-turning-budget": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "de0165c01e6068cd690db73d890d380a7a03ff6b7cf27a095e9f5386bd65f944"
+    },
+    "cw-erosion-disks": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "26a3813ac2cfbd4de486f0dbec51c689ebb2c5cc131aa67ce4ded4ce6eaf48e3"
+    },
+    "cw-regular-inner-parallel": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "e30177babcb9a746b5d8a560756166670fdb665603a0f4a04b09bb72f765a30a"
+    },
+    "cw-irregular-construction": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "1479b355e2b051f1b5289da3bfc7b6f4886df3afbfd9fa741c76d3697377cc76"
+    },
+    "cw-mixed-area-polarization": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "5f1724acd62b8afa95523bf232aa0b88123e989957f68cee5121a0f5e7dc7159"
+    },
+    "cw-mixed-area-monotonicity": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "270ee505e8da939fe93074b83d7af6c992fb1b2d3f92645cbfcae6d8435a4502"
+    },
+    "cw-polygon-mixed-edge-sum": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "f98939c5cbc7c424429707c8b6daa888748be4dc28742fc19062e0809f62b87f"
+    },
+    "cw-segment-mixed-area": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "540d580ede2d24b6f04fe05c84313fb68cef0585029d06728f4021192a721fa7"
+    },
+    "cw-valuation-segment-correction": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "254fd7068638ab65f3aa23e54b299b475ced98a2bcdb3642e8d040b6875386db"
+    },
+    "cw-cap-chord-replacement": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "c21d6caa836e755c14e9500e7d90d1cd85ef89f83139032c380198dec8930e7f"
+    },
+    "cw-mixed-area-complement": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "f6864b3ca7d87f7566ed653c890ba4392d740ec39da395ea02012a47070740d1"
+    },
+    "cw-triangle-hexagon-plateau": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "35b0c9b482718924e2624ee1ce64b9d335d18ffb3844b5183da3a551a9cf14a8"
+    },
+    "cw-reuleaux-skeleton-plateau": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "4bc83bcb22dbbd57672fac38c84cdfb807d47129f9e12c7a3f4282e8b751ad3e"
+    },
+    "cw-skeleton-difference-area": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "28ef817465ef54673b95c447ee37014734124dc7e6fc0ec7922091079fa5c9fd"
+    },
+    "cw-skeleton-area-extrema": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "c6d65f3bc7398519cd37fc453dd5ce3061840c83f1cb8ef2ea7a1e82cc2193f6"
+    },
+    "cw-steiner-parallel": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "c0addeb2b4a770b340592662221d82b2d0f1eff2ea60a15b5ff68fa5ad482340"
+    },
+    "cw-convex-hull-mixed-identity": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "adf0c5a45849adac1d0266f38df55b02a704efa0b0c5e86bcaae1964161c0660"
+    },
+    "cw-planar-hull-objective": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "6a08cec07c16dc192e0955724ba10fd6f1e716ebd6c0a58502e9ba12a9ac6785"
+    },
+    "cw-symmetric-hull-annulus": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "b6af03328a7cfa1c0d7e2bab492fd85db645331d7b96c26c62b82486a4e98cd9"
+    },
+    "cw-annulus-both-constraints": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "9bc8a4052c32951ad782b5d009b4f065b23583b7fcf9fd2bfe84264c0af997c5"
+    },
+    "cw-symmetric-cover": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "2b5e7346d7a1f0bde437c30a604c370e307343ca0c675810dddea64357d7a216"
+    },
+    "cw-blaschke-volume": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "4445cdee335f4ec882d86abed693aa6123349396439e756c95f94b4c5f5fbc49"
+    },
+    "cw-spatial-mixed-objectives": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "5a74572ccf2dc19cb26eb36997565e2c74c1e21a722035ebf98788c1f9c8bdd7"
+    },
+    "cw-projected-hull-identity": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "3d6c91c78a02b6ea8099229d980cc180cd9024bb132d0de35f043ec842b04982"
+    },
+    "cw-spatial-hull-objective": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "588712e2a6b1e52d6e23403a579b166e717fab95d783a9cd25609a8c5a602e69"
+    },
+    "cw-annulus-inner-contact": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "180d52e1a7cf527aa56f36ab09a93bd261f0e815c367a6870eec1cd04a0a0849"
+    },
+    "cw-spatial-cover-obstruction": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "064d902879565ab8b3f7d62a0d7514e85d8c4a64003bc98b1dd4d51b8e0d6098"
+    },
+    "cw-spatial-inradius-volume": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "d80ff8a93268874f9ba81cf2c0827d0814bb36571c3e727a2db1cc929622c664"
+    },
+    "cw-minimizer-inradius-threshold": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/mixed-and-reuleaux.md",
+      "content_sha256": "0c6f7a6f2e13c308291fa32d33e50c4111c4504564aa841f79308e80db9b4b3d"
+    },
+    "cw-disk-maximizes-area": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "c466b5cf7f578c385f6bdda3683f687d1e65b7c1cf2af9ea2d8a5872cbe5203e"
+    },
+    "cw-angle-convexity": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "203250e54144085bb2d6f41a066464b4c06f23081d1340cf7c97fc0f3dd3c41b"
+    },
+    "cw-convex-budget": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "ce9325448f77365073af691cdf16926fbf3d7136ab151fdf76d5421d03134a8c"
+    },
+    "cw-local-perimeter-comparison": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "d61df74f8c88939fdd22970948e6b359bee9d674d5b4d53eb4b53b7a072f1771"
+    },
+    "cw-perimeter-to-area": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "aac4635349801fa88ee6af49acea286e9e097eec35e7adfa467bcdf20d028889"
+    },
+    "cw-blaschke-lebesgue": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "12ce29a1a6d879f6cadb767719a2ae4a6ae7df530060f5ee5a4f9821ceb63646"
+    },
+    "cw-curvature-moment-constraints": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "f5ce6bbf1b55b9d4866493f61afdb6cea867583302731806bb0399eef88ed38f"
+    },
+    "cw-support-area-second-variation": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "d6191a20d88be84b2baea54cdbba7440941b047f0e472fd19355b11fb7e049be"
+    },
+    "cw-curvature-bang-bang": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "8839db0d815f5f61326f60d1925b0ca10682ca78fc1ba4cc1ab7dcdc677ffd36"
+    },
+    "cw-two-moment-duality": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "cb29e10bb62a82af6437512f02d72a077993365ba21260ff1223aadb1c518deb"
+    },
+    "cw-variational-switching-rule": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "361631d393b463450c1b8286b251dac2ec668840635f0548c643476ea559f369"
+    },
+    "cw-switching-ode-regularity": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "95eeb693fc370c139fa9123b262670837aae8a97dbad856a00a0e6924a7eee6a"
+    },
+    "cw-blaschke-lebesgue-variational": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "3a16aa4363fb0881f6a2c2a1c8c0a2a1c5ebb67697563df3610df177bb9bbaa1"
+    },
+    "cw-arc-normal-integral": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "9ff0c347363b8fcd11a4696d5cbd4f79115b85d39f5f624bfc16fc0f7c9d47c5"
+    },
+    "cw-blaschke-two-vertex-motion": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "f414cc93bc6fd700d0d3d004bae5d74c0827585ec47dbf1bd7aab233b60e389e"
+    },
+    "cw-blaschke-negative-second-variation": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "af18c363b7d757719971d153d7cc13ac4adc9bb1ac6dde9065e629060f61c89b"
+    },
+    "cw-reuleaux-finite-compactness": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "9ff362a9e3d9e7ccdee824841071b7a01fb80bede65ca1848ee928fb2d01d4b5"
+    },
+    "cw-shortest-arc-chord-lemma": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "e2aaa4291456357ab56b469e7002138a1efb990d00ac71fa8228c76f613152cc"
+    },
+    "cw-smallest-arc-removal": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "0312d12f416c4746c2f849637e0a915650c3d5bc9157fd173efda66ede6272a5"
+    },
+    "cw-support-parallel-regularization": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "fae6f37d3fe93189f78bf3c0b64d5273799a78f62ae4a63ef5110474d1a18aba"
+    },
+    "cw-reuleaux-approximation-support-splice": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "b836389d0063d7862fe50c2eb529e061bd8906ed7d88821324a5878cadb0439e"
+    },
+    "cw-polygon-descent-limit": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "06e412bd3f7e36533dc22e1d3d6e9bb0fd81981db47df82c516a079a64a919bb"
+    },
+    "cw-equiangular-support-perimeter": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "146c4dcbcdf71d084cfc9b28ec646668ff18f5a96051be0661e296c11b1852df"
+    },
+    "cw-equiangular-area-quadratic": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "2d70cf18f99a207343bdf70e38bab7782c7b857e62ad9582480e5bb0aff32818"
+    },
+    "cw-hexagon-strip-sliding": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "c43ea688cb9dac15284d9d096d2cbc2dec9dfd4f3f947e6ca88e6ea1f4903997"
+    },
+    "cw-equiangular-mesh-error": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/blaschke-lebesgue.md",
+      "content_sha256": "4d9686630ecc03b66187455754e57befa2ed7f4db1c92ffdc47e72badfb4d6be"
+    },
+    "cw-reuleaux-tetra-not-width": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "92d0ae0ccc01e61dee4afe9009b009aee5fb79bb2037875a31339caca2b49505"
+    },
+    "cw-dual-edge-coordinates": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "5018c25588e23d1dd1b7b017641f50cde9db6d8d291800f306222a692cdbc66b"
+    },
+    "cw-dual-dihedral": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "0cb3cfe002d40ea8a292b26bc5685bc47f057f51fe15f9ca6342070c86ce4b6c"
+    },
+    "cw-spindle-area": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "40a083c271cca501851b0cfaf7da0b5af23852b8471906ecd6f8a8eab6d0c34c"
+    },
+    "cw-spherical-helper": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "41274224d8b5f53f7334ef09df00e86bee1de288d3e3ddbafcc23c6b0fe8645e"
+    },
+    "cw-meissner-tetra-volume": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "f6816ea255c94611bf1abeb148bd0d55a57bb7cc4a77d824c0dd8572a9ded2d7"
+    },
+    "cw-meissner-summand": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "c18b050233d3382df81f8d29ce2912b4c69af803b0576b6e4ce2aef0eddf080e"
+    },
+    "cw-extremal-bookkeeping": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "6f24fda3e1719de0c81bea89cdbd88ae933ee944cbf427d21843b0745906e38f"
+    },
+    "cw-dangling-delete": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "2a6de845d889f3ddfcacf99b0fdf260e7d3bccb116dd96a1d89d3330658f7a2d"
+    },
+    "cw-tetra-smoothings": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "be72baef3ccd17e1eb9d457eaab2a8d3c60ba921ce4cb657b4497eb3ba839a64"
+    },
+    "cw-jung-plane": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "789ccd084d67d196f6f4f58c6f1fe2212fbf4040c3a5e5e3bcb53de0b1c8ed79"
+    },
+    "cw-inradius-extrema": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "e0ee94e385be1d26934ea1205ae4be11ac9c9990c8109cbc2548f17fe26c1b84"
+    },
+    "cw-cheeger-scaling": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "fa6115590824c16fcd2d68ed31b60992950e2a0b9d5569aea1eae96d09e57ee2"
+    },
+    "cw-cheeger-root": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "e7c423430f075d943dbb4cb3ed7bd44d5bb84c9f075319314c20e3d5b60331d1"
+    },
+    "cw-cheeger-extrema": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "c8505f535f7dedd9d7d482c9bb3fcbea7653e94264bb68438edf22929c2e7b78"
+    },
+    "cw-layer-cake": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "c97494419aa58a08e0bbf031982ae2f18cb9956f682d298eb67811f13f985218"
+    },
+    "cw-high-moment-counterexample": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "977ffb517e1aaf69fc3f2ffa268d81db52e866c95362b570e2dfe7f96c18e7eb"
+    },
+    "cw-translate-collision": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "3f7ac759e118e4fcaee21e9c3d6a84ddc847a2ab2657b7f494d467f388784a23"
+    },
+    "cw-common-point-packing": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "f0c9d3981372a6da82bd33f34c309af92c3edc1a24061e14218c7e66dd82c2ff"
+    },
+    "cw-unit-disk-packing": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "eb6b8337267b6635aad794e561d5e0e47158dc3d3d19c43f002bf36d64ff2b9f"
+    },
+    "cw-fixed-shape-disk-packing": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "9a7487286952e29f8b132de7ad74f82eb9a1cf0c0895c82483f0d3867cf558c0"
+    },
+    "cw-four-body-disk-radius": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "9808a80adfbd6d071a4a0f4dcb373180763c725b3987151d159091f35e2d9ae6"
+    },
+    "cw-lattice-translates-density": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "ee7f6c27f3ab66f8630ea74d3b0f8c198f62713321f80565a07c7a9fa280cae5"
+    },
+    "cw-diameter-packing-counterexample": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "ee9285b741c5c1c031f952548aab1d3c6a60d75e093eb75be21a670579234030"
+    },
+    "cw-fourier-area": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "4a9a0f5a7fef96375788a15fbafb499dff107c893bfe1fcca8b8cd63ec7c76ae"
+    },
+    "cw-convexity-certificate": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "6e1eff248dd2ab1f279ccf8cb29113c927dd2b4fc1c38626b16ffa02a34fc041"
+    },
+    "cw-grid-failure": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "50d29c8c20f5ce6bb7399986adff4f6481a49e659d7e479a316584016b67d8a0"
+    },
+    "cw-cheeger-bisection": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "d5cd1c593fa0045fcc9deb6e3ca8b167fc51df669844d869472e785c0732e98f"
+    },
+    "cw-spherical-partition-check": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "d8fd1f1244ddca43b3ee0f01ed18d77654e634bf11dc98b4fd1333429226f90b"
+    },
+    "cw-scaling-checks": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "4678c0ca261275a2b50beda7eac89aba6ac9cb869a50f7fb0a6c503f67194677"
+    },
+    "cw-open-meissner": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "65a3ec35f25525e6fd30c85e5b87d815bc8c9b2ba1ea5f68ad08132c12204b24"
+    },
+    "cw-open-eigenvalue": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "b53eb741181f49b502f9cd235e429189681c1356e6d5e37ea118968294e3a6df"
+    },
+    "cw-open-helper-monotonicity": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "6d659f33244dde5acef3343345fd68440ef0ba18ba1f05f73c03e4ddc4c9a2a8"
+    },
+    "cw-open-pair-distance": {
+      "reviewed": true,
+      "reviewer": "ChatGPT 6 Astra",
+      "date": "2026-10-15",
+      "review_kind": "ai",
+      "report": "docs/reviews/geometry-optimization-open.md",
+      "content_sha256": "19535e5122bc5a43b171d053e111b35d4d29d7c08d6013a766b18123989c2968"
+    }
+  }
+}

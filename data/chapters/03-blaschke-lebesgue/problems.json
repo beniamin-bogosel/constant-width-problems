@@ -1,0 +1,855 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "03-blaschke-lebesgue",
+  "problems": [
+    {
+      "id": "cw-disk-maximizes-area",
+      "title": "The disk maximizes area at fixed constant width",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 1,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "isoperimetric-inequality",
+        "area"
+      ],
+      "statement_md": "Prove $A(K)\\leq\\pi w^2/4$ for a planar convex body of constant width $w>0$, with equality only for a disk. You may use the planar isoperimetric inequality.",
+      "hint_md": "Combine the fixed perimeter supplied by Barbier’s theorem with the isoperimetric inequality.",
+      "prerequisites": [
+        "cw-barbier"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-12, maximum-area part",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "regular-family",
+          "path": "figures/regular-family.svg",
+          "caption_md": "Regular Reuleaux polygons of width one; their areas increase toward the disk.",
+          "alt": "Three equal-width outlines: Reuleaux triangle, regular pentagon, and regular nonagon."
+        }
+      ]
+    },
+    {
+      "id": "cw-angle-convexity",
+      "title": "The convex angle function behind inner parallel sets",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 2,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "convexity",
+        "inner-parallel-sets"
+      ],
+      "statement_md": "Fix $0<t\\leq1-1/\\sqrt3$, put $q=1-t$, and define $\\alpha_t(x)=\\arcsin(\\sin x/q)-x$ for $0\\leq x\\leq\\pi/6$. Prove that it is strictly increasing and strictly convex, that $\\alpha_t(0)=0$, and that $\\alpha_t(x)\\leq x$. What happens at $t=0$?",
+      "hint_md": "Differentiate the arcsine expression twice. To prove the upper bound, compare $\\sin x/q$ with $\\sin(2x)$ on the stated interval.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§2.3, Proposition labelled prop:convexity; equivalent arcsine formula derived here",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-convex-budget",
+      "title": "Concentrating an angle budget",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 3,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "convexity",
+        "inequalities"
+      ],
+      "statement_md": "Let $a>0$ and $f:[0,a]\\to\\mathbb R$ be convex with $f(0)=0$. For a finite list $x_1,\\ldots,x_N$, if $0\\leq x_i\\leq a$ and $\\sum_i x_i\\leq ma$ for an integer $m\\geq1$, and $f(a)\\geq0$, prove $\\sum_i f(x_i)\\leq m f(a)$. When $f$ is strictly convex and increasing, characterize equality.",
+      "hint_md": "The graph of a convex function lies below the chord joining $(0,0)$ and $(a,f(a))$. Apply that bound to each summand.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, Step III, equation eq:max-sum-f",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-local-perimeter-comparison",
+      "title": "A short perimeter comparison before an arc disappears",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 4,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "inner-parallel-sets",
+        "perimeter"
+      ],
+      "statement_md": "Let a unit disk polygon have arc angles $\\theta_i$ and turning angles $\\beta_i\\in[0,\\pi/3]$, with $\\sum\\theta_i\\geq\\pi$. Suppose its erosion $D_{-t}=\\{x:x+tB\\subset D\\}$ at $0\\leq t\\leq1-1/\\sqrt3$ retains all arcs and satisfies $P(D_{-t})=(1-t)[\\sum\\theta_i-2\\sum\\alpha_t(\\beta_i/2)]$. Prove $P(D_{-t})\\geq P(T_{-t})$, where $T$ is the width-one Reuleaux triangle. The displayed formula is an explicit hypothesis here.",
+      "hint_md": "Total turning bounds the sum of the corner angles. Apply the angle-budget inequality to $f(\\beta)=2\\alpha_t(\\beta/2)$.",
+      "prerequisites": [
+        "cw-turning-budget",
+        "cw-angle-convexity",
+        "cw-convex-budget",
+        "cw-regular-inner-parallel"
+      ],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, Steps II–III; regular inner-parallel regime",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-perimeter-to-area",
+      "title": "Integrating a perimeter comparison backwards",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 5,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "coarea",
+        "inner-parallel-sets"
+      ],
+      "statement_md": "Let $T$ be the width-one Reuleaux triangle and $r_T=1-1/\\sqrt3$. Suppose a convex body $K$ has inradius at least $r_T$ and $P(K_{-t})\\geq P(T_{-t})$ for $0\\leq t<r_T$. Using absolute continuity of inner-parallel areas and $\\frac{d}{dt}A(K_{-t})=-P(K_{-t})$ almost everywhere, prove $A(K_{-t})\\geq A(T_{-t})$ for $0\\leq t\\leq r_T$.",
+      "hint_md": "Consider the difference of the two eroded areas and integrate its derivative backwards from $r_T$, where the triangle’s remaining area is zero.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, Theorem labelled thm:area-parallel",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-erosion",
+          "path": "figures/triangle-erosion.svg",
+          "caption_md": "Erosion retains the three disk centers and reduces every disk radius from one to 1−t.",
+          "alt": "Four nested rounded triangles illustrating increasing erosion distances."
+        }
+      ]
+    },
+    {
+      "id": "cw-blaschke-lebesgue",
+      "title": "A mixed-area proof of Blaschke–Lebesgue",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 6,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "blaschke-lebesgue",
+        "mixed-area"
+      ],
+      "statement_md": "Using the circumscribed-hexagon theorem and monotonicity of mixed area, prove that every planar convex body of constant width $w>0$ satisfies $A(K)\\geq(\\pi-\\sqrt3)w^2/2$. Exhibit an attaining body. You may use $A(K+L)=A(K)+2A(K,L)+A(L)$.",
+      "hint_md": "Place the circumscribed hexagon at the origin, so it contains both $K$ and $-K$. Expand the area of $K+(-K)$ and use mixed-area monotonicity.",
+      "prerequisites": [
+        "cw-pal-hexagon",
+        "cw-difference-body",
+        "cw-triangle-measures",
+        "cw-mixed-area-monotonicity"
+      ],
+      "sources": [
+        {
+          "source_id": "blog-bl",
+          "locator": "2013 post; mixed-area argument rewritten",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§2.1, Chakerian proof, p. 3; preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "pal-hexagon",
+          "path": "figures/pal-hexagon.svg",
+          "caption_md": "Six equally spaced supporting lines can be chosen at equal distance from a common center.",
+          "alt": "A width-one Reuleaux triangle inside its circumscribed regular hexagon."
+        }
+      ]
+    },
+    {
+      "id": "cw-curvature-moment-constraints",
+      "title": "Which curvature perturbations preserve a closed constant-width curve?",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 7,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "variational-proof",
+        "curvature",
+        "closure"
+      ],
+      "statement_md": "First show that every planar constant-width-one support function is $C^{1,1}$. You may use the distributional characterization: for a continuous periodic support function $h$, $h''+h$ is a nonnegative finite measure; conversely, this nonnegativity characterizes support functions. Combine it with $h(\\theta+\\pi)+h(\\theta)=1$.\n\nLet $u(\\theta)=(\\cos\\theta,\\sin\\theta)$ and $\\rho\\in L^\\infty(0,2\\pi)$ be periodic. Show that $\\rho=h''+h$ for a periodic $C^{1,1}$ support function of width one if and only if\n$$0\\leq\\rho\\leq1,\\quad \\rho(\\theta+\\pi)=1-\\rho(\\theta),\\quad \\int_0^{2\\pi}\\rho(\\theta)u(\\theta)\\,d\\theta=0.$$\nThe inequalities and curvature identities are understood almost everywhere. Explain why subtracting first harmonics from a proposed curvature perturbation repairs its moments but need not preserve $0\\leq\\rho\\leq1$.",
+      "hint_md": "Integrate against sine and cosine. For sufficiency solve $h''+h=\\rho$ by variation of constants and examine $h(\\theta)+h(\\theta+\\pi)$.",
+      "prerequisites": [
+        "cw-support-parametrization"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3, equation (3.1) and the perturbation preceding Lemma 3.4; admissibility checked explicitly",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-support-area-second-variation",
+      "title": "Area is strictly concave along nontranslation width-preserving segments",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 8,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "variational-proof",
+        "second-variation",
+        "fourier"
+      ],
+      "statement_md": "For periodic $C^{1,1}$ functions $h,f$, let $A(h)=\\frac12\\int_0^{2\\pi}(h^2-h'^2)$. If $f(\\theta+\\pi)=-f(\\theta)$, prove\n$$A(h+tf)=A(h)+t\\int_0^{2\\pi}h(f''+f)+\\frac{t^2}{2}\\int_0^{2\\pi}(f^2-f'^2).$$\nShow the last integral is nonpositive, and vanishes precisely for $f=a\\cos\\theta+b\\sin\\theta$. If the first harmonics of $f$ vanish, prove $\\int f'^2\\geq9\\int f^2$. Interpret these statements for an admissible segment of width-one bodies.",
+      "hint_md": "Expand the quadratic form and use the Fourier modes allowed by antipodal oddness.",
+      "prerequisites": [
+        "cw-curvature-moment-constraints"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§2, area formula; §3 variational framework; Fourier companion",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-curvature-bang-bang",
+      "title": "An area minimizer has curvature radius zero or one almost everywhere",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 9,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "variational-proof",
+        "curvature",
+        "bang-bang"
+      ],
+      "statement_md": "Suppose $h$ minimizes area among width-one bodies, and put $\\rho=h''+h$. Prove $\\rho\\in\\{0,1\\}$ almost everywhere. If the set where $0<\\rho<1$ has positive measure, construct a nonzero bounded perturbation $g$ supported where $\\varepsilon\\leq\\rho\\leq1-\\varepsilon$, antipodally odd and with both first moments zero. Three disjoint measurable patches in a half-circle suffice. Explain why this alone does not prove that the minimizer is a finite Reuleaux polygon.",
+      "hint_md": "Three patch coefficients satisfy only two homogeneous moment equations. Apply both signs of the perturbation and the strict second variation.",
+      "prerequisites": [
+        "cw-curvature-moment-constraints",
+        "cw-support-area-second-variation"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3, variational strategy; moment-preserving three-patch argument developed here",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "switching-support-curvature",
+          "path": "figures/switching-support-curvature.svg",
+          "caption_md": "A piecewise analytic support function for a width-one regular Reuleaux pentagon. Equal intervals alternate between curvature radius zero and one: zero intervals map to single vertices, while unit intervals trace unit-circle arcs. Curvature values at the finitely many jumps are immaterial.",
+          "alt": "Support and stepwise curvature-radius graphs with equal switching intervals beside the corresponding Reuleaux pentagon, whose vertices are orange and arcs blue."
+        }
+      ]
+    },
+    {
+      "id": "cw-two-moment-duality",
+      "title": "A two-moment optimization lemma produces a switching function",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 10,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "variational-proof",
+        "convex-duality",
+        "closure"
+      ],
+      "statement_md": "Let $f$ be continuous on $[0,\\pi]$. Minimize $\\int_0^\\pi fq$ over measurable $|q|\\leq1$ satisfying $\\int_0^\\pi qu=0$, where $u=(\\cos\\theta,\\sin\\theta)$. Prove that there exists $a\\in\\mathbb R^2$ such that every minimizer satisfies\n$$q(\\theta)=-\\operatorname{sign}(f(\\theta)-a\\cdot u(\\theta))$$\nalmost everywhere on the set where $f-a\\cdot u\\ne0$. You may use the convex subgradient formula\n$$\\partial_a\\int|f-a\\cdot u|=\\left\\{-\\int\\sigma u:\\ |\\sigma|\\leq1,\\ \\sigma=\\operatorname{sign}(f-a\\cdot u)\\text{ off its zero set}\\right\\}.$$\nAll integrals here are over $[0,\\pi]$.",
+      "hint_md": "Minimize the convex function $F(a)=\\int|f-a\\cdot u|$ and use a zero subgradient to construct an admissible optimizer.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3 variational strategy; finite-moment duality companion replacing an unchecked curvature projection",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-variational-switching-rule",
+      "title": "Deriving the switching rule without losing the closure constraints",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 11,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "variational-proof",
+        "optimality",
+        "support-functions"
+      ],
+      "statement_md": "Let $h$ minimize area among width-one supports and $\\rho=h''+h$. Using the two-moment lemma, show that a translation $H=h-a\\cdot u$ can be chosen so that\n$$H>\\tfrac12\\ \\Longrightarrow\\ \\rho=0,\\qquad H<\\tfrac12\\ \\Longrightarrow\\ \\rho=1\\quad\\text{a.e.}$$\nDo not assume in advance that the appropriate translation is the Steiner-point normalization.",
+      "hint_md": "First minimize the first variation over all feasible curvature radii. On a half-circle write $q=2\\rho-1$.",
+      "prerequisites": [
+        "cw-curvature-moment-constraints",
+        "cw-support-area-second-variation",
+        "cw-two-moment-duality"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3, Lemma 3.4 strategy; corrected moment-constrained derivation",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "switching-support-curvature",
+          "path": "figures/switching-support-curvature.svg",
+          "caption_md": "A piecewise analytic support function for a width-one regular Reuleaux pentagon. Equal intervals alternate between curvature radius zero and one: zero intervals map to single vertices, while unit intervals trace unit-circle arcs. Curvature values at the finitely many jumps are immaterial.",
+          "alt": "Support and stepwise curvature-radius graphs with equal switching intervals beside the corresponding Reuleaux pentagon, whose vertices are orange and arcs blue."
+        }
+      ]
+    },
+    {
+      "id": "cw-switching-ode-regularity",
+      "title": "Equal endpoint slopes force equal arcs",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 12,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "variational-proof",
+        "ordinary-differential-equations",
+        "reuleaux-polygons"
+      ],
+      "statement_md": "Let $H$ be a width-one $C^{1,1}$ support, not identically $1/2$, satisfying $H''+H=0$ a.e. where $H>1/2$, and $H''+H=1$ a.e. where $H<1/2$. Prove that these regions alternate in intervals of one common length $\\ell=\\pi/N$, where $N\\geq3$ is odd. Deduce that the curve is a regular Reuleaux $N$-gon. Compute the endpoint slopes on an interval of length $\\ell$.",
+      "hint_md": "Solve the two constant-forcing ODEs with endpoint values $1/2$. The slopes have magnitude $\\frac12\\tan(\\ell/2)$.",
+      "prerequisites": [
+        "cw-variational-switching-rule"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3, Lemma 3.6 and concluding ODE argument; endpoint factor 1/2 restored",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "switching-support-curvature",
+          "path": "figures/switching-support-curvature.svg",
+          "caption_md": "A piecewise analytic support function for a width-one regular Reuleaux pentagon. Equal intervals alternate between curvature radius zero and one: zero intervals map to single vertices, while unit intervals trace unit-circle arcs. Curvature values at the finitely many jumps are immaterial.",
+          "alt": "Support and stepwise curvature-radius graphs with equal switching intervals beside the corresponding Reuleaux pentagon, whose vertices are orange and arcs blue."
+        }
+      ]
+    },
+    {
+      "id": "cw-blaschke-lebesgue-variational",
+      "title": "Assembling the support-function variational proof",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 13,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "blaschke-lebesgue",
+        "variational-proof",
+        "equality"
+      ],
+      "statement_md": "Use existence of a least-area width-one body, the switching rule, and its ODE classification to prove the Blaschke–Lebesgue theorem, including uniqueness up to rigid motions. You may use\n$$A(R_N)=\\frac{\\pi-N\\tan(\\pi/(2N))}{2}\\quad(N\\geq3\\text{ odd})$$\nfor regular Reuleaux polygons. Verify directly that these areas strictly increase with $N$.",
+      "hint_md": "The disk is not a minimizer. Reduce to the regular polygons and differentiate $\\tan x/x$.",
+      "prerequisites": [
+        "cw-compactness",
+        "cw-variational-switching-rule",
+        "cw-switching-ode-regularity",
+        "cw-regular-reuleaux"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3 and Example 2.19; assembled using the explicit moment-duality prerequisite",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "switching-support-curvature",
+          "path": "figures/switching-support-curvature.svg",
+          "caption_md": "A piecewise analytic support function for a width-one regular Reuleaux pentagon. Equal intervals alternate between curvature radius zero and one: zero intervals map to single vertices, while unit intervals trace unit-circle arcs. Curvature values at the finitely many jumps are immaterial.",
+          "alt": "Support and stepwise curvature-radius graphs with equal switching intervals beside the corresponding Reuleaux pentagon, whose vertices are orange and arcs blue."
+        }
+      ]
+    },
+    {
+      "id": "cw-arc-normal-integral",
+      "title": "The normal integral of a circular arc",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 14,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "blaschke-perturbation",
+        "shape-derivative"
+      ],
+      "statement_md": "Let a unit-circle arc have endpoint outward normals $u,v$ and angle $0<\\ell<\\pi$. Prove\n$$\\int_\\Gamma n\\,ds=\\tan(\\ell/2)(u+v).$$\nFor a smoothly moving intersection of unit disks with unchanged active arcs, whose centers move with velocities $z_i$, deduce\n$$A'(0)=\\sum_i z_i\\cdot\\tan(\\ell_i/2)(u_i+v_i).$$\nYou may use the area shape derivative $A'=\\int_{\\partial K}V\\cdot n\\,ds$.",
+      "hint_md": "Integrate the sine and cosine components about the middle normal. A moving center contributes normal velocity $z_i\\cdot n$.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "bogosel-variational",
+          "locator": "§3.1, Proposition labelled prop:one-arc; center formulation in §4.2",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "blaschke-two-vertex",
+          "path": "figures/blaschke-two-vertex.svg",
+          "caption_md": "An exact two-vertex Blaschke motion of the regular width-one pentagon. Blue is the initial body, orange the perturbed body. Areas are computed by circular-arc integration; the plot illustrates, rather than proves, the negative second variation.",
+          "alt": "Initial and deformed Reuleaux pentagons beside a graph of area with a strict local maximum at the undeformed pentagon."
+        }
+      ]
+    },
+    {
+      "id": "cw-blaschke-two-vertex-motion",
+      "title": "A Blaschke motion moves two vertices, not one",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 15,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "blaschke-perturbation",
+        "first-variation",
+        "admissibility"
+      ],
+      "statement_md": "Let $n=2k+1\\geq5$, with strictly nondegenerate width-one Reuleaux vertices $p_i$ in counterclockwise order, indexed modulo $n$. The arc centered at $p_i$ has normals $u_i=p_{i+k}-p_i$, $v_i=p_{i-k}-p_i$ and angle $\\ell_i\\in(0,\\pi/3)$. Assume all other vertex-pair distances are strictly below one. Rotate $p_i$ counterclockwise about fixed $p_{i-k}$ at unit angular speed, and let $p_j$, $j=i+k$, follow the nearby intersection of the unit circles centered at moving $p_i$ and fixed $p_{i-1}$. All other vertices stay fixed. Prove this is a local constant-width motion in both parameter directions, and derive\n$$\\dot p_i=-Jv_i,\\quad \\dot p_j=-\\frac{\\sin\\ell_i}{\\sin\\ell_j}Ju_j,$$\n$$A'(0)=\\sin\\ell_i\\left(\\tan\\frac{\\ell_i}{2}-\\tan\\frac{\\ell_j}{2}\\right),$$\nwhere $J$ rotates vectors counterclockwise by $\\pi/2$.",
+      "hint_md": "Differentiate the three affected unit-distance constraints. Only two generating centers have nonzero velocity.",
+      "prerequisites": [
+        "cw-arc-normal-integral"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-variational",
+          "locator": "§3.2, Blaschke perturbation in Figure labelled fig:perturbedR; two-center calculation with CCW cyclic indexing",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "blaschke-two-vertex",
+          "path": "figures/blaschke-two-vertex.svg",
+          "caption_md": "An exact two-vertex Blaschke motion of the regular width-one pentagon. Blue is the initial body, orange the perturbed body. Areas are computed by circular-arc integration; the plot illustrates, rather than proves, the negative second variation.",
+          "alt": "Initial and deformed Reuleaux pentagons beside a graph of area with a strict local maximum at the undeformed pentagon."
+        }
+      ]
+    },
+    {
+      "id": "cw-blaschke-negative-second-variation",
+      "title": "Equal coupled arcs are unstable under a Blaschke motion",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 16,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "blaschke-perturbation",
+        "second-variation",
+        "instability"
+      ],
+      "statement_md": "For the preceding two-vertex motion, suppose $\\ell_i=\\ell_j=L\\in(0,\\pi/3)$. Prove\n$$\\ell_i'=1-2\\cos L,\\qquad \\ell_j'=2\\cos L-1,$$\nand hence\n$$A''(0)=2\\tan(L/2)(1-2\\cos L)<0.$$\nDeduce that a strictly nondegenerate Reuleaux polygon with at least five arcs cannot be a local area minimum, even when its first variation vanishes.",
+      "hint_md": "For a moving unit vector $w$, its angular velocity is $(Jw)\\cdot\\dot w$. Apply this to the four endpoint normals.",
+      "prerequisites": [
+        "cw-blaschke-two-vertex-motion"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-variational",
+          "locator": "§3.2, local nonminimality; equivalent two-center second variation developed here",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "blaschke-two-vertex",
+          "path": "figures/blaschke-two-vertex.svg",
+          "caption_md": "An exact two-vertex Blaschke motion of the regular width-one pentagon. Blue is the initial body, orange the perturbed body. Areas are computed by circular-arc integration; the plot illustrates, rather than proves, the negative second variation.",
+          "alt": "Initial and deformed Reuleaux pentagons beside a graph of area with a strict local maximum at the undeformed pentagon."
+        }
+      ]
+    },
+    {
+      "id": "cw-reuleaux-finite-compactness",
+      "title": "Why local polygon deformations give a global area bound",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 17,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "blaschke-lebesgue",
+        "compactness",
+        "blaschke-perturbation"
+      ],
+      "statement_md": "Fix an odd $N\\geq3$. Prove that the width-one Reuleaux polygons with at most $N$ arcs, translated to contain the origin, form a compact class for Hausdorff distance. You may use their representation as intersections of unit disks centered at their vertices; repeated centers may pad a representation to $N$ centers. Explain why a limit of the intersections is still the intersection of the limiting disks.\n\nThen use the two-sided Blaschke variations and area continuity to prove that the triangle minimizes area in this finite class. Assuming Reuleaux polygons are dense among planar constant-width bodies, pass to the whole class. Explain why a negative first variation alone would leave a gap at regular polygons.",
+      "hint_md": "Normalize by translation, minimize in the compact finite class, and inspect the actual number of nonzero arcs of a minimizer.",
+      "prerequisites": [
+        "cw-hausdorff-selection",
+        "cw-convex-hausdorff-volume",
+        "cw-blaschke-negative-second-variation",
+        "cw-hausdorff-support",
+        "cw-ball-intersection"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-variational",
+          "locator": "§2, Proposition prop:existenceRP; §3.2, finite-class minimization and density",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "blaschke-two-vertex",
+          "path": "figures/blaschke-two-vertex.svg",
+          "caption_md": "An exact two-vertex Blaschke motion of the regular width-one pentagon. Blue is the initial body, orange the perturbed body. Areas are computed by circular-arc integration; the plot illustrates, rather than proves, the negative second variation.",
+          "alt": "Initial and deformed Reuleaux pentagons beside a graph of area with a strict local maximum at the undeformed pentagon."
+        }
+      ]
+    },
+    {
+      "id": "cw-shortest-arc-chord-lemma",
+      "title": "The shortest arc controls the opposite replacement chord",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 18,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "arc-removal",
+        "elementary-geometry"
+      ],
+      "statement_md": "In a nontriangular, nondegenerate width-one Reuleaux polygon, let $c,d$ be consecutive vertices with a shortest joining boundary arc, centered at $q$. Let the adjacent arcs $bq$ and $qa$ be centered at $d$ and $c$. Prove $|c-d|\\leq|a-b|$. In the cyclic configuration shown in the figure, use\n$$\\angle aqb=\\angle cqa+\\angle dqb-\\angle cqd.$$\nExplain why choosing a shortest arc is equivalent to choosing a shortest adjacent chord.",
+      "hint_md": "All arcs have radius one and angle at most $\\pi/3$. Use the two isosceles triangles at $q$ and the side opposite an angle greater than $\\pi/3$.",
+      "prerequisites": [
+        "cw-corner-angle"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v2",
+          "locator": "§3, Lemma 3.3; companion to Yaglom–Boltyanskii Exercise 7-20",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "smallest-arc-removal",
+          "path": "figures/smallest-arc-removal.svg",
+          "caption_md": "A shortest arc cd (purple) and opposite corner q are replaced using the unit-circle intersection p. The new body has five arcs; c and d become smooth points. Dashed blue is the previous boundary. Both bodies are constructed and checked as width-one Reuleaux polygons.",
+          "alt": "An irregular seven-arc Reuleaux polygon and its five-arc replacement, with the shortest arc and points a, b, c, d, p, q labeled."
+        }
+      ]
+    },
+    {
+      "id": "cw-smallest-arc-removal",
+      "title": "Removing a smallest arc and its opposite corner",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 19,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "arc-removal",
+        "blaschke-lebesgue"
+      ],
+      "statement_md": "Use the notation of the shortest-arc chord lemma. Let $p$ be the intersection of the unit circles about $a,b$ closer to the arc $cd$. Replace the arc $cd$ by arcs $cp,pd$ centered at $a,b$, and replace $bq,qa$ by the single arc $ba$ centered at $p$. Show that this removes two vertices and does not increase area.\n\nYou may use the following **geometric surgery and comparison lemma** (Hynd §4, following Yaglom–Boltyanskii 7-20): for a shortest arc the replacement is a convex constant-width curve, tangent to the unchanged boundary at $c,d$; with $s,r\\in[p,q]$, $|s-p|=|r-q|=1$, the area lost is the sum of the curvilinear pieces $asq,bsq$, and the area gained is that of $crp,drp$. For the paired pieces, a nonnegative arc excess $\\widehat{as}-\\widehat{cr}$ gives a nonnegative area excess, increasing with that arc excess; the reflected pair obeys the same comparison function. Arc notation uses the circles centered at $p$ and $q$. The task is to complete the reduction and area comparison from this explicit lemma.",
+      "hint_md": "The sum of the two arc excesses is nonnegative. If one is negative, compare its deficit with the other excess using monotonicity.",
+      "prerequisites": [
+        "cw-shortest-arc-chord-lemma"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§4, Lemma 4.2 and concluding shortest-arc reduction, pp. 22–26; Yaglom–Boltyanskii 7-20",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "smallest-arc-removal",
+          "path": "figures/smallest-arc-removal.svg",
+          "caption_md": "A shortest arc cd (purple) and opposite corner q are replaced using the unit-circle intersection p. The new body has five arcs; c and d become smooth points. Dashed blue is the previous boundary. Both bodies are constructed and checked as width-one Reuleaux polygons.",
+          "alt": "An irregular seven-arc Reuleaux polygon and its five-arc replacement, with the shortest arc and points a, b, c, d, p, q labeled."
+        },
+        {
+          "figure_id": "shortest-arc-caps",
+          "path": "figures/shortest-arc-caps.svg",
+          "caption_md": "The orange region is removed near q and the purple region is added near p. The line pq splits them into the paired curvilinear pieces used in the comparison lemma. Their boundaries include circular arcs, so straight-triangle areas would give the wrong subtraction. Dashes show the original boundary; the solid gray curve is the replacement.",
+          "alt": "Two views of the same shortest-arc replacement, with the removed curved cap shaded orange and the added curved cap shaded purple; points p, q, r, s, a, b, c, d are marked."
+        }
+      ]
+    },
+    {
+      "id": "cw-support-parallel-regularization",
+      "title": "Rounding corners while keeping width one",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 20,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "approximation",
+        "support-functions",
+        "parallel-bodies"
+      ],
+      "statement_md": "Let $K$ have width one, support $h\\in C^{1,1}$, and curvature radius $\\rho=h''+h\\in[0,1]$. For $\\delta>0$ set $K_\\delta=(K+\\delta B)/(1+2\\delta)$. Prove\n$$h_\\delta=\\frac{h+\\delta}{1+2\\delta},\\qquad \\rho_\\delta=\\frac{\\rho+\\delta}{1+2\\delta},\\qquad \\frac{\\delta}{1+2\\delta}\\leq\\rho_\\delta\\leq\\frac{1+\\delta}{1+2\\delta}.$$\nShow $h_\\delta\\to h$ in $C^1$ and that the normal-angle parametrization has no constant intervals. Does this operation by itself make the boundary infinitely differentiable?",
+      "hint_md": "Apply support-function addition and scaling. A positive lower curvature radius prevents a whole interval of normals from representing one vertex.",
+      "prerequisites": [
+        "cw-support-calculus",
+        "cw-curvature-moment-constraints"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§4, Proposition 4.1, first approximation step; numerator checked directly",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-reuleaux-approximation-support-splice",
+      "title": "Checking the support-function splice in Reuleaux approximation",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 21,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "approximation",
+        "arc-removal",
+        "support-functions"
+      ],
+      "statement_md": "Let $h$ be a width-one $C^{1,1}$ support and $\\gamma=hu+h'u'$. On a partition cell $[a,b]\\subset[0,\\pi]$, suppose a unit-circle center $z$ and angles $a\\leq\\phi\\leq\\psi\\leq b$ have been constructed with\n$$\\gamma(a)=z+u(\\phi),\\qquad\\gamma(b)=z+u(\\psi).$$\nDefine $H=\\gamma(a)\\cdot u$ on $[a,\\phi]$, $H=1+z\\cdot u$ on $[\\phi,\\psi]$, and $H=\\gamma(b)\\cdot u$ on $[\\psi,b]$. Prove the pieces match in value and first derivative, with $H''+H\\in\\{0,1\\}$. Doing this on every cell, extend by $H(\\theta+\\pi)=1-H(\\theta)$. Prove this gives a Reuleaux polygon and, if every cell has length at most $\\Delta$, that $\\|H-h\\|_\\infty,\\|H'-h'\\|_\\infty\\leq2\\Delta$. The existence of centers with the stated angle order is the geometric input to this exercise.",
+      "hint_md": "The vector identities at the junctions give both matching conditions. Bound the two support values by the distance between their contact points.",
+      "prerequisites": [
+        "cw-curvature-moment-constraints",
+        "cw-support-parallel-regularization"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§4, Proposition 4.1, steps 2–3; Yaglom–Boltyanskii approximation discussion, pp. 76–80",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "equiangular-supports",
+          "path": "figures/equiangular-supports.svg",
+          "caption_md": "The same Reuleaux triangle inside intersections of 6, 12 and 24 equally spaced supporting half-planes. At a corner several successive support lines can meet at one point, producing zero-length sides in the indexed polygon.",
+          "alt": "Three increasingly fine circumscribed equiangular supporting polygons around one Reuleaux triangle."
+        }
+      ]
+    },
+    {
+      "id": "cw-polygon-descent-limit",
+      "title": "Passing a polygon area inequality to every constant-width body",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 22,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "blaschke-lebesgue",
+        "approximation",
+        "equality"
+      ],
+      "statement_md": "Assume every width-one body has arbitrarily close Reuleaux-polygon approximations in Hausdorff distance. Combine shortest-arc removal with area continuity to prove $A(K)\\geq(\\pi-\\sqrt3)/2$ for every width-one body. Alternatively, pass to the limit using $C^1$ support convergence and $A(h)=\\frac12\\int(h^2-h'^2)$. Explain why a sequence of strict inequalities does not alone prove uniqueness of the limiting equality case.",
+      "hint_md": "Apply finite descent to each approximating polygon before taking the limit.",
+      "prerequisites": [
+        "cw-smallest-arc-removal",
+        "cw-convex-hausdorff-volume",
+        "cw-triangle-measures"
+      ],
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§4, opening reduction in the proof of Blaschke–Lebesgue; Yaglom–Boltyanskii Exercise 7-20",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "smallest-arc-removal",
+          "path": "figures/smallest-arc-removal.svg",
+          "caption_md": "A shortest arc cd (purple) and opposite corner q are replaced using the unit-circle intersection p. The new body has five arcs; c and d become smooth points. Dashed blue is the previous boundary. Both bodies are constructed and checked as width-one Reuleaux polygons.",
+          "alt": "An irregular seven-arc Reuleaux polygon and its five-arc replacement, with the shortest arc and points a, b, c, d, p, q labeled."
+        }
+      ]
+    },
+    {
+      "id": "cw-equiangular-support-perimeter",
+      "title": "Every circumscribed equiangular even-gon has the same perimeter",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 23,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "equiangular-polygons",
+        "barbier",
+        "circumscription"
+      ],
+      "statement_md": "Let $N\\geq4$ be even, $\\Delta=2\\pi/N$, $n_j=u(\\alpha+j\\Delta)$, and $h_j=h_K(n_j)$ for a width-$w$ body. Intersect the supporting half-planes $x\\cdot n_j\\leq h_j$ to obtain $P_N$. Allow zero-length sides at coincident consecutive intersections. Prove\n$$\\ell_j=\\frac{h_{j-1}+h_{j+1}-2\\cos\\Delta\\,h_j}{\\sin\\Delta},\\qquad P(P_N)=Nw\\tan(\\pi/N).$$\nThus its perimeter is independent of $K$ and orientation. Deduce Barbier’s theorem by refining the normal mesh; you may use perimeter continuity for planar convex bodies.",
+      "hint_md": "Solve the two neighboring support-line intersections in normal/tangent coordinates, then sum and pair opposite supports.",
+      "prerequisites": [
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-11, p. 74; support-line calculation for the equiangular construction",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "equiangular-supports",
+          "path": "figures/equiangular-supports.svg",
+          "caption_md": "The same Reuleaux triangle inside intersections of 6, 12 and 24 equally spaced supporting half-planes. At a corner several successive support lines can meet at one point, producing zero-length sides in the indexed polygon.",
+          "alt": "Three increasingly fine circumscribed equiangular supporting polygons around one Reuleaux triangle."
+        }
+      ]
+    },
+    {
+      "id": "cw-equiangular-area-quadratic",
+      "title": "Area of an equiangular polygon is a discrete quadratic form",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 24,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "equiangular-polygons",
+        "area",
+        "fourier"
+      ],
+      "statement_md": "For the preceding supporting polygon prove\n$$A(P_N)=\\frac{1}{\\sin\\Delta}\\sum_j h_jh_{j+1}-\\cot\\Delta\\sum_jh_j^2.$$\nWrite $h_j=w/2+g_j$ with $g_{j+N/2}=-g_j$. Using the discrete Fourier basis, prove\n$$A(P_N)\\leq\\frac{Nw^2}{4}\\tan(\\pi/N),$$\nwith equality exactly when the sampled support values, after a translation, are all $w/2$. Does equality for a fixed mesh force the enclosed constant-width body to be a disk?",
+      "hint_md": "Use $A=\\frac12\\sum h_j\\ell_j$. The Fourier multiplier of the remaining quadratic form is proportional to $\\cos(m\\Delta)-\\cos\\Delta$.",
+      "prerequisites": [
+        "cw-equiangular-support-perimeter",
+        "cw-pal-hexagon"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-12, p. 74; discrete Fourier solution of its upper-bound component",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "equiangular-supports",
+          "path": "figures/equiangular-supports.svg",
+          "caption_md": "The same Reuleaux triangle inside intersections of 6, 12 and 24 equally spaced supporting half-planes. At a corner several successive support lines can meet at one point, producing zero-length sides in the indexed polygon.",
+          "alt": "Three increasingly fine circumscribed equiangular supporting polygons around one Reuleaux triangle."
+        }
+      ]
+    },
+    {
+      "id": "cw-hexagon-strip-sliding",
+      "title": "Sliding three width-one strips: the hexagon area calculation",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 25,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "equiangular-polygons",
+        "area",
+        "hexagons"
+      ],
+      "statement_md": "Take six half-planes with normals $n_j=u(j\\pi/3)$ and support numbers $h_{j+3}=w-h_j$. Assume all six constraints are active, allowing zero-length sides. Prove that after translating,\n$$h_j=\\frac w2+(-1)^jt,\\qquad |t|\\leq w/6,$$\nand compute\n$$\\ell_j=\\frac{w-6(-1)^jt}{\\sqrt3},\\qquad A=\\frac{\\sqrt3}{2}w^2-6\\sqrt3\\,t^2.$$\nIdentify the maximum and the degenerate endpoint shapes. Explain why the minimum in this larger strip family is not the Blaschke–Lebesgue constant.",
+      "hint_md": "The three-dimensional space of antipodally odd six-tuples consists of two translation modes and one alternating mode.",
+      "prerequisites": [
+        "cw-equiangular-support-perimeter"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercises 7-10(b) and 7-12, p. 74; three-strip specialization",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "hexagon-strip-sliding",
+          "path": "figures/hexagon-strip-sliding.svg",
+          "caption_md": "Opposite supports remain one unit apart while the three strips slide. At the endpoint three sides vanish and an equilateral triangle remains. These straight-sided polygons are not constant-width bodies.",
+          "alt": "A regular hexagon, an alternating-side hexagon, and a limiting equilateral triangle obtained by sliding three strips."
+        }
+      ]
+    },
+    {
+      "id": "cw-equiangular-mesh-error",
+      "title": "Why finer supporting polygons recover the original body",
+      "chapter_id": "03-blaschke-lebesgue",
+      "order": 26,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "equiangular-polygons",
+        "approximation",
+        "hausdorff-distance"
+      ],
+      "statement_md": "Translate a width-$w$ body so $0\\in K\\subset wB$. Let $P_N$ be the circumscribed equiangular $N$-gon with normal gap $\\Delta=2\\pi/N<\\pi$. Prove\n$$P_N\\subset w\\sec(\\Delta/2)B,$$\n$$d_H(P_N,K)\\leq2w\\bigl(1+\\sec(\\Delta/2)\\bigr)\\sin(\\Delta/4).$$\nDeduce area convergence, including along the meshes $N=3\\cdot2^m$ used in Yaglom–Boltyanskii's area argument. Explain which additional comparison is needed to obtain the sharp lower area bound from those meshes.",
+      "hint_md": "Choose a sampled normal closest to a point's radial direction, then one closest to an arbitrary test direction.",
+      "prerequisites": [
+        "cw-hausdorff-support",
+        "cw-convex-hausdorff-volume"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-12 and approximation discussion, pp. 74, 79–80; explicit support-mesh estimate",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "equiangular-supports",
+          "path": "figures/equiangular-supports.svg",
+          "caption_md": "The same Reuleaux triangle inside intersections of 6, 12 and 24 equally spaced supporting half-planes. At a corner several successive support lines can meet at one point, producing zero-length sides in the indexed polygon.",
+          "alt": "Three increasingly fine circumscribed equiangular supporting polygons around one Reuleaux triangle."
+        }
+      ]
+    }
+  ]
+}

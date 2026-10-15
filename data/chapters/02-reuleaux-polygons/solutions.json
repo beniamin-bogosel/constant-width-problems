@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "02-reuleaux-polygons",
+  "solutions": [
+    {
+      "problem_id": "cw-triangle-measures",
+      "kind": "proof",
+      "body_md": "Write the equilateral vertices as $a,b,c$ and let their center be $o$. The boundary arc from $b$ to $c$ lies on the circle of radius $w$ centered at $a$, and subtends $\\pi/3$. Its outward normal at $x$ is $u=(x-a)/w$. The opposite support point is $a$: the two incident arcs at $a$ have a normal cone containing $-u$. Thus the supporting lines through $x$ and $a$ perpendicular to $u$ are exactly $w$ apart. The three arc-normal intervals and their opposite corner-normal intervals cover all directions, including their endpoints. Hence the width is $w$.\n\nThere are three arcs of length $w\\pi/3$, so $P(T)=\\pi w$. The chord triangle and the three outward circular segments have disjoint interiors. Each segment has area $w^2\\pi/6-\\sqrt3w^2/4$, giving\n$$A(T)=\\frac{\\sqrt3}{4}w^2+3\\left(\\frac\\pi6w^2-\\frac{\\sqrt3}{4}w^2\\right)=\\frac{\\pi-\\sqrt3}{2}w^2.$$\n\nThe vertex triangle forces every enclosing disk to have radius at least $R=w/\\sqrt3$. To check that the disk centered at $o$ of radius $R$ contains the curved boundary as well, set $o=0$. On the arc centered at $a$, write $x=a+wu$; its arc directions satisfy $a\\cdot u\\leq-w/2$, with equality at the two endpoints. Therefore $|x|^2=R^2+w^2+2w\\,a\\cdot u\\leq R^2$. The same holds on the other arcs. Thus the circumradius is exactly $R$, and the concentric-ball identity for constant-width bodies gives $r=w-R=w(1-1/\\sqrt3)$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-1, printed p. 73",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-arc-polygon-area",
+      "kind": "proof",
+      "body_md": "Use cyclic indices, so $v_{m+1}=v_1$. Convexity places the chord polygon inside the region. The circular segments between its edges and the boundary arcs have disjoint interiors and fill the remaining region. Their signs are positive because every arc bulges outward; for inward arcs a signed formula would be needed.\n\nThe counterclockwise chord polygon has area $\\frac12\\sum_i\\det(v_i,v_{i+1})$. The segment on the $i$th edge is a sector of area $r^2\\alpha_i/2$ with its isosceles triangle of area $r^2\\sin\\alpha_i/2$ removed. Adding the polygon and these segments proves the formula. Angles are in radians.\n\nFor a Reuleaux polygon put $r=w$. For an eroded equal-disk intersection put $r=w-t$ and use its actual active arcs and vertices at that value of $t$. If a circular segment has collapsed, its limiting contribution is zero; do not retain a vanished arc as a positive-length side.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Exercise 2.3(ii), reformulated for arbitrary arc polygons",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-regular-reuleaux",
+      "kind": "proof",
+      "body_md": "Let $n=2m+1$ and place a regular $n$-gon with circumradius $R_n$ at the origin. Its longest vertex chords span $m$ steps and have length $2R_n\\cos(\\pi/(2n))$. Choose $R_n=w/[2\\cos(\\pi/(2n))]$ and intersect the radius-$w$ disks centered at the vertices. Each vertex has precisely two farthest vertices, which are adjacent in the cyclic boundary order. The minor radius-$w$ arc joining those two vertices is the opposite boundary arc. Each such arc subtends $\\pi/n$; its normals pair with the opposite normal cone at its center. Consequently the intersection has constant width $w$ and perimeter $nw(\\pi/n)=\\pi w$.\n\nPut $x=\\pi/(2n)$, so $R_n=w/(2\\cos x)$. The vertex polygon has area $\\frac n2R_n^2\\sin(4x)=\\frac{nw^2}{2}\\tan x\\cos(2x)$. The $n$ circular segments add $\\frac{nw^2}{2}(2x-\\sin(2x))$. Since $\\tan x\\cos(2x)-\\sin(2x)=-\\tan x$, their sum is\n$$A_n=\\frac{w^2}{2}\\left[\\pi-n\\tan\\frac{\\pi}{2n}\\right].$$\n\nNow $n\\tan(\\pi/(2n))=(\\pi/2)(\\tan x/x)$. The derivative of $\\tan x/x$ has the sign of $x-\\sin x\\cos x$, which is positive for $x>0$: this last function vanishes at zero and has derivative $2\\sin^2x>0$. Thus $A_n$ strictly increases as the odd integer $n$ increases, and $\\tan x/x\\to1$ gives $A_n\\to\\pi w^2/4$.\n\nThe geometric convergence also follows. Rotational symmetry makes the center a circumcenter; the arcs stay inside the circle of radius $R_n$, as is seen from their radial squared-distance formula. Hence the concentric-ball identity gives\n$$(w-R_n)B\\subset P_n\\subset R_nB.$$\nBoth radii tend to $w/2$, proving Hausdorff convergence to the disk, not just convergence of areas.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Exercise 2.3(i), monotonicity corrected",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-turning-budget",
+      "kind": "proof",
+      "body_md": "Traverse the boundary counterclockwise and track a continuous choice of tangent angle between corners. On a radius-$r$ arc it increases by the central angle $\\alpha_i$. At a convex corner its jump is the exterior angle $\\beta_i$ (zero at a smooth junction). The tangent makes one full revolution, so\n$$\\sum_i\\alpha_i+\\sum_i\\beta_i=2\\pi.$$\n\nFor a width-$r$ Reuleaux polygon, take an arc centered at a vertex $c$. The outward arc normals are $(x-c)/r$, while their negatives fill the normal cone at $c$. The angular lengths of this arc-normal interval and this corner-normal interval are equal. Every arc and corner occurs in this correspondence once, so the two sums are equal and each is $\\pi$. This also gives $P=r\\sum_i\\alpha_i=\\pi r$. Ordinary intersections of equal disks need not have this pairing and need not have constant width.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Exercise 2.10; Cheeger manuscript §2.2",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-erosion-disks",
+      "kind": "proof",
+      "body_md": "The condition $x+tB\\subset D=\\bigcap_iB(c_i,w)$ is equivalent to $x+tB\\subset B(c_i,w)$ for every $i$. For a fixed center,\n$$\\max_{|z|\\leq t}|x+z-c_i|=|x-c_i|+t.$$\nThe triangle inequality gives the upper bound, attained by taking $z$ in the direction $x-c_i$; if $x=c_i$, any vector of length $t$ works. Thus inclusion holds exactly when $|x-c_i|\\leq w-t$ for every $i$, proving the identity.\n\nA boundary arc may shrink to a point and disappear when neighboring intersection vertices collide. The formula for the intersection remains valid through such events, but a formula using a fixed list of positive-length arcs must be recomputed. At the inradius the erosion can have zero area, and beyond it the intersection is empty. Even when $D$ has constant width, its erosion generally does not: shrinking the generating disks alone does not preserve the opposite arc/corner pairing.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, Step I; definition of inner parallel sets",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-regular-inner-parallel",
+      "kind": "proof",
+      "body_md": "Keep the original disk centers fixed and replace their radii by $q=1-t$, using the disk-erosion identity. Two cyclically adjacent centers are separated by\n$$2R\\sin(\\pi/n)=2\\sin\\delta.$$\nTheir midpoint $m$ has distance $|m|=R\\cos(\\pi/n)$ from the origin. Their two radius-$q$ circle intersections lie on the perpendicular bisector, at distance $\\sqrt{q^2-\\sin^2\\delta}$ from $m$. The intersection belonging to the eroded polygon lies across the origin from $m$, so its distance from the origin is\n$$r_t=\\sqrt{q^2-\\sin^2\\delta}-R\\cos(\\pi/n).$$\nThe expression is positive precisely in the stated range $q>R$ and is zero at $q=R$.\n\nThe angle between the line of centers and the radius to that intersection is determined by the same right triangle. Relative to $q=1$, each endpoint has moved through\n$$\\alpha=\\arcsin(\\sin\\delta/q)-\\delta,$$\nwhere $\\arcsin$ is the principal branch in $[0,\\pi/2]$. Each of the $n$ active arcs therefore has angle $\\beta=2\\delta-2\\alpha$, so the perimeter is $nq\\beta$. Rotational symmetry gives a regular chord polygon of radius $r_t$. Adding its area to the $n$ circular segments yields\n$$A(t)=\\frac n2r_t^2\\sin\\frac{2\\pi}{n}+\\frac{nq^2}{2}(\\beta-\\sin\\beta).$$\n\nAt $t=0$ one has $\\alpha=0$, $\\beta=\\pi/n$, and $r_t=R$, recovering the original polygon. At $t\\uparrow1-R$, the identity $\\arcsin(\\sin\\delta/R)=\\arcsin(\\sin2\\delta)=2\\delta$ is valid since $2\\delta\\leq\\pi/3$; hence $\\beta,r_t\\to0$ and both perimeter and area tend to zero. The endpoint is a singleton, not a positive-area disk polygon.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, equation labelled eq:regular-reuleaux-perim; area derived here",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-irregular-construction",
+      "kind": "proof",
+      "body_md": "Here is one exact example, with star indices taken modulo five. Put $s=\\sqrt{3003/377}$ and choose\n$$q_0=(0,0),\\quad q_1=(1,0),\\quad q_2=(1/5,3/5),\\quad q_3=(38/65,-21/65),\\quad q_4=\\left(\\frac{38+21s}{130},\\frac{-21+38s}{130}\\right).$$\nThe first three star edges have vectors $(1,0)$, $(-4/5,3/5)$ and $(5/13,-12/13)$, all of length one. The formula for $q_4$ is the upper intersection of the unit circles centered at $q_3$ and $q_0$, so the remaining two star edges also have length one.\n\nThe counterclockwise hull order is $q_0,q_3,q_1,q_4,q_2$. Direct determinants are positive in this order, and every pair not joined by a star edge has distance strictly less than one. These checks can be done without trusting rounded coordinates: squaring gives $2.82<s<2.83$; substitution bounds $q_4$ in $(0.747,0.750)\\times(0.662,0.666)$, which already makes all five consecutive turn determinants positive and the five remaining distances less than one. Thus the five star edges are exactly the diagonals of a strictly convex pentagon.\n\nIntersect the five closed unit disks. For each center $q_i$, take the minor unit-circle arc joining $q_{i-1}$ to $q_{i+1}$. Its endpoints lie in all the other disks. On this unit circle, membership in a second unit disk centered at $q_j$ is the angular condition\n$$u\\cdot(q_j-q_i)\\geq\\frac12|q_j-q_i|^2,\\qquad x=q_i+u,\\quad |u|=1.$$\nThis is a closed angular interval of length less than $\\pi$. It contains both endpoints and therefore their minor arc. Hence all five intended arcs are present, with positive lengths, and form the intersection boundary. At $q_i$, the two incident outward normals are $q_i-q_{i-1}$ and $q_i-q_{i+1}$; their negatives delimit exactly the opposite arc-normal interval. The arc/corner pairing now proves constant width one in every direction.\n\nThe two adjacent hull sides $q_0q_2$ and $q_0q_3$ have squared lengths $2/5$ and $377/845$, respectively, so the pentagon is not regular. More generally, small perturbations of an equilateral five-edge star produce a family of such examples, but the pairwise-distance, convex-order and active-arc checks are essential. The existing illustration shows another member of this family.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical review pass 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Constructive exercise inspired by outline §2; circle-intersection closure",
+          "relationship": "original-exercise"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "scene_title": "Outer parallel body and original body",
+  "diagnostics": [
+    {
+      "type": "support",
+      "min_sample_curvature": 0.29000000000000004,
+      "convexity_margin": 0.29000000000000004,
+      "width": 1.3
+    },
+    {
+      "type": "support",
+      "min_sample_curvature": 0.14,
+      "convexity_margin": 0.14,
+      "width": 1
+    }
+  ],
+  "rendering": "Floating-point geometry; samples or triangular facets used only for display."
+}

@@ -1,0 +1,793 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "04-mixed-volumes",
+  "problems": [
+    {
+      "id": "cw-mixed-area-polarization",
+      "title": "Mixed area by polarization",
+      "chapter_id": "04-mixed-volumes",
+      "order": 1,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "mixed-area",
+        "support-functions"
+      ],
+      "statement_md": "Use the convention $A(K+tL)=A(K)+2tA(K,L)+t^2A(L)$ for $t\\geq0$. For $C^2$ planar support functions $h,k$ with positive curvature radius, derive\n$$A(K,L)=\\frac12\\int_0^{2\\pi}(hk-h'k')\\,d\\theta.$$\nShow this expression is symmetric and unchanged by translating either body.",
+      "hint_md": "Insert $h+tk$ into the support-function formula for area and compare the coefficient of $t$. Translation adds only first harmonics.",
+      "prerequisites": [
+        "cw-support-parametrization"
+      ],
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§5.1, planar specialization",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-mixed-area-monotonicity",
+      "title": "Why mixed area is monotone",
+      "chapter_id": "04-mixed-volumes",
+      "order": 2,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "mixed-area",
+        "monotonicity"
+      ],
+      "statement_md": "For smooth strictly convex planar $L$, show that $K\\subset K'$ implies $A(K,L)\\leq A(K',L)$. Extend the assertion to arbitrary convex bodies by approximation; you may assume continuity of mixed area.",
+      "hint_md": "Integrate by parts so that $h_K$ is multiplied by the nonnegative curvature radius of $L$.",
+      "prerequisites": [
+        "cw-mixed-area-polarization"
+      ],
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§5.1, monotonicity of mixed volumes",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-polygon-mixed-edge-sum",
+      "title": "Mixed area as a sum over polygon edges",
+      "chapter_id": "04-mixed-volumes",
+      "order": 3,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "mixed-area",
+        "polygons"
+      ],
+      "statement_md": "Let $Q$ be a convex polygon with edge lengths $\\ell_i$ and outward unit normals $u_i$, and let $K$ be any planar convex body. Prove\n$$2A(K,Q)=\\sum_i\\ell_i h_K(u_i).$$\nYou may use the support-measure formula $2A(K,L)=\\int h_K\\,dS_L$, where $S_L$ records boundary length by outward normal. Explain why translating $K$ does not change the sum.",
+      "hint_md": "For a polygon, the boundary-length measure has one atom per edge. The vector sum of the oriented edges vanishes.",
+      "prerequisites": [
+        "cw-mixed-area-polarization"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§2.2, support-measure tool for Theorem 2; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "mixed-skeleton-tangents",
+          "path": "figures/mixed-skeleton-tangents.svg",
+          "caption_md": "The skeleton S lies inside P, which lies inside the endpoint-tangent polygon C. Every convex K between S and C has the same reflected mixed area. Both panels have width-one Reuleaux polygons.",
+          "alt": "Triangle and irregular Reuleaux pentagon, each overlaid with its inner skeleton and outer tangent polygon."
+        }
+      ]
+    },
+    {
+      "id": "cw-segment-mixed-area",
+      "title": "A segment has zero area but nonzero mixed area",
+      "chapter_id": "04-mixed-volumes",
+      "order": 4,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "mixed-area",
+        "segments"
+      ],
+      "statement_md": "Let $I$ be a segment of length $\\ell$ in direction $e$, and let $b$ be the width of a planar convex body $K$ perpendicular to $e$. Prove $A(K,I)=\\ell b/2$ directly from Minkowski addition. Deduce $A(I,J)=\\ell m|\\sin\\alpha|/2$ for two segments of lengths $\\ell,m$ meeting at angle $\\alpha$.",
+      "hint_md": "Take slices parallel to the segment. Every nonempty interval gains the same length.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Lemma 1(a), p. 6; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "mixed-segment-sweep",
+          "path": "figures/mixed-segment-sweep.svg",
+          "caption_md": "Adding a horizontal segment of length ℓ extends every nonempty horizontal slice by ℓ. The shaded curved band therefore has area ℓb, where b is the perpendicular width. For a radius-r disk and its diameter segment, ℓ=b=2r, giving mixed area 2r² despite the segment having zero area. Circle arcs are sampled only for rendering.",
+          "alt": "A disk before and after adding a horizontal segment. In the sum, two horizontal arrows across the added curved band both have length ell; a vertical dimension marks the disk width b."
+        }
+      ]
+    },
+    {
+      "id": "cw-valuation-segment-correction",
+      "title": "Why a cutting segment cannot be discarded",
+      "chapter_id": "04-mixed-volumes",
+      "order": 5,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "mixed-area",
+        "valuation"
+      ],
+      "statement_md": "Split the radius-$r$ disk $D$ into two closed half-disks $D_+,D_-$ along a diameter $I$. Compute $A(D,D_+)$, $A(D,D_-)$ and $A(D,I)$, and verify\n$$A(D,D_+)+A(D,D_-)=A(D,D)+A(D,I).$$\nYou may use Steiner’s formula. Explain why ignoring the zero-area intersection gives the wrong answer.",
+      "hint_md": "The perimeter of a half-disk includes its straight diameter. Compare coefficients in the parallel-area formula.",
+      "prerequisites": [
+        "cw-segment-mixed-area"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§2.2, half-disk example across pp. 5–6 (normalization corrected); inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "mixed-segment-sweep",
+          "path": "figures/mixed-segment-sweep.svg",
+          "caption_md": "Adding a horizontal segment of length ℓ extends every nonempty horizontal slice by ℓ. The shaded curved band therefore has area ℓb, where b is the perpendicular width. For a radius-r disk and its diameter segment, ℓ=b=2r, giving mixed area 2r² despite the segment having zero area. Circle arcs are sampled only for rendering.",
+          "alt": "A disk before and after adding a horizontal segment. In the sum, two horizontal arrows across the added curved band both have length ell; a vertical dimension marks the disk width b."
+        }
+      ]
+    },
+    {
+      "id": "cw-cap-chord-replacement",
+      "title": "When a cap can be replaced by its chord",
+      "chapter_id": "04-mixed-volumes",
+      "order": 6,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "mixed-area",
+        "normal-cones"
+      ],
+      "statement_md": "Let $L$ be a planar convex body whose boundary contains a segment $I$ of length $\\ell$ with outward normal $n$. Let $K$ be another convex body. Assume there is $x\\in K$ such that, at almost every point of $\\partial L\\setminus I$, the outward normal belongs to the normal cone $N_K(x)=\\{u:u\\cdot(y-x)\\leq0\\text{ for every }y\\in K\\}$ of $K$ at $x$. Prove $A(K,L)=A(K,I)$. You may use $2A(K,L)=\\int h_K\\,dS_L$ and $\\int u\\,dS_L(u)=0$.",
+      "hint_md": "Translate the common supporting point to the origin. All contributions off the chord disappear.",
+      "prerequisites": [
+        "cw-segment-mixed-area"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Lemma 1(b), p. 6; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-mixed-area-complement",
+      "title": "Area and reflected mixed area add to a constant",
+      "chapter_id": "04-mixed-volumes",
+      "order": 7,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "mixed-area",
+        "optimization"
+      ],
+      "statement_md": "For a planar width-$w$ body prove $A(K)+A(K,-K)=\\pi w^2/2$. Compute $A(K,-K)$ for the disk and for the Reuleaux triangle. Explain why minimizing area is equivalent to maximizing reflected mixed area.",
+      "hint_md": "Expand the area of the difference body and use $A(-K)=A(K)$.",
+      "prerequisites": [
+        "cw-difference-body",
+        "cw-triangle-measures"
+      ],
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Chapter 4, item 2",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "equations (2)–(3), p. 3; preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-triangle-hexagon-plateau",
+      "title": "The same reflected mixed area from triangle to hexagon",
+      "chapter_id": "04-mixed-volumes",
+      "order": 8,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "mixed-area",
+        "equality",
+        "polygons"
+      ],
+      "statement_md": "Let $T$ be a centered equilateral triangle of side $w$, and set $H=\\operatorname{conv}(T\\cup(-T))$. For every convex $K$ with $T\\subset K\\subset H$, prove\n$$A(K,-K)=\\frac{\\sqrt3}{2}w^2.$$\nExplain why this gives strict inclusions without a strict mixed-area inequality.",
+      "hint_md": "Compute the difference body of the triangle and use monotonicity at both ends of the inclusion interval.",
+      "prerequisites": [
+        "cw-mixed-area-monotonicity"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§2.1–2.2, pp. 3–4, Figures 1–2; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "mixed-skeleton-tangents",
+          "path": "figures/mixed-skeleton-tangents.svg",
+          "caption_md": "The skeleton S lies inside P, which lies inside the endpoint-tangent polygon C. Every convex K between S and C has the same reflected mixed area. Both panels have width-one Reuleaux polygons.",
+          "alt": "Triangle and irregular Reuleaux pentagon, each overlaid with its inner skeleton and outer tangent polygon."
+        }
+      ]
+    },
+    {
+      "id": "cw-reuleaux-skeleton-plateau",
+      "title": "The skeleton and tangent polygon have the same mixed area",
+      "chapter_id": "04-mixed-volumes",
+      "order": 9,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "mixed-area",
+        "reuleaux-polygons",
+        "normal-cones"
+      ],
+      "statement_md": "Let $P$ be a nondegenerate planar Reuleaux polygon of width $w$: its boundary consists of minor radius-$w$ arcs centered at its vertices, with no redundant vertices. Let $S$ be the convex hull of the vertices. Let $C$ be the intersection of the supporting half-planes obtained from the two endpoint tangents of every arc. Prove that every convex $K$ with $S\\subset K\\subset C$ satisfies\n$$A(K,-K)=A(S,-S)=A(P,-P)=A(C,-C).$$\nUse the polygon edge formula and the fact that the normal interval of each arc is opposite to the normal cone at its center vertex.",
+      "hint_md": "At which directions do the support functions of $S$ and $C$ agree? Only finitely many directions enter the polygon mixed-area formula.",
+      "prerequisites": [
+        "cw-polygon-mixed-edge-sum",
+        "cw-mixed-area-monotonicity"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 2, pp. 4–5; alternative edge-measure proof; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "mixed-skeleton-tangents",
+          "path": "figures/mixed-skeleton-tangents.svg",
+          "caption_md": "The skeleton S lies inside P, which lies inside the endpoint-tangent polygon C. Every convex K between S and C has the same reflected mixed area. Both panels have width-one Reuleaux polygons.",
+          "alt": "Triangle and irregular Reuleaux pentagon, each overlaid with its inner skeleton and outer tangent polygon."
+        }
+      ]
+    },
+    {
+      "id": "cw-skeleton-difference-area",
+      "title": "The area of a skeleton’s difference body is a sine sum",
+      "chapter_id": "04-mixed-volumes",
+      "order": 10,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "mixed-area",
+        "reuleaux-polygons",
+        "area"
+      ],
+      "statement_md": "Let $P$ be a width-$w$ Reuleaux polygon with arc angles $\\theta_1,\\ldots,\\theta_n$ and skeleton $S$. Prove\n$$A(S+(-S))=w^2\\sum_{i=1}^n\\sin\\theta_i.$$\nYou may use $\\sum_i\\theta_i=\\pi$ and $A(S,-S)=A(P,-P)$.",
+      "hint_md": "Remove the circular caps from $P$, and compare the two difference-body area expansions.",
+      "prerequisites": [
+        "cw-reuleaux-skeleton-plateau"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 4, second proof, p. 7; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "mixed-skeleton-tangents",
+          "path": "figures/mixed-skeleton-tangents.svg",
+          "caption_md": "The skeleton S lies inside P, which lies inside the endpoint-tangent polygon C. Every convex K between S and C has the same reflected mixed area. Both panels have width-one Reuleaux polygons.",
+          "alt": "Triangle and irregular Reuleaux pentagon, each overlaid with its inner skeleton and outer tangent polygon."
+        }
+      ]
+    },
+    {
+      "id": "cw-skeleton-area-extrema",
+      "title": "Sharp area bounds for Reuleaux skeletons",
+      "chapter_id": "04-mixed-volumes",
+      "order": 11,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "mixed-area",
+        "reuleaux-polygons",
+        "inequalities"
+      ],
+      "statement_md": "For the skeleton $S$ of any width-$w$ Reuleaux polygon, show\n$$\\frac{\\sqrt3}{4}w^2\\leq A(S)<\\frac{\\pi}{4}w^2.$$\nShow that the lower bound is attained only by the equilateral-triangle skeleton, and that the upper bound is a supremum approached by regular odd polygons. You may use the planar Rogers–Shephard inequality $A(S+(-S))\\leq6A(S)$ and the arc constraints $0<\\theta_i\\leq\\pi/3$, $\\sum_i\\theta_i=\\pi$.",
+      "hint_md": "On $[0,\\pi/3]$, bound the sine from below by its endpoint chord. For the upper bound, put the skeleton inside its Reuleaux polygon.",
+      "prerequisites": [
+        "cw-skeleton-difference-area",
+        "cw-regular-reuleaux",
+        "cw-disk-maximizes-area"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 4, pp. 7–8; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "mixed-skeleton-tangents",
+          "path": "figures/mixed-skeleton-tangents.svg",
+          "caption_md": "The skeleton S lies inside P, which lies inside the endpoint-tangent polygon C. Every convex K between S and C has the same reflected mixed area. Both panels have width-one Reuleaux polygons.",
+          "alt": "Triangle and irregular Reuleaux pentagon, each overlaid with its inner skeleton and outer tangent polygon."
+        }
+      ]
+    },
+    {
+      "id": "cw-steiner-parallel",
+      "title": "Outer parallel bodies and normalization",
+      "chapter_id": "04-mixed-volumes",
+      "order": 12,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "parallel-bodies",
+        "minkowski-sums"
+      ],
+      "statement_md": "Using planar Steiner’s formula, prove that $K+tB$ has width $w+2t$, perimeter $\\pi(w+2t)$, and area $A(K)+\\pi wt+\\pi t^2$ when $K$ has width $w$. Show that the normalized body $(w/(w+2t))(K+tB)$ approaches a radius-$w/2$ disk as $t\\to\\infty$.",
+      "hint_md": "Adding a disk adds a constant to the support function. Examine the normalized support function as $t$ becomes large.",
+      "prerequisites": [
+        "cw-hausdorff-support",
+        "cw-barbier"
+      ],
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§4.2, Steiner formula",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "outer-parallel",
+          "path": "figures/outer-parallel.svg",
+          "caption_md": "Adding a radius-0.15 disk adds 0.15 to the support function and 0.30 to the width.",
+          "alt": "Nested smooth constant-width curves representing a body and its outer parallel body."
+        }
+      ]
+    },
+    {
+      "id": "cw-convex-hull-mixed-identity",
+      "title": "A convex-hull identity from disjoint support differences",
+      "chapter_id": "04-mixed-volumes",
+      "order": 13,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "mixed-area",
+        "convex-hulls",
+        "support-functions"
+      ],
+      "statement_md": "Let $K,L$ be planar convex bodies and $H=\\operatorname{conv}(K\\cup L)$. Prove\n$$A(H)-A(H,K)-A(H,L)+A(K,L)=0.$$\nYou may use the mixed-area formula $\\mathcal B(f,g)=\\frac12\\int_0^{2\\pi}(fg-f'g')\\,d\\theta$ for Lipschitz support functions, extended bilinearly to their differences. Derivatives are taken almost everywhere.",
+      "hint_md": "The functions $h_H-h_K$ and $h_H-h_L$ are nonnegative and cannot both be positive at the same angle.",
+      "prerequisites": [
+        "cw-mixed-area-polarization"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§3, convex-hull formula preceding equation (7), p. 8; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "symmetric-hull-annulus",
+          "path": "figures/symmetric-hull-annulus.svg",
+          "caption_md": "The hull H is a regular hexagon between concentric circles of radii 1/2 and 1/√3. The inner disk belongs to the hull, not necessarily to either Reuleaux triangle.",
+          "alt": "Two reflected Reuleaux triangles inside their common hexagonal convex hull, with inner and outer concentric circles."
+        }
+      ]
+    },
+    {
+      "id": "cw-planar-hull-objective",
+      "title": "Area minimization becomes perimeter minus area",
+      "chapter_id": "04-mixed-volumes",
+      "order": 14,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "mixed-area",
+        "optimization",
+        "convex-hulls"
+      ],
+      "statement_md": "For a planar width-$w$ body $K$, put $H=\\operatorname{conv}(K\\cup(-K))$. Prove\n$$A(K,-K)=\\frac w2P(H)-A(H),\\qquad\nA(K)=\\frac{\\pi w^2}{2}-\\frac w2P(H)+A(H).$$\nExplain why minimizing $A(K)$ is equivalent to maximizing the first right-hand side over hulls arising from width-$w$ bodies. Show that translating $K$ before taking its reflected hull changes neither objective value, although it can change the hull.",
+      "hint_md": "Apply the hull identity to $K,-K$ and replace their Minkowski sum by $wB$.",
+      "prerequisites": [
+        "cw-convex-hull-mixed-identity",
+        "cw-mixed-area-complement"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equation (7) and Theorem 7, pp. 8–9; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "symmetric-hull-annulus",
+          "path": "figures/symmetric-hull-annulus.svg",
+          "caption_md": "The hull H is a regular hexagon between concentric circles of radii 1/2 and 1/√3. The inner disk belongs to the hull, not necessarily to either Reuleaux triangle.",
+          "alt": "Two reflected Reuleaux triangles inside their common hexagonal convex hull, with inner and outer concentric circles."
+        }
+      ]
+    },
+    {
+      "id": "cw-symmetric-hull-annulus",
+      "title": "A symmetric hull trapped between two concentric balls",
+      "chapter_id": "04-mixed-volumes",
+      "order": 15,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "convex-hulls",
+        "inradius",
+        "circumradius"
+      ],
+      "statement_md": "Let $K\\subset\\mathbb R^d$ have width $w$, place a circumcenter at the origin, and write $R$ for its circumradius. For $H=\\operatorname{conv}(K\\cup(-K))$, prove\n$$h_H(u)=\\frac w2+\\left|h_K(u)-\\frac w2\\right|,\\qquad\n\\frac w2B\\subset H\\subset RB.$$\nDeduce $H\\subset(w/\\sqrt3)B$ in dimension two and $H\\subset w\\sqrt{3/8}\\,B$ in dimension three. You may use Jung’s theorem $R\\leq w\\sqrt{d/(2d+2)}$.",
+      "hint_md": "The support of a convex hull is a maximum; opposite supports of a constant-width body sum to its width.",
+      "prerequisites": [
+        "cw-binormals",
+        "cw-support-calculus"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§3, annulus observations, p. 9; §4 after Theorem 10, p. 12; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "symmetric-hull-annulus",
+          "path": "figures/symmetric-hull-annulus.svg",
+          "caption_md": "The hull H is a regular hexagon between concentric circles of radii 1/2 and 1/√3. The inner disk belongs to the hull, not necessarily to either Reuleaux triangle.",
+          "alt": "Two reflected Reuleaux triangles inside their common hexagonal convex hull, with inner and outer concentric circles."
+        }
+      ]
+    },
+    {
+      "id": "cw-annulus-both-constraints",
+      "title": "Why both annulus constraints matter",
+      "chapter_id": "04-mixed-volumes",
+      "order": 16,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "optimization",
+        "counterexamples",
+        "inclusion"
+      ],
+      "statement_md": "For planar convex $H$, set $F(H)=P(H)/2-A(H)$. A regular hexagon between the concentric circles of radii $1/2$ and $1/\\sqrt3$ has $F(H)=\\sqrt3/2$. Show that deleting either constraint permits a strictly larger value: use a square if only $\\tfrac12B\\subset H$ is retained, and thin rectangles if only $H\\subset\\tfrac1{\\sqrt3}B$ is retained.",
+      "hint_md": "Use the unit square. For the rectangles, keep every vertex on the outer circle while shrinking one side.",
+      "prerequisites": [
+        "cw-planar-hull-objective"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Remark 8, p. 9; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "symmetric-hull-annulus",
+          "path": "figures/symmetric-hull-annulus.svg",
+          "caption_md": "The hull H is a regular hexagon between concentric circles of radii 1/2 and 1/√3. The inner disk belongs to the hull, not necessarily to either Reuleaux triangle.",
+          "alt": "Two reflected Reuleaux triangles inside their common hexagonal convex hull, with inner and outer concentric circles."
+        }
+      ]
+    },
+    {
+      "id": "cw-symmetric-cover",
+      "title": "A bound for centrally symmetric universal covers",
+      "chapter_id": "04-mixed-volumes",
+      "order": 17,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "universal-covers",
+        "mixed-area"
+      ],
+      "statement_md": "A centrally symmetric convex planar set $C$ contains a congruent copy of every width-one body (the copy may depend on the body). Prove $A(C)\\geq\\sqrt3/2$ using mixed area. Why does this argument require central symmetry?",
+      "hint_md": "It is enough to put one Reuleaux triangle in the container. Central symmetry then puts its reflection there as well.",
+      "prerequisites": [
+        "cw-mixed-area-complement",
+        "cw-pal-hexagon"
+      ],
+      "sources": [
+        {
+          "source_id": "blog-cover",
+          "locator": "2020 post, central-symmetry hypothesis retained throughout",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 6, p. 8; preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "pal-hexagon",
+          "path": "figures/pal-hexagon.svg",
+          "caption_md": "Six equally spaced supporting lines can be chosen at equal distance from a common center.",
+          "alt": "A width-one Reuleaux triangle inside its circumscribed regular hexagon."
+        }
+      ]
+    },
+    {
+      "id": "cw-blaschke-volume",
+      "title": "Blaschke’s relation in three dimensions",
+      "chapter_id": "04-mixed-volumes",
+      "order": 18,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "mixed-volumes",
+        "three-dimensional"
+      ],
+      "statement_md": "Let $K\\subset\\mathbb R^3$ have width $w$, volume $V$, and surface area $S$. Using symmetric multilinear mixed volume and $S=3V(K,K,B)$, prove $V=wS/2-\\pi w^3/3$.",
+      "hint_md": "Introduce $a=V(K,K,-K)$. Expanding the volume of the difference body and expressing $V(K,K,wB)$ give two linear equations in $V$ and $a$.",
+      "prerequisites": [
+        "cw-difference-body"
+      ],
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§12.1, Blaschke formula; Volume_Meissner.tex introduction",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§4, pp. 10–11; preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "meissner-two-types",
+          "path": "figures/meissner-two-types.png",
+          "caption_md": "Spherical patches are blue, wedges pale green, and spindle patches orange. Both choices have the same exact area and volume. Triangulated illustrations.",
+          "alt": "Side-by-side rendered Meissner tetrahedra with the star and face choices of smoothed edges."
+        }
+      ]
+    },
+    {
+      "id": "cw-spatial-mixed-objectives",
+      "title": "Three equivalent objectives in dimension three",
+      "chapter_id": "04-mixed-volumes",
+      "order": 19,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "mixed-volumes",
+        "three-dimensional",
+        "optimization"
+      ],
+      "statement_md": "Let $K\\subset\\mathbb R^3$ have width $w$, and write $v=V(K)$, $s=\\operatorname{area}(\\partial K)$, $a=V(K,K,-K)$ and $b=V(B,K,-K)$, with $B$ the unit ball. Prove\n$$2v+6a=\\frac{4\\pi w^3}{3},\\qquad \\frac s3+b=\\frac{2\\pi w^2}{3}.$$\nUsing Blaschke’s relation, explain why minimizing volume or surface area is equivalent to maximizing either $a$ or $b$ at fixed width.",
+      "hint_md": "Expand $V(K+(-K))$ and $V(B,K+(-K),K+(-K))$, using reflection invariance.",
+      "prerequisites": [
+        "cw-blaschke-volume"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equations (11)–(12), p. 11; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-projected-hull-identity",
+      "title": "Lift the hull identity to three dimensions by projection",
+      "chapter_id": "04-mixed-volumes",
+      "order": 20,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "mixed-volumes",
+        "projections",
+        "convex-hulls"
+      ],
+      "statement_md": "For convex bodies $K,L\\subset\\mathbb R^3$, set $H=\\operatorname{conv}(K\\cup L)$. Prove\n$$V(B,H,H)-V(B,H,K)-V(B,H,L)+V(B,K,L)=0.$$\nYou may use Cauchy’s projection formula $\\operatorname{area}(\\partial Q)=4\\langle A(Q|u^\\perp)\\rangle$, where the brackets denote the uniform average over $u\\in\\mathbb S^2$, and $3V(B,Q,Q)=\\operatorname{area}(\\partial Q)$.",
+      "hint_md": "Polarize Cauchy’s formula first. Orthogonal projection commutes with convex hull and Minkowski sum.",
+      "prerequisites": [
+        "cw-convex-hull-mixed-identity"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equation (14), p. 12; projection-based proof of the needed special case; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-spatial-hull-objective",
+      "title": "Mean width minus surface area",
+      "chapter_id": "04-mixed-volumes",
+      "order": 21,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "mixed-volumes",
+        "mean-width",
+        "optimization"
+      ],
+      "statement_md": "Let $K\\subset\\mathbb R^3$ have width $w$ and let $H=\\operatorname{conv}(K\\cup(-K))$. Define the mean width by $M(H)=(4\\pi)^{-1}\\int_{\\mathbb S^2}[h_H(u)+h_H(-u)]\\,d\\sigma(u)$. Prove\n$$3V(B,K,-K)=2\\pi wM(H)-\\operatorname{area}(\\partial H).$$\nYou may use $3V(B,B,H)=\\int_{\\mathbb S^2}h_H\\,d\\sigma$. Deduce the reformulation of constant-width volume minimization as a maximization over these hulls.",
+      "hint_md": "Use the projected hull identity, then add the terms containing $K$ and $-K$.",
+      "prerequisites": [
+        "cw-projected-hull-identity",
+        "cw-spatial-mixed-objectives"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equations (13)–(15) and Theorem 10, p. 12; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-annulus-inner-contact",
+      "title": "A maximizer must touch the inner sphere",
+      "chapter_id": "04-mixed-volumes",
+      "order": 22,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "mixed-volumes",
+        "optimization",
+        "inradius"
+      ],
+      "statement_md": "Fix $R>w/2$. Among origin-symmetric convex bodies $H$ satisfying $(w/2)B\\subset H\\subset RB$, consider\n$$G(H)=wV(B,B,H)-V(B,H,H).$$\nProve that every maximizer has centered inradius exactly $w/2$. Here the centered inradius is $\\min_{u\\in\\mathbb S^2}h_H(u)$. Use homogeneity and mixed-volume monotonicity.",
+      "hint_md": "If the inner sphere is not touched, contract the body slightly and check the sign of the derivative.",
+      "prerequisites": [
+        "cw-spatial-hull-objective"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§4, scaling argument after equation (16), p. 12 (strictness made explicit); inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-spatial-cover-obstruction",
+      "title": "Why a spatial universal cover gives no positive volume bound",
+      "chapter_id": "04-mixed-volumes",
+      "order": 23,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "mixed-volumes",
+        "universal-covers",
+        "three-dimensional"
+      ],
+      "statement_md": "Assume every width-$w$ body in $\\mathbb R^3$ can be placed in an origin-symmetric convex body $D$ of volume $w^3/\\sqrt2$ (the rhombic dodecahedral cover has this volume). Use mixed-volume monotonicity to derive\n$$V(K)\\geq\\left(\\frac{2\\pi}{3}-\\frac3{\\sqrt2}\\right)w^3.$$\nDetermine the sign and explain what this says about copying the planar covering proof.",
+      "hint_md": "Bound all three arguments of $V(K,K,-K)$ by the same symmetric container.",
+      "prerequisites": [
+        "cw-spatial-mixed-objectives"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§4, rhombic-dodecahedron calculation, p. 11; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-spatial-inradius-volume",
+      "title": "A volume lower bound from the inradius",
+      "chapter_id": "04-mixed-volumes",
+      "order": 24,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "graduate",
+      "tags": [
+        "mixed-volumes",
+        "inradius",
+        "volume"
+      ],
+      "statement_md": "Let $K\\subset\\mathbb R^3$ have width $w$ and inradius $r$. Prove\n$$V(K)\\geq\\frac{2\\pi r w^3}{3(3w-2r)}.$$\nYou may use $3V(K)=\\int_{\\partial K}h_K(n)\\,dS$ after translating an incenter to zero, and Blaschke’s relation. Using $r\\geq w(1-\\sqrt{3/8})$, deduce $V(K)\\geq\\frac\\pi3(3\\sqrt6-7)w^3$.",
+      "hint_md": "Every supporting plane is at distance at least $r$ from the incenter. Eliminate surface area from the resulting inequality.",
+      "prerequisites": [
+        "cw-blaschke-volume",
+        "cw-concentric-balls"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Equation (10), p. 10; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-minimizer-inradius-threshold",
+      "title": "A Meissner competitor restricts a minimizer’s inradius",
+      "chapter_id": "04-mixed-volumes",
+      "order": 25,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "inradius",
+        "optimization",
+        "meissner"
+      ],
+      "statement_md": "For width one, let $v_M=\\pi(\\tfrac23-\\tfrac{\\sqrt3}{4}\\arccos\\tfrac13)$ be the volume of a Meissner tetrahedron. Show that any minimum-volume constant-width body must satisfy\n$$1-\\sqrt{3/8}\\leq r\\leq r_M:=\\frac{9v_M}{2\\pi+6v_M}.$$\nCompute $r_M$ approximately. Explain why the inequalities supplied here exclude $r>r_M$, but by themselves do not exclude $r=r_M$.",
+      "hint_md": "A minimizer cannot have volume larger than an admissible Meissner competitor. Solve the inradius lower-bound inequality for $r$.",
+      "prerequisites": [
+        "cw-spatial-inradius-volume",
+        "cw-meissner-tetra-volume"
+      ],
+      "sources": [
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "Theorem 9 and preceding comparison, pp. 10–11; inspected preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    }
+  ]
+}

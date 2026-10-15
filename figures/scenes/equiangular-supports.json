@@ -1,0 +1,17 @@
+{
+  "renderer": "scripts/make_blaschke_figures.py",
+  "normal_counts": [
+    6,
+    12,
+    24
+  ],
+  "orientation": 0.13,
+  "caption": "The same Reuleaux triangle inside intersections of 6, 12 and 24 equally spaced supporting half-planes. At a corner several successive support lines can meet at one point, producing zero-length sides in the indexed polygon.",
+  "alt": "Three increasingly fine circumscribed equiangular supporting polygons around one Reuleaux triangle.",
+  "problems": [
+    "cw-equiangular-support-perimeter",
+    "cw-equiangular-area-quadratic",
+    "cw-equiangular-mesh-error",
+    "cw-reuleaux-approximation-support-splice"
+  ]
+}

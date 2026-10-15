@@ -1,0 +1,12 @@
+{
+  "renderer": "scripts/make_review_figures.py",
+  "n": 5,
+  "caption": "A piecewise analytic support function for a width-one regular Reuleaux pentagon. Equal intervals alternate between curvature radius zero and one: zero intervals map to single vertices, while unit intervals trace unit-circle arcs. Curvature values at the finitely many jumps are immaterial.",
+  "alt": "Support and stepwise curvature-radius graphs with equal switching intervals beside the corresponding Reuleaux pentagon, whose vertices are orange and arcs blue.",
+  "problems": [
+    "cw-curvature-bang-bang",
+    "cw-variational-switching-rule",
+    "cw-switching-ode-regularity",
+    "cw-blaschke-lebesgue-variational"
+  ]
+}

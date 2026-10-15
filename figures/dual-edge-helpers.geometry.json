@@ -1,0 +1,12 @@
+{
+  "scene_title": "Helper midpoints for a dual edge pair",
+  "diagnostics": [
+    {
+      "u": 0.35,
+      "v": 0.5,
+      "h": 0.792148975887743,
+      "cross_distance": 1.0
+    }
+  ],
+  "rendering": "Floating-point geometry; samples or triangular facets used only for display."
+}

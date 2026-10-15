@@ -1,0 +1,50 @@
+{
+  "checked_on": "2026-10-15",
+  "queries": [
+    "Beniamin Bogosel blog constant width Cheeger constant",
+    "Blaschke Lebesgue Meissner conjecture 2026 open problem",
+    "site:mathproblems123.wordpress.com constant width",
+    "Beniamin Bogosel volume computation Meissner polyhedra helper points surface area",
+    "constant width first eigenvalue torsional rigidity Reuleaux triangle conjecture 2025 2026",
+    "Reuleaux triangle first eigenvalue 2026",
+    "Reuleaux triangle eigenvalue maximizes proof",
+    "packing three constant width one bodies unit disk Reuleaux triangle 120 degrees",
+    "\"Reuleaux\" \"three\" \"unit disk\" packing",
+    "\"constant width\" \"four\" \"packing\" \"circle\""
+  ],
+  "findings": [
+    {
+      "url": "https://arxiv.org/abs/2606.01754",
+      "use": "Current primary preprint explicitly says the 3D Blaschke–Lebesgue problem remains open; claimed lower bound recorded with preprint qualification."
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.19747",
+      "use": "Dangling-point deletion is a reported theorem, not an open question. Broader strong-criticality remains a separate local question."
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.07708",
+      "use": "Distinguishes fixed minimal width from constant width; numerical spectral motivation is not a proof."
+    },
+    {
+      "url": "https://arxiv.org/abs/2011.07244",
+      "use": "Explicit p-Laplacian conjecture; use p=2 for an accessible first-eigenvalue question."
+    },
+    {
+      "url": "https://aif.centre-mersenne.org/item/10.5802/aif.3728.pdf",
+      "use": "Cross-check of Cheeger direction and spectral discussion against the author's local manuscript."
+    },
+    {
+      "url": "https://doi.org/10.1007/s00454-024-00688-0",
+      "use": "Publication metadata and formula convention cross-check for the local volume manuscript."
+    },
+    {
+      "url": "https://doi.org/10.1007/s10711-024-00933-z",
+      "use": "Primary-source cross-check of exact Meissner tetrahedron volume; density is a further reading lead."
+    },
+    {
+      "url": "https://arxiv.org/abs/1504.06733",
+      "use": "Search lead concerns plane-wide packing, not the finite unit-disk problem. No theorem from it was imported. The new finite-packing exercises have direct proofs; current exact four-body radius and literature priority were not established."
+    }
+  ],
+  "qualification": "Targeted search and selected primary-source inspection. Not exhaustive scraping of the web or all books. No inferred theorem solely from a numerical experiment or secondary AI summary."
+}

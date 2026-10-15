@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "05-meissner-polyhedra",
+  "solutions": [
+    {
+      "problem_id": "cw-reuleaux-tetra-not-width",
+      "kind": "proof",
+      "body_md": "Write $C$ for the intersection and put $b=\\sqrt3/2-a$. The points $\\pm(b,0,0)$ lie in all four balls: the largest squared distance to a vertex is $(b+a)^2+2a^2=3/4+1/4=1$. Their distance is $2b=\\sqrt3-1/\\sqrt2>1$.\n\nWe also verify the claimed width, rather than relying on the picture. Fix a tetrahedron vertex $v$ and let $u=v/|v|$ point from its opposite face toward $v$. For every other vertex $z$,\n$$u\\cdot(v-z)=\\sqrt{2/3}.$$\nThe ball centered at $v$ gives $u\\cdot x\\geq u\\cdot v-1$ for $x\\in C$. This lower support value is attained at $v-u$, since $|v-u-v|=1$ and\n$$|v-u-z|^2=2-2\\sqrt{2/3}<1.$$\nFor the upper support value, write $y=x-v$. The other three ball inequalities give\n$$|y|^2+2y\\cdot(v-z)\\leq0.$$\nSum over $z\\ne v$ and use $\\sum_{z\\ne v}(v-z)=4v$. It follows that $3|y|^2+8y\\cdot v\\leq0$, hence $u\\cdot x\\leq u\\cdot v$. The vertex $v$ itself belongs to $C$, so both bounds are attained and this width is exactly one. A constant-width-one body has diameter one; the exhibited longer pair rules out constant width.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§8.2, Reuleaux tetrahedron; coordinate exercise",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-dual-edge-coordinates",
+      "kind": "proof",
+      "body_md": "Place the midpoint of $ab$ at the origin and its line on the vertical axis. Equidistance from $a,b$ puts $c,d$ in $z=0$; distance one puts them on the circle of radius $R=\\sqrt{1-u^2}$. The midpoint of their chord is perpendicular to that chord and has distance $\\sqrt{R^2-v^2}$ from the origin. Rotate around the vertical axis so the chord is horizontal and its midpoint lies on positive $y$. This gives the claimed coordinates. In particular the edge directions are perpendicular, and the three lengths $u,v,h$ satisfy a Pythagorean identity.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "intermediary",
+          "locator": "Section Dual spindle–wedge cells, opening coordinate construction",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-dual-dihedral",
+      "kind": "proof",
+      "body_md": "Intersect the half-planes with the plane through the midpoint of $ab$ perpendicular to $ab$. The resulting two rays go toward $c,d$, have common radius $\\sqrt{1-u^2}$, and chord length $2v$. Bisecting the isosceles triangle gives $\\sin(\\phi_{ab}/2)=v/\\sqrt{1-u^2}$. Exchanging the pairs gives $\\phi_{cd}=2\\arcsin(u/\\sqrt{1-v^2})$. Thus $\\phi_{cd}=2\\arcsin(\\sin(s/2)/\\cos(t/2))$. These are the interior opening angles, not their supplements.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "§2, dual-edge geometry; equations for dihedral angles",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-spindle-area",
+      "kind": "proof",
+      "body_md": "Set $s=\\sin(\\theta/2)$ and $c=\\cos(\\theta/2)$. The profile $y(x)=\\sqrt{1-x^2}-c$ is nonnegative on $[-s,s]$ and vanishes only at its endpoints. For $-s<x<s$ and $0<v<\\phi$, parametrize the patch by\n$$X(x,v)=(x,y(x)\\cos v,y(x)\\sin v).$$\nThe cross product gives $|X_x\\times X_v|=y\\sqrt{1+y'^2}$. As $y'=-x/\\sqrt{1-x^2}$,\n$$y\\sqrt{1+y'^2}=1-\\frac{c}{\\sqrt{1-x^2}}.$$\nTherefore\n$$S=\\phi\\left[x-c\\arcsin x\\right]_{-s}^{s}\n=2\\phi\\left[\\sin(\\theta/2)-(\\theta/2)\\cos(\\theta/2)\\right].$$\nHere $\\arcsin(s)=\\theta/2$ uses the stated angular range. The endpoints and, for $\\phi=2\\pi$, the joined seam have zero area. The restriction $\\phi\\leq2\\pi$ avoids covering the same surface repeatedly; beyond it the integral counts multiplicity. Only the curved patch is included, not planar faces closing a sector.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "§3.2, Proposition labelled prop:spindle-area",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-spherical-helper",
+      "kind": "proof",
+      "body_md": "Choose the cyclic orientation so that the polygon is positively oriented as seen from outside the sphere, and put $v_{m+1}=v_1$. Geodesic convexity and the open-hemisphere hypothesis ensure that every minor arc from $q$ to a boundary vertex stays in the polygon. These arcs partition it into triangles with disjoint interiors. Consequently\n$$A=2\\sum_{i=1}^{m}\\operatorname{atan2}\\left(\\det(q,v_i,v_{i+1}),\\,1+q\\cdot v_i+v_i\\cdot v_{i+1}+v_{i+1}\\cdot q\\right).$$\nWe use the convention $\\operatorname{atan2}(y,x)$: its first argument is the signed numerator. For positively oriented nondegenerate triangles the determinant is positive; the returned angle lies in $(0,\\pi)$, so doubling gives the correct spherical area in $(0,2\\pi)$ even if the denominator is negative. Replacing this expression by an ordinary arctangent of a quotient can lose the branch. Degenerate triangles contribute zero by continuity.\n\nAny other interior helper point yields another partition of the same region, proving independence of $q$. On the unit sphere centered at $p$, replace a vertex $x_i$ by $v_i=x_i-p$ and translate the helper point in the same way. On a sphere of radius $r$, normalize by $r$ and multiply the resulting solid angle by $r^2$. This formula applies directly to geodesic polygons. Ball-polyhedron faces bounded by small circles require additional spherical-segment corrections.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Auxiliary-point triangulation of the geodesic face decomposition in Volume_Meissner.tex §3",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-meissner-tetra-volume",
+      "kind": "proof",
+      "body_md": "For one pair, $f(\\pi/3,\\pi/3)=(\\pi\\sqrt3/6)\\arcsin(1/\\sqrt3)$. If $\\eta=\\arccos(1/3)$, the half-angle formula gives $\\arcsin(1/\\sqrt3)=\\eta/2$. Hence $S=2\\pi-(\\pi\\sqrt3/2)\\eta$ and the unit-width form of Blaschke’s relation, $V=S/2-\\pi/3$, gives $V=2\\pi/3-(\\pi\\sqrt3/4)\\eta\\approx0.419860$. Both smoothing choices give the same parameters and therefore the same area and volume. At width $w$, multiply area by $w^2$ and volume by $w^3$. The supplied general surface formula is a theorem used here, not established by this substitution.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "§3.3, Theorem surface-Meissner and following corollary",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-meissner-summand",
+      "kind": "proof",
+      "body_md": "Let $D=1-\\sin^2(s/2)-\\sin^2(t/2)>0$. Differentiating gives $f_s=(t/2)\\cos(s/2)\\cos(t/2)/\\sqrt D$. Its value at $s=0$ is $t/2$. A second derivative is $f_{ss}=(t/4)\\cos(t/2)\\sin(s/2)\\sin^2(t/2)/D^{3/2}\\geq0$. Therefore $f_s\\geq t/2$, yielding the lower bound by integration. Convexity and $f(0,t)=0$ imply $f(a,t)\\leq a f(a+b,t)/(a+b)$ and the analogous inequality for $b$; add them. The zero case is immediate. This argument concerns splitting one angular variable with the other fixed, not arbitrary geometric refinements.\n\nFor completeness, $D\\geq1/2$ on the whole square, so these differentiations introduce no singularity. If $s,t>0$, then $f_{ss}>0$ for positive $s$ and $f(s,t)>st/2$; equality in this lower bound occurs precisely when $s=0$ or $t=0$. The splitting inequality is strict when $a,b,t>0$, and equality holds when one of them is zero. Thus strict convexity is available away from the degenerate cases.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "Appendix A, first-variable derivatives; superadditivity derived here",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-extremal-bookkeeping",
+      "kind": "proof",
+      "body_md": "Subtract the two extremal pair counts to obtain $2k$. In the degree sum over $Z$, pairs from $Z$ to $Y$ are counted once and the $q$ internal pairs twice, giving $2k+q$. If all degrees are at least three, $3k\\leq2k+q$, so $k\\leq q\\leq k(k-1)/2$ and $k\\geq3$. At $k=3$ equality holds everywhere: the three added points form a unit equilateral triangle, each has degree three in $X$, and each has exactly one unit-distance neighbor in $Y$. The neighbors in $Y$ need not be distinct; the conclusion specifies exactly one neighbor for each added point, not a bijection to three old points.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "intermediary",
+          "locator": "Proposition prop:edge-count, exact bookkeeping",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-dangling-delete",
+      "kind": "proof",
+      "body_md": "With $m=|X|$, deletion leaves $2m-2-2=2(m-1)-2$ unit-distance pairs. Distances cannot increase, and unit pairs remain, so diameter stays one. Thus the subset is extremal. However changing generators also changes dual-edge pairing and available smoothing choices. A count of distances says nothing about their lengths or the area summands; the separate dangling-point comparison theorem is needed to infer monotonicity of optimal area or volume.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "intermediary",
+          "locator": "§1; compare the 2026 dangling-point paper",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-tetra-smoothings",
+      "kind": "proof",
+      "body_md": "There are $2^3=8$ choices. If some vertex has degree three in the chosen-edge graph, the graph is its star, giving four choices. Otherwise the graph has maximum degree two. Three edges on four vertices then form either a triangle or a three-edge path (a disjoint two-edge path and edge would need five vertices). A three-edge path has its first and last edges disjoint, hence opposite in the tetrahedron, which is forbidden. Thus it is a triangle; there are four faces. Symmetry makes each of the two classes a single type.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; review pass 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "§2, discussion of the two Meissner tetrahedra",
+          "relationship": "adapted"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "03-blaschke-lebesgue",
+  "solutions": [
+    {
+      "problem_id": "cw-disk-maximizes-area",
+      "kind": "proof",
+      "body_md": "Barbier gives $P(K)=\\pi w$. The isoperimetric inequality $4\\pi A\\leq P^2$ yields $A\\leq\\pi w^2/4$, with equality precisely for a disk. The disk of radius $w/2$ attains it.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-12, maximum-area part",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-angle-convexity",
+      "kind": "proof",
+      "body_md": "Here $1/\\sqrt3\\leq q<1$ and $0\\leq\\sin x\\leq1/2$, so $q^2-\\sin^2x\\geq1/12>0$. The principal arcsine is therefore smooth throughout the interval. Differentiation gives\n$$\\alpha_t'(x)=\\frac{\\cos x}{\\sqrt{q^2-\\sin^2x}}-1>0,$$\n$$\\alpha_t''(x)=\\frac{(1-q^2)\\sin x}{(q^2-\\sin^2x)^{3/2}}>0\\quad(x>0).$$\nThe first inequality follows from $\\cos^2x-(q^2-\\sin^2x)=1-q^2>0$, with both square roots positive. Although $\\alpha_t''(0)=0$, its derivative is strictly increasing on the full interval, so the function is strictly convex there.\n\nAlso $\\alpha_t(0)=0$. For $x>0$, both $\\arcsin(\\sin x/q)$ and $2x$ lie in $[0,\\pi/2]$, where sine is increasing. Thus $\\alpha_t(x)\\leq x$ is equivalent to $\\sin x/q\\leq\\sin(2x)$, or $q\\geq1/(2\\cos x)$. This follows from $q\\geq1/\\sqrt3$ and $x\\leq\\pi/6$. The case $x=0$ is immediate. At $t=0$, $q=1$ and $\\arcsin(\\sin x)=x$, so $\\alpha_0$ is identically zero; strict increase and strict convexity no longer hold.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§2.3, Proposition labelled prop:convexity; equivalent arcsine formula derived here",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-convex-budget",
+      "kind": "proof",
+      "body_md": "The chord inequality is $f(x)\\leq(x/a)f(a)$. Sum and use the budget. If $f$ is strictly convex, equality in a chord inequality forces each $x_i\\in\\{0,a\\}$. If it is also increasing, $f(a)>0$, so the budget must be saturated: exactly $m$ terms equal $a$ and the others vanish. This proves the required extremal statement without differentiating a constrained objective.\n\nIf $N<m$, the equality pattern cannot occur. For a merely convex function the endpoint value may be zero and additional equality cases can occur; the stated characterization uses both strict convexity and increase.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, Step III, equation eq:max-sum-f",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-local-perimeter-comparison",
+      "kind": "proof",
+      "body_md": "Total turning gives $\\sum\\beta_i=2\\pi-\\sum\\theta_i\\leq\\pi$. Apply the convex-budget inequality to $f(\\beta)=2\\alpha_t(\\beta/2)$ on $[0,\\pi/3]$ with $m=3$. Thus $\\sum_i2\\alpha_t(\\beta_i/2)\\leq6\\alpha_t(\\pi/6)$. Substituting and using $\\sum\\theta_i\\geq\\pi$ gives $(1-t)[\\pi-6\\alpha_t(\\pi/6)]=P(T_{-t})$. Extending this comparison through changes of active arcs requires the separate disk-polygon construction in the cited paper; it is not implied by this local calculation.\n\nAt $t=0$, use $\\alpha_0=0$ directly: the conclusion is $P(D)=\\sum\\theta_i\\geq\\pi=P(T)$. At the triangle's terminal erosion time, its displayed perimeter expression is zero, interpreted by continuity. No claim that all arcs of an arbitrary disk polygon survive to that time is being made.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, Steps II–III; regular inner-parallel regime",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-perimeter-to-area",
+      "kind": "proof",
+      "body_md": "Set $D(t)=A(K_{-t})-A(T_{-t})$. The derivative formula gives $D'(t)=-P(K_{-t})+P(T_{-t})\\leq0$ almost everywhere. Absolute continuity, rather than just the a.e. derivative inequality, justifies\n$$D(t)=D(r_T)+\\int_t^{r_T}\\bigl[P(K_{-s})-P(T_{-s})\\bigr],ds\\geq D(r_T).$$\nAt $r_T$ the eroded triangle is its incenter, hence has zero area. The inradius hypothesis ensures $K_{-r_T}$ is nonempty, and in any case its area is nonnegative. Therefore $D(r_T)=A(K_{-r_T})\\geq0$, proving the comparison including both endpoints. If the derivative formula is initially used only before the terminal time, take the limit using continuity of the eroded areas. Integrating toward the terminal zero-area set is the essential direction of the argument.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§3, Theorem labelled thm:area-parallel",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-blaschke-lebesgue",
+      "kind": "proof",
+      "body_md": "Translate the center of a circumscribed regular hexagon $H$ to zero. Then $K\\subset H=-H$, hence $-K\\subset H$. Monotonicity gives $A(K,-K)\\leq A(H,-K)\\leq A(H,H)=A(H)$. The hexagon has apothem $w/2$ and side $w/\\sqrt3$, so $A(H)=\\sqrt3w^2/2$. Since $K+(-K)=wB$, the mixed-area identity gives $\\pi w^2=2A(K)+2A(K,-K)\\leq2A(K)+\\sqrt3w^2$. Rearrange. The Reuleaux triangle has exactly this area. This establishes the minimum and an optimizer; uniqueness requires an additional equality argument and is not claimed as proved here.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "blog-bl",
+          "locator": "2013 post; mixed-area argument rewritten",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "bogosel-mixed",
+          "locator": "§2.1, Chakerian proof, p. 3; preprint dated 2 May 2024",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-curvature-moment-constraints",
+      "kind": "proof",
+      "body_md": "Let $\\mu=h''+h$ be the curvature measure of an arbitrary width-one support. The width identity holds in distributions, so $\\mu$ plus its translate by $\\pi$ equals Lebesgue measure $d\\theta$. Both summands are nonnegative; hence $0\\leq\\mu\\leq d\\theta$. Thus $\\mu=\\rho\\,d\\theta$ for a measurable $0\\leq\\rho\\leq1$. Since $h$ is continuous and bounded, $h''=\\rho-h\\in L^\\infty$. Integrating this weak derivative gives a representative of $h'$ that is Lipschitz, and hence $h\\in C^{1,1}$. This supplies the regularity needed when applying the later variational arguments to an arbitrary area minimizer.\n\nNecessity follows by integrating by parts against sine and cosine, and by differentiating the width identity twice. For sufficiency set $h(\\theta)=\\int_0^\\theta\\sin(\\theta-t)\\rho(t)\\,dt$. The two zero moments give $h(2\\pi)=h(0)$ and $h'(2\\pi)=h'(0)$, so periodic extension solves the equation and is $C^{1,1}$. The function $v(\\theta)=h(\\theta)+h(\\theta+\\pi)-1$ solves $v''+v=0$ and is $\\pi$-periodic. A first harmonic is $\\pi$-antiperiodic, so $v=0$. Nonnegative curvature makes $h$ a support function. Solutions differ only by $a\\cos\\theta+b\\sin\\theta$, which translates the body.\n\nFor a variation $g$ of $\\rho$, both zero moments and the box bounds must be checked. Replacing $g$ by $g-a\\cos\\theta-b\\sin\\theta$ changes it even outside its original support. On a region where $\\rho=0$ any negative change is forbidden; where $\\rho=1$ any positive change is forbidden. Orthogonality of these harmonics to an objective's gradient does not make the changed curvature admissible.\n\nGeometrically, $\\gamma=hu+h'u'$ satisfies $\\gamma'=\\rho u'$, so a closed contact curve requires $\\int_0^{2\\pi}\\rho u'=0$. Since $u'=Ju$ for a fixed quarter-turn $J$, these are exactly the same two moment conditions. Antipodal oddness of a perturbation alone does not impose them: $g(\\theta)=\\cos\\theta$ is antipodally odd but has $\\int_0^{2\\pi}g(\\theta)\\cos\\theta\\,d\\theta=\\pi$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3, equation (3.1) and the perturbation preceding Lemma 3.4; admissibility checked explicitly",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-support-area-second-variation",
+      "kind": "proof",
+      "body_md": "Expansion and periodic integration by parts give the identity. Antipodal oddness removes the constant and all even Fourier modes. Parseval therefore gives\n$$\\int(f'^2-f^2)=\\pi\\sum_{m\\geq1,\\ m\\ \\mathrm{odd}}(m^2-1)(a_m^2+b_m^2)\\geq0.$$\nOnly the first harmonics can give equality; these represent translations. Once they are removed the remaining frequencies satisfy $m\\geq3$, proving the stronger inequality. Thus area is strictly concave along every admissible affine support-function segment except a translation segment. In particular, an area minimizer cannot be the midpoint of two nontranslated admissible bodies. This does not say that an arbitrary perturbation is admissible: the curvature bounds must still hold.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§2, area formula; §3 variational framework; Fourier companion",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-curvature-bang-bang",
+      "kind": "proof",
+      "body_md": "Choose $\\varepsilon>0$ so the slack set has positive measure. It is antipodally invariant. Split its intersection with $[0,\\pi)$ into three disjoint positive-measure sets $E_1,E_2,E_3$. The linear map\n$$(c_1,c_2,c_3)\\longmapsto\\sum_{j=1}^3c_j\\int_{E_j}u(\\theta)\\,d\\theta\\in\\mathbb R^2$$\nhas a nonzero kernel vector. Define $g=c_j$ on $E_j$, zero elsewhere in the half-circle, and extend antipodally oddly. Normalize $\\|g\\|_\\infty=1$. Its full-circle first moments vanish. Hence $f''+f=g$ has a periodic antipodally odd solution, which may be translated to remove its first harmonics. For $|t|<\\varepsilon$, $\\rho+tg$ is admissible, giving two width-one supports $h\\pm tf$. Since $g\\ne0$, $f$ is not a first harmonic, and\n$$A(h+tf)+A(h-tf)-2A(h)=t^2\\int(f^2-f'^2)<0.$$\nAt least one competitor has smaller area, a contradiction. A measurable zero-one function can have infinitely many switches, so finiteness and regular spacing need an additional argument.\n\nFor completeness, the slack set is $\\{0<\\rho<1\\}=\\bigcup_{m\\geq3}\\{1/m\\leq\\rho\\leq1-1/m\\}$. Positive measure of the union implies positive measure of one member. Lebesgue measure has no atoms, so its half-circle portion can be split into three positive-measure patches. Disjointness makes a nonzero coefficient vector yield a nonzero function. Outside those patches and their antipodes the curvature is unchanged, which is why saturated zero or one regions remain admissible.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3, variational strategy; moment-preserving three-patch argument developed here",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-two-moment-duality",
+      "kind": "proof",
+      "body_md": "The estimate $F(a)\\geq\\int|a\\cdot u|-\\int|f|=2|a|-\\|f\\|_1$ makes $F$ coercive, so it attains a minimum. At a minimizing $a$, the stated subgradient formula gives a selector $\\sigma$ with $\\int\\sigma u=0$. Thus $q_0=-\\sigma$ is admissible. For every admissible $q$,\n$$\\int fq=\\int(f-a\\cdot u)q\\geq-\\int|f-a\\cdot u|.$$\nThe choice $q_0$ attains the bound. Any other minimizer must attain equality in the pointwise inequality almost everywhere, because its nonnegative gap has integral zero. Hence it has the claimed sign wherever the switching function is nonzero. Values on the zero set are selected to meet the moments. The finite-dimensional subgradient formula is an explicit prerequisite of this exercise.\n\nThe same minimizing vector $a$ works for every primal minimizer. It need not be unique, and the sign rule prescribes no value where $f-a\\cdot u=0$. On that set the selector is allowed to take any value in $[-1,1]$ required by the two moments. Values on null sets never affect admissibility or optimality.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3 variational strategy; finite-moment duality companion replacing an unchecked curvature projection",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-variational-switching-rule",
+      "kind": "proof",
+      "body_md": "For every feasible curvature radius $\\eta$, choose its width-one support $k$. The segment $(1-t)h+tk$ is feasible for $0\\leq t\\leq1$. Minimality and the area variation formula give $\\int h(\\eta-\\rho)\\geq0$. Thus $\\rho$ minimizes the linear functional $\\int h\\eta$ over feasible curvatures.\n\nOn $[0,\\pi]$ put $q=2\\eta-1$. Antipodal extension and the full-circle closure conditions are equivalent to $|q|\\leq1$ and $\\int_0^\\pi qu=0$. Pairing opposite angles gives\n$$\\int_0^{2\\pi}h\\eta=\\int_0^\\pi\\left[\\tfrac12+(h-\\tfrac12)q\\right].$$\nApply the two-moment lemma with $f=h-1/2$. Its vector $a$ yields $2\\rho-1=-\\operatorname{sign}(h-1/2-a\\cdot u)$ off the zero set, which is the asserted rule. Translating changes no curvature or area. This argument retains both moment constraints throughout; it does not subtract a harmonic from an otherwise unbalanced curvature perturbation.\n\nThe moment characterization ensures that every measurable competitor used in the linear problem has a genuine periodic support function. Conversely, the affine support segment preserves convexity and width, so its one-sided derivative at a true area minimizer must be nonnegative. This is a necessary condition; the subsequent ODE classification is what makes it useful for the nonlinear area problem.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3, Lemma 3.4 strategy; corrected moment-constrained derivation",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-switching-ode-regularity",
+      "kind": "proof",
+      "body_md": "Choose a component $(a,b)$ where $H>1/2$. Antipodal oddness of $H-1/2$ bounds its length by $\\pi$. Equality is impossible: a solution of $H''+H=0$ has opposite values at points separated by $\\pi$, whereas both endpoints here have value $1/2$. Thus $\\ell=b-a<\\pi$. With $m=(a+b)/2$,\n$$H(\\theta)=\\frac{\\cos(\\theta-m)}{2\\cos(\\ell/2)},\\quad H'(a+)=\\tfrac12\\tan(\\ell/2),\\quad H'(b-)=-\\tfrac12\\tan(\\ell/2).$$\nThe nonzero derivative at $b$ forces a neighboring component where $H<1/2$, so no zero plateau can intervene. On a lower component of length $L$, the solution is $1-\\cos(\\theta-m')/[2\\cos(L/2)]$, with slopes $-\\tfrac12\\tan(L/2)$ and $+\\tfrac12\\tan(L/2)$. Continuity of $H'$ gives $L=\\ell$. Iterating in both directions covers the real line with equal intervals; there can be no accumulation since $\\ell>0$.\n\nPeriodicity gives $2\\pi=2N\\ell$, and a shift by $\\pi$ must reverse the sign, so $N$ is odd. Since $\\ell<\\pi$, $N\\geq3$. The parametrization $\\gamma=Hu+H'u'$ has derivative $\\rho u'$. It stays at a vertex on zero-curvature intervals and traces a unit circular arc on each unit-curvature interval. The identical pieces recur after rotation by $2\\ell$, yielding the regular $N$-gon.\n\nThe ODE solutions used above are legitimate even though the equations were assumed only almost everywhere: on an open sign component, $H''=c-H$ has a continuous right-hand side, so integration upgrades $H$ to a classical solution there. The zero crossings recur exactly at $a+j\\ell$, with nonzero alternating slopes. A period of $2\\pi$ must therefore cross an even number $2N$ of intervals; the half-period $\\pi$ crosses $N$, which must be odd to reverse the sign. The explicit formulas also show $H(\\theta+2\\ell)=H(\\theta)$, so the resulting body is invariant under rotation through $2\\pi/N$, with exactly $N$ congruent unit-radius arcs.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3, Lemma 3.6 and concluding ODE argument; endpoint factor 1/2 restored",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-blaschke-lebesgue-variational",
+      "kind": "proof",
+      "body_md": "A minimizer exists by compactness and area continuity. The disk has area $\\pi/4$, larger than the Reuleaux triangle's $(\\pi-\\sqrt3)/2$, so the translated support in the switching rule is not identically $1/2$. The ODE exercise makes every minimizer a regular Reuleaux $N$-gon.\n\nFor $0<x<\\pi/2$, $\\tan x/x$ is strictly increasing: its derivative has numerator $x\\sec^2x-\\tan x$, which vanishes at zero and has derivative $2x\\sec^2x\\tan x>0$. Taking $x=\\pi/(2N)$ shows $N\\tan(\\pi/(2N))$ strictly decreases as $N$ increases. Thus $A(R_N)$ strictly increases. The unique permitted smallest $N$ is three, proving both the bound and the equality characterization. This route uses the stated finite-dimensional subgradient lemma through the switching-rule exercises.\n\nEvery body attaining the lower bound is itself a global area minimizer. Applying the same necessary condition and classification to that body forces $N=3$ again. The translations introduced in the duality step and rotations of the angular variable account precisely for the rigid-motion freedom in the equality statement.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§3 and Example 2.19; assembled using the explicit moment-duality prerequisite",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-arc-normal-integral",
+      "kind": "proof",
+      "body_md": "Writing $b=(u+v)/(2\\cos(\\ell/2))$, the odd tangential component integrates to zero and the bisector component integrates to $2\\sin(\\ell/2)b$. This is the first formula. On an arc centered at $p_i(t)$, write a moving point as $p_i(t)+u(\\theta(t))$. Its normal velocity is $p_i'(0)\\cdot n$, since the angular velocity is tangential. Integrate over each arc and sum. Moving endpoints produce no separate term in the boundary shape derivative; corners have zero arclength. The unchanged active-arc assumption excludes a change of combinatorial regime at the differentiation time.\n\nHere $n$ is the outward normal of the disk intersection: on an active arc it points away from that arc's generating center. In coordinates with bisector $b=(1,0)$, the integral is directly $\\int_{-\\ell/2}^{\\ell/2}(\\cos t,\\sin t)\\,dt=(2\\sin(\\ell/2),0)$. Using inward normals would reverse the shape-derivative sign.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-variational",
+          "locator": "§3.1, Proposition labelled prop:one-arc; center formulation in §4.2",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-blaschke-two-vertex-motion",
+      "kind": "proof",
+      "body_md": "The two defining circles for $p_j$ meet transversely because the incident unit vectors are nonparallel. Their branch through $p_j$ is therefore smooth. The construction preserves the two fixed-anchor distances and the shared distance $|p_j-p_i|=1$; all other diametric constraints are unchanged. Strict inequalities, convex cyclic order, and positive arc angles persist for sufficiently small positive and negative parameters. The usual opposite-vertex construction thus remains a Reuleaux polygon.\n\nThe first velocity is immediate. Tangency at the fixed anchor gives $\\dot p_j=-cJu_j$. Since $v_j=-u_i$, differentiating the shared unit length and using $u_i\\cdot Jv_i=-\\sin\\ell_i$ gives $c=\\sin\\ell_i/\\sin\\ell_j$. Write $t_i=\\tan(\\ell_i/2)$. The normal-integral formula then gives contributions $t_i\\sin\\ell_i$ and $-t_j\\sin\\ell_i$, proving the derivative. Hence unequal coupled arc angles provide a strict area-decreasing direction. Moving $p_i$ alone would violate a diametric constraint.\n\nMore explicitly, $0=u_i\\cdot(\\dot p_j-\\dot p_i)=-c\\sin\\ell_j+\\sin\\ell_i$, since $v_j=-u_i$ and the oriented angle from $u_j$ to $v_j$ is $\\ell_j$. This fixes both the speed ratio and its sign. The construction is local: beyond the first collision or disappearance of an arc, a new polygon description is required.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-variational",
+          "locator": "§3.2, Blaschke perturbation in Figure labelled fig:perturbedR; two-center calculation with CCW cyclic indexing",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-blaschke-negative-second-variation",
+      "kind": "proof",
+      "body_md": "At equal angles, $\\dot p_i=-Jv_i$ and $\\dot p_j=-Ju_j$. The vectors $u_i,v_i$ have angles separated by $L$. Also $v_j=-u_i$ and the counterclockwise angle from $u_j$ to $v_j$ is $L$. Thus $u_i\\cdot u_j=-\\cos L$ and $u_i\\cdot v_i=\\cos L$. Since\n$$\\dot u_i=-Ju_j+Jv_i,\\quad\\dot v_i=Jv_i,$$\nthe angular speeds of $u_i,v_i$ are $2\\cos L,1$. Hence $\\ell_i'=1-2\\cos L$. Similarly, $\\dot u_j=Ju_j$ and $\\dot v_j=-Jv_i+Ju_j$ have angular speeds $1,2\\cos L$, giving the second identity.\n\nDifferentiate $A'=\\sin\\ell_i(t_i-t_j)$. The derivative of the sine factor drops out at equal angles, so\n$$A''=\\tfrac12\\sin L\\sec^2(L/2)(\\ell_i'-\\ell_j')=2\\tan(L/2)(1-2\\cos L).$$\nIt is strictly negative for $L<\\pi/3$. At any candidate local minimum, the two-sided first variations force equality of each coupled pair, after which this negative second variation contradicts minimality. The triangle is excluded from the construction and from the strict sign range.\n\nThe first-variation formula applies at each nearby parameter value, because $p_i$ continues to rotate at unit angular speed around its fixed anchor. It can therefore be differentiated along this exact path. If its derivative at zero is nonzero, one of the two parameter directions decreases area; if it vanishes, the displayed negative second derivative gives $A(t)=A(0)+\\tfrac12A''(0)t^2+o(t^2)<A(0)$ for both sufficiently small nonzero signs.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-variational",
+          "locator": "§3.2, local nonminimality; equivalent two-center second variation developed here",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-reuleaux-finite-compactness",
+      "kind": "proof",
+      "body_md": "Every normalized body has diameter one and lies in $B(0,1)$. Blaschke selection gives a subsequence $K_j\\to K$; the support/Hausdorff identity preserves width one. The limit is full-dimensional: a lower-dimensional planar convex set has zero width in some direction. For each $K_j$, list its at most $N$ generating vertex centers, padding with repetitions. They lie in $B(0,1)$, so a further subsequence has $p_{i,j}\\to p_i$ for every $i$. The centers also belong to $K$, because $p_{i,j}\\in K_j$ and the sets converge in Hausdorff distance. Write $C=\\bigcap_{i=1}^N B(p_i,1)$. Passing points to the limit gives $K\\subset C$.\n\nChoose $z\\in\\operatorname{int}K$. Each $|z-p_i|<1$: equality would make $z$ a boundary point of a disk containing $K$, contradicting interiority. Put $\\varepsilon=\\min_i(1-|z-p_i|)>0$. For $x\\in C$ and $0<t\\leq1$, the point $x_t=(1-t)x+tz$ satisfies $|x_t-p_i|\\leq1-t\\varepsilon$. Thus $x_t\\in K_j$ once all centers are within $t\\varepsilon$ of their limits. Hausdorff convergence gives $x_t\\in K$, and $t\\downarrow0$ gives $x\\in K$. Therefore $K=C$.\n\nAfter repeated and redundant disks are removed, each generating circle contributes at most one active arc. Indeed another disk restricts its angular parameter by $u\\cdot(p_j-p_i)\\geq|p_j-p_i|^2/2$, an arc of length less than $\\pi$; these short arcs are geodesically convex, so their nonempty intersection is connected. Consequently $K$ has at most $N$ unit-radius arcs. As it still has constant width, it is a Reuleaux polygon, with zero arcs merged. The normalized finite class is closed and bounded, hence compact by selection.\n\nArea therefore attains a minimum in this class. If the actual number of nonzero arcs is at least five, the Blaschke first and second variations give a smaller-area polygon in the same class, a contradiction. The minimizer is a triangle. Finally, for arbitrary $K$, choose dense Reuleaux approximants $P_m\\to K$. Each belongs to some finite class, so $A(P_m)\\geq A(T)$; area continuity yields $A(K)\\geq A(T)$.\n\nA first derivative can vanish at a regular polygon, so the second variation is essential in this exclusion. This limit argument proves the bound and an optimizer; it does not by itself classify arbitrary nonpolygonal equality cases. Polygonal density remains an explicit external input.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "bogosel-variational",
+          "locator": "§2, Proposition prop:existenceRP; §3.2, finite-class minimization and density",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-shortest-arc-chord-lemma",
+      "kind": "proof",
+      "body_md": "An arc of angle $\\ell\\in[0,\\pi/3]$ has chord length $2\\sin(\\ell/2)$, a strictly increasing function. Hence $|c-d|\\leq|a-q|,|q-b|$. Since all vertex distances are at most one, the isosceles triangles with unit sides $cq,ca$ and $dq,db$ have base angles at $q$ greater than $\\pi/3$ in the nontriangular case. Also $cq=dq=1$ and $|c-d|\\leq1$ give $\\angle cqd\\leq\\pi/3$. The displayed angle decomposition yields $\\angle aqb>\\pi/3$. Its opposite side $ab$ cannot be the smallest side of triangle $aqb$: a smallest side has an opposite angle at most $\\pi/3$. Thus $|a-b|>\\min(|a-q|,|q-b|)\\geq|c-d|$. This verifies the chord comparison needed before making the shortest-arc replacement.\n\nThe strict base-angle assertion uses the corner-angle theorem: an arc of angle $\\pi/3$ in a width-one body forces a Reuleaux triangle. Since that case was excluded, the arcs $qa,bq$ have angles below $\\pi/3$, so their chords have length below one. The isosceles base angles are $(\\pi-\\ell)/2>\\pi/3$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v2",
+          "locator": "§3, Lemma 3.3; companion to Yaglom–Boltyanskii Exercise 7-20",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-smallest-arc-removal",
+      "kind": "proof",
+      "body_md": "Vertices $c,d$ become smooth junctions and $q$ disappears; the new corner is $p$. Thus three old vertices are replaced by one, reducing the count by two (merge any additional degeneracies). The allowed surgery lemma ensures admissibility; preserving the width cannot be inferred from a drawing alone.\n\nThe chord lemma and monotonicity of unit-radius arc length give $\\widehat{ab}\\geq\\widehat{cd}$. Put $x=\\widehat{as}-\\widehat{cr}$ and $y=\\widehat{sb}-\\widehat{rd}$. Then $x+y\\geq0$. If both are nonnegative, both paired area differences are nonnegative. If, say, $x\\geq0>y$, then $x\\geq-y$. Apply the monotone area-excess comparison to the first pair and the reflected second pair: the loss excess of the first is at least the gain deficit of the second. The sum is again nonnegative. The remaining case is symmetric. Hence total lost area is at least total gained area, proving $A(P')\\leq A(P)$.\n\nRepeatedly choose a shortest arc until three remain. This is the finite reduction behind the Yaglom–Boltyanskii/Hynd polygon proof. The full geometric surgery and curvilinear comparison lemma is explicitly supplied here; this exercise does not claim to reprove it or to establish strictness in every equality case.\n\nThe pieces in the supplied lemma have concrete boundaries: $\\Delta(asq)$ is bounded by the segment $sq$, the arc $sa$ centered at $p$, and the original arc $aq$ centered at $c$. Similarly $\\Delta(crp)$ is bounded by $rp$, the original arc $rc$ centered at $q$, and the new arc $cp$ centered at $a$; the other two pieces use $b,d$. The segment $pq$ divides each total cap into its two pieces. Thus the area bookkeeping is an exact subtraction of caps, not a comparison of the straight triangles with the same vertices. The accompanying area-piece diagram shows this distinction.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§4, Lemma 4.2 and concluding shortest-arc reduction, pp. 22–26; Yaglom–Boltyanskii 7-20",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-support-parallel-regularization",
+      "kind": "proof",
+      "body_md": "The support identities give the displayed $h_\\delta$. Applying $1+\\partial_\\theta^2$ adds the constant $\\delta$, yielding the stated curvature formula and bounds. Opposite supports still add to one. Moreover\n$$h_\\delta-h=\\frac{\\delta(1-2h)}{1+2\\delta},\\qquad h_\\delta'-h'=\\frac{-2\\delta h'}{1+2\\delta},$$\nwhich converge uniformly to zero. Since $\\gamma_\\delta'=\\rho_\\delta u'$ and $\\rho_\\delta$ has a positive lower bound, a normal interval cannot map to a single point. There is no claim of smooth curvature: jumps of $\\rho$ remain jumps after this affine change. Thus the operation removes corner normal intervals but is not a general $C^\\infty$ smoothing procedure.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§4, Proposition 4.1, first approximation step; numerator checked directly",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-reuleaux-approximation-support-splice",
+      "kind": "proof",
+      "body_md": "At $\\phi$, the two formulas have common value $1+z\\cdot u(\\phi)$ and common derivative $z\\cdot u'(\\phi)$, because $u\\cdot u=1$ and $u\\cdot u'=0$. The calculation at $\\psi$ is identical. At a cell endpoint, the value and derivative match $h,h'$ by $\\gamma=hu+h'u'$. The antipodal extension also matches at $0,\\pi,2\\pi$, and its curvature is complementary to that on the first half-circle. Thus $H$ is a periodic $C^{1,1}$ width-one support with finitely many zero/unit-curvature pieces, giving a Reuleaux polygon after merging redundant pieces.\n\nThe original contact map is 1-Lipschitz since $\\gamma'=\\rho u'$ and $0\\leq\\rho\\leq1$. On the endpoint pieces the new contact point is $\\gamma(a)$ or $\\gamma(b)$, at distance at most $\\Delta$ from $\\gamma(\\theta)$. On the middle piece it is $z+u(\\theta)$, whose distance from $\\gamma(\\theta)$ is at most\n$$|\\gamma(\\theta)-\\gamma(b)|+|u(\\psi)-u(\\theta)|\\leq2\\Delta.$$\nTaking scalar products with $u$ and $u'$ proves both bounds. The second half-circle follows by antipodality. This checks the analytic splice and its error; the circle-center construction is an explicit geometric input.\n\nFor any support $g$, its contact vector $gu+g'u'$ has scalar components $g$ and $g'$ in the orthonormal frame $(u,u')$. This is why the same vector-distance estimate bounds both errors. Intervals of zero length, such as $\\phi=a$ or $\\phi=\\psi$, simply contribute no piece; matching still holds, and adjacent identical arcs or constant contact vectors are merged.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§4, Proposition 4.1, steps 2–3; Yaglom–Boltyanskii approximation discussion, pp. 76–80",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-polygon-descent-limit",
+      "kind": "proof",
+      "body_md": "Choose $P_m\\to K$. Repeated shortest-arc removal gives $A(P_m)\\geq A(T)$ for every $m$. Hausdorff convergence of convex bodies gives $A(P_m)\\to A(K)$, so $A(K)\\geq A(T)=(\\pi-\\sqrt3)/2$. If support functions converge in $C^1$, uniform convergence of both squared terms in the area integral gives the same conclusion directly. Scaling yields the bound multiplied by $w^2$ at width $w$.\n\nStrict finite-stage inequalities can tend to equality: the positive deficits need not have a uniform positive lower bound. Consequently this limit argument proves the inequality and an attaining triangle but does not by itself classify all equality cases. The variational switching route supplies a separate equality argument.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "hynd-bl-v1",
+          "locator": "§4, opening reduction in the proof of Blaschke–Lebesgue; Yaglom–Boltyanskii Exercise 7-20",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-equiangular-support-perimeter",
+      "kind": "proof",
+      "body_md": "On the line $x=h_jn_j+tJn_j$, its intersections with the next and previous support lines have tangent coordinates $(h_{j+1}-h_j\\cos\\Delta)/\\sin\\Delta$ and $(h_j\\cos\\Delta-h_{j-1})/\\sin\\Delta$. Their difference is $\\ell_j$. It is nonnegative: a contact point with $K$ lies between those intersections, and convexly ordered tangent lines bound the circumscribed polygon (zero sides are permitted).\n\nSummation gives $P(P_N)=2\\tan(\\Delta/2)\\sum_jh_j$. Since $h_{j+N/2}+h_j=w$, the sum is $Nw/2$, proving the formula. As the maximum normal gap tends to zero, the circumscribed polygons converge to $K$ (see the mesh-error exercise), and their perimeters tend to $P(K)$. Since $N\\tan(\\pi/N)\\to\\pi$, $P(K)=\\pi w$.\n\nA sampled normal can lie in a corner's normal cone. Several consecutive supporting lines then meet at that corner, giving indexed side lengths zero; they contribute neither length nor area. Perimeter continuity is used here as an independent fact about planar convex bodies. With that permitted input, the polygon calculation proves Barbier's formula without using it to evaluate the approximating perimeters.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-11, p. 74; support-line calculation for the equiangular construction",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-equiangular-area-quadratic",
+      "kind": "proof",
+      "body_md": "The signed-triangle area identity $A=\\frac12\\sum h_j\\ell_j$ is valid with any origin, by the divergence theorem; substitution yields the quadratic form. The constant part contributes $Nw^2\\tan(\\pi/N)/4$, and the cross term vanishes since $\\sum g_j=0$. For the cyclic quadratic form on $g$, a Fourier mode $e^{imj\\Delta}$ has multiplier\n$$\\frac{\\cos(m\\Delta)-\\cos\\Delta}{\\sin\\Delta}.$$\nAntipodal oddness retains only odd $m$. All multipliers are nonpositive, with zero only at $m=1,N-1$. Hence equality means $g_j=a\\cos(j\\Delta)+b\\sin(j\\Delta)$, precisely a translation of constant sampled support. The polygon is then regular. The enclosed body need not be a disk: at $N=6$, Pál's theorem supplies a regular supporting hexagon even for a Reuleaux triangle. Letting $N\\to\\infty$ and using area continuity recovers the disk's maximal-area bound, but this discrete upper bound is not the lower bound of Blaschke–Lebesgue.\n\nThe cyclic frequencies are $m=0,\\ldots,N-1$. The shift by $N/2$ acts on mode $m$ by $(-1)^m$, explaining exactly why only odd modes occur. Among those frequencies, the largest cosine is $\\cos(2\\pi/N)$, attained precisely at $m=1,N-1$; thus no other equality modes are hidden. When $N=4$, these are all the allowed modes: every circumscribed four-sided equiangular polygon is a square of side $w$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-12, p. 74; discrete Fourier solution of its upper-bound component",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-hexagon-strip-sliding",
+      "kind": "proof",
+      "body_md": "Write $h_j=w/2+g_j$. The condition $g_{j+3}=-g_j$ leaves three degrees of freedom. The independent vectors $\\cos(j\\pi/3)$, $\\sin(j\\pi/3)$ and $(-1)^j$ form a basis. A translation removes the first two terms. Substitute the remaining $g_j=(-1)^jt$ into the side-length formula with $\\cos\\Delta=1/2$, $\\sin\\Delta=\\sqrt3/2$ to obtain $\\ell_j$. Nonnegative lengths are equivalent to $|t|\\leq w/6$.\n\nSumming $\\frac12\\sum h_j\\ell_j$ gives the area formula. The maximum $\\sqrt3w^2/2$ occurs at $t=0$, the regular hexagon in Pál's theorem. At $t=\\pm w/6$ three alternating sides vanish and the polygon becomes an equilateral triangle of altitude $w$, area $w^2/\\sqrt3$. These strip constraints prescribe widths only in three directions; they allow shapes of larger diameter and varying width. Their minimum is therefore below the constant-width minimum and cannot be substituted for it. This illustrates the area-concavity mechanism of the strip-sliding argument in Yaglom–Boltyanskii.\n\nHere an active constraint means its supporting line meets the polygon, even if only at a vertex; this permits the endpoint degeneracies. At $t=\\pm w/6$ the equilateral triangle has side length $2w/\\sqrt3$ and diameter greater than $w$. It cannot contain a width-$w$ body while all six prescribed support values remain those of that body: prescribing strip separations alone has discarded the full directional-width constraint. Indeed, three of the prescribed supporting lines touch that triangle only at its three vertices. If these were also supports of an enclosed body, that body would have to contain all three vertices, contradicting diameter $w$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercises 7-10(b) and 7-12, p. 74; three-strip specialization",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-equiangular-mesh-error",
+      "kind": "proof",
+      "body_md": "For $x\\in P_N$, choose $n_j$ within angle $\\Delta/2$ of $x/|x|$. Then $|x|\\cos(\\Delta/2)\\leq x\\cdot n_j\\leq h_K(n_j)\\leq w$, proving confinement. For any unit $u$, choose $n_j$ with $|u-n_j|\\leq2\\sin(\\Delta/4)$. Since $K\\subset wB$, its support is $w$-Lipschitz as a function of the unit vector. Consequently\n$$x\\cdot u-h_K(u)\\leq |x|\\,|u-n_j|+|h_K(n_j)-h_K(u)|\\leq2w(1+\\sec(\\Delta/2))\\sin(\\Delta/4).$$\nMaximize over $x,u$ and use the support/Hausdorff identity. The bound tends to zero, so convex area continuity proves $A(P_N)\\to A(K)$. In particular it applies to $3\\cdot2^m$ as $m\\to\\infty$. Convergence alone gives no lower area bound: one must additionally compare these supporting polygons to the corresponding ones for the Reuleaux triangle, or use the separate polygon-descent proof. The discrete maximum-area calculation and three-strip calculation do not by themselves establish that lower comparison.\n\nThe radial estimate is trivial at $x=0$; choose a radial direction only for $x\\ne0$. Because $K\\subset P_N$, the reverse directed Hausdorff distance is already zero. The uniform support excess bounds precisely the remaining direction, from $P_N$ to $K$. A rate tending to zero is sufficient here; no optimal rate is asserted.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review 2026-10-15; human review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-12 and approximation discussion, pp. 74, 79–80; explicit support-mesh estimate",
+          "relationship": "original-exercise"
+        }
+      ]
+    }
+  ]
+}

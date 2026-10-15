@@ -1,0 +1,18 @@
+{
+  "figsize": [
+    11,
+    5
+  ],
+  "panels": [
+    {
+      "type": "meissner",
+      "title": "Star smoothing",
+      "smoothing": "star"
+    },
+    {
+      "type": "meissner",
+      "title": "Face smoothing",
+      "smoothing": "face"
+    }
+  ]
+}

@@ -1,0 +1,444 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "06-shape-optimization",
+  "problems": [
+    {
+      "id": "cw-jung-plane",
+      "title": "A short proof of planar Jung’s bound",
+      "chapter_id": "06-shape-optimization",
+      "order": 1,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "jung-theorem",
+        "circumradius"
+      ],
+      "statement_md": "Let a compact planar set have diameter $w>0$ and smallest enclosing radius $R$. Prove $R\\leq w/\\sqrt3$. You may use the elementary optimality fact that the enclosing-circle center lies in the convex hull of its contact points, and planar Carathéodory’s theorem.",
+      "hint_md": "Write the center as a convex combination of at most three contact points. Expand the weighted sum of squared pairwise distances.",
+      "prerequisites": [
+        "cw-binormals"
+      ],
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§3.4, Jung bound; outline Exercise 2.9 corrected",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-inradius-extrema",
+      "title": "The sharp inradius interval",
+      "chapter_id": "06-shape-optimization",
+      "order": 2,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "inradius",
+        "optimization"
+      ],
+      "statement_md": "Show that a planar width-$w$ body satisfies $w(1-1/\\sqrt3)\\leq r\\leq w/2$. Identify equality cases.",
+      "hint_md": "Combine $r+R=w$ with Jung’s bound for one endpoint. For the other, compare the width of an inscribed disk with the width of the body.",
+      "prerequisites": [
+        "cw-concentric-balls",
+        "cw-jung-plane"
+      ],
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-14, printed p. 75",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-radii",
+          "path": "figures/triangle-radii.svg",
+          "caption_md": "The incircle and circumcircle share the symmetry center; their radii sum to the width.",
+          "alt": "Reuleaux triangle with vertex triangle, concentric inscribed and enclosing circles, and labeled radii."
+        }
+      ]
+    },
+    {
+      "id": "cw-cheeger-scaling",
+      "title": "Cheeger scaling and domain monotonicity",
+      "chapter_id": "06-shape-optimization",
+      "order": 3,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "cheeger-constant",
+        "scaling"
+      ],
+      "statement_md": "For a bounded planar domain $\\Omega$, let $h_C(\\Omega)=\\inf_{E\\subset\\Omega,\\,|E|>0}P(E)/|E|$, with finite-perimeter measurable competitors. Show $h_C(a\\Omega)=h_C(\\Omega)/a$ for $a>0$ and $\\Omega\\subset\\Lambda\\Rightarrow h_C(\\Omega)\\geq h_C(\\Lambda)$. Compute $h_C(B_R)$ in the plane.",
+      "hint_md": "Scale a competitor as well as the containing domain. For a disk, the isoperimetric inequality bounds every competitor’s perimeter-to-area ratio.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§4, definition of the Cheeger constant",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-cheeger-root",
+      "title": "The unique inner-radius equation for the Cheeger constant",
+      "chapter_id": "06-shape-optimization",
+      "order": 4,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "cheeger-constant",
+        "inner-parallel-sets"
+      ],
+      "statement_md": "For a planar convex body $K$ with inradius $r>0$, write $K_{-t}=\\{x:x+tB\\subset K\\}$ and interpret $h_C(K)$ on its interior. You may use the theorem $h_C(K)=1/t_K$ where $A(K_{-t_K})=\\pi t_K^2$. Prove that this equation has exactly one solution in $(0,r)$, and show how ordering all inner parallel areas orders the Cheeger constants.",
+      "hint_md": "Subtract $\\pi t^2$ from the eroded area. Check continuity, strict monotonicity, and the endpoint signs before comparing roots.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§4, Cheeger characterization and comparison argument",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-erosion",
+          "path": "figures/triangle-erosion.svg",
+          "caption_md": "Erosion retains the three disk centers and reduces every disk radius from one to 1−t.",
+          "alt": "Four nested rounded triangles illustrating increasing erosion distances."
+        }
+      ]
+    },
+    {
+      "id": "cw-cheeger-extrema",
+      "title": "Cheeger extremizers at fixed constant width",
+      "chapter_id": "06-shape-optimization",
+      "order": 5,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "cheeger-constant",
+        "optimization"
+      ],
+      "statement_md": "You may use the theorem that $A(K_{-t})\\geq A(T_{-t})$ for every width-$w$ planar body and $0\\leq t\\leq r(T)$, where $T$ is the Reuleaux triangle. Prove $4/w\\leq h_C(K)\\leq h_C(T)$, and identify an attaining body for each bound.",
+      "hint_md": "Use the eroded-area comparison for the upper bound. For the lower bound, combine isoperimetry for each competitor with the maximal area at fixed width.",
+      "prerequisites": [
+        "cw-cheeger-root",
+        "cw-disk-maximizes-area",
+        "cw-cheeger-scaling"
+      ],
+      "sources": [
+        {
+          "source_id": "cheeger",
+          "locator": "§4, main theorem; lower bound derived using isoperimetry",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-erosion",
+          "path": "figures/triangle-erosion.svg",
+          "caption_md": "Erosion retains the three disk centers and reduces every disk radius from one to 1−t.",
+          "alt": "Four nested rounded triangles illustrating increasing erosion distances."
+        }
+      ]
+    },
+    {
+      "id": "cw-layer-cake",
+      "title": "Radial integrals through intersections with disks",
+      "chapter_id": "06-shape-optimization",
+      "order": 6,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "radial-kernels",
+        "integration"
+      ],
+      "statement_md": "Let $K\\subset B_R(0)$ be measurable and $g:[0,R]\\to\\mathbb R$ absolutely continuous. Prove $\\int_K g(|x|)\\,dx=g(R)|K|-\\int_0^R g'(t)|K\\cap B_t(0)|\\,dt$. Explain why comparing radial moments requires fixing a center.",
+      "hint_md": "Write $g(s)=g(R)-\\int_s^R g\\prime(t)\\,dt$ and interchange the order of integration.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "kernels",
+          "locator": "§2, indicator kernels and layer cake",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-high-moment-counterexample",
+      "title": "Why the Reuleaux triangle cannot minimize every radial moment",
+      "chapter_id": "06-shape-optimization",
+      "order": 7,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "counterexample",
+        "radial-kernels"
+      ],
+      "statement_md": "Center a width-one Reuleaux triangle $T$ and the radius-$1/2$ disk $D$ at their symmetry centers. Prove that for all sufficiently large $p$, $\\int_T|x|^p\\,dx>\\int_D|x|^p\\,dx$. Thus triangle minimality fails for some increasing convex radial weights.",
+      "hint_md": "The triangle has positive area at radii larger than $1/2$. Compare an exponential lower bound from that region with an upper bound for the whole disk.",
+      "prerequisites": [
+        "cw-triangle-measures"
+      ],
+      "sources": [
+        {
+          "source_id": "kernels",
+          "locator": "§ on counterexamples and large powers, following Proposition prop:counter",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "triangle-radii",
+          "path": "figures/triangle-radii.svg",
+          "caption_md": "The incircle and circumcircle share the symmetry center; their radii sum to the width.",
+          "alt": "Reuleaux triangle with vertex triangle, concentric inscribed and enclosing circles, and labeled radii."
+        }
+      ]
+    },
+    {
+      "id": "cw-translate-collision",
+      "title": "Translates collide exactly like equal disks",
+      "chapter_id": "06-shape-optimization",
+      "order": 8,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "packing",
+        "translations",
+        "difference-body"
+      ],
+      "statement_md": "Let $K\\subset\\mathbb R^d$ have width $w$. Show that translates $K+a$ and $K+b$ have intersecting interiors exactly when $|a-b|<w$. Show that they touch at a single point when $|a-b|=w$, and are disjoint when $|a-b|>w$.",
+      "hint_md": "The forbidden translation differences form $K-K=wB$. Identify its interior and use strict convexity at contact.",
+      "prerequisites": [
+        "cw-difference-body",
+        "cw-binormals"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "two-translates-in-disk",
+          "path": "figures/two-translates-in-disk.svg",
+          "caption_md": "Moving each endpoint of a diameter to O gives two translates in the unit disk. They lie on opposite sides of a common supporting line and touch only at O.",
+          "alt": "Two identical irregular Reuleaux pentagons, translated to touch at the center of a unit circle, with a dashed separating tangent line."
+        }
+      ]
+    },
+    {
+      "id": "cw-common-point-packing",
+      "title": "At most three constant-width bodies can meet without overlap",
+      "chapter_id": "06-shape-optimization",
+      "order": 9,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "packing",
+        "corner-angles"
+      ],
+      "statement_md": "Let planar convex bodies $K_1,\\ldots,K_N$ have positive constant widths, which need not be equal. Suppose their interiors are pairwise disjoint and they all contain one point $p$. Prove $N\\leq3$. If $N=3$, prove that every $K_i$ is a Reuleaux triangle with a vertex at $p$, and their tangent sectors at $p$ partition the full angle. You may use the $120^\\circ$ corner bound and its equality case.",
+      "hint_md": "Count the angles of the tangent cones at the shared point. Smooth boundary points occupy a half-plane.",
+      "prerequisites": [
+        "cw-corner-angle"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "three-in-unit-disk",
+          "path": "figures/three-in-unit-disk.svg",
+          "caption_md": "Three translates share only the disk center O. Their tangent sectors have angle 120° and partition the full angle; the curved bodies leave gaps farther from O. Boundary contacts are allowed.",
+          "alt": "Three differently colored Reuleaux triangles in a unit-radius circle, touching at its center, with three dashed tangent rays and 120-degree angle marks."
+        }
+      ]
+    },
+    {
+      "id": "cw-unit-disk-packing",
+      "title": "Three unit-width bodies in the unit disk",
+      "chapter_id": "06-shape-optimization",
+      "order": 10,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "packing",
+        "reuleaux-triangle",
+        "optimization"
+      ],
+      "statement_md": "Determine the maximum number of planar convex bodies of constant width one that can be placed inside $B(0,1)$ with pairwise disjoint interiors. Boundary contacts are allowed, and the bodies need not initially be congruent. Prove that the maximum is three and characterize every maximizing arrangement. As a corollary, determine the maximum total occupied area. What changes if the closed bodies must be pairwise disjoint?",
+      "hint_md": "First prove that every body contains the disk center. The $120^\\circ$ bound then counts how many bodies can meet there.",
+      "prerequisites": [
+        "cw-enclosing-ball-core",
+        "cw-common-point-packing",
+        "cw-triangle-measures",
+        "cw-disk-maximizes-area",
+        "cw-translate-collision"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Author’s proposed problem: three unit-width bodies in a unit-radius disk; 120-degree sector argument (15 October 2026)",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "three-in-unit-disk",
+          "path": "figures/three-in-unit-disk.svg",
+          "caption_md": "Three translates share only the disk center O. Their tangent sectors have angle 120° and partition the full angle; the curved bodies leave gaps farther from O. Boundary contacts are allowed.",
+          "alt": "Three differently colored Reuleaux triangles in a unit-radius circle, touching at its center, with three dashed tangent rays and 120-degree angle marks."
+        }
+      ]
+    },
+    {
+      "id": "cw-fixed-shape-disk-packing",
+      "title": "For a prescribed shape the answer is two or three",
+      "chapter_id": "06-shape-optimization",
+      "order": 11,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "packing",
+        "translations",
+        "rigidity"
+      ],
+      "statement_md": "Fix a planar body $K$ of width $w$. Show that two translates of $K$ always fit with disjoint interiors in $B(0,w)$. Prove that three congruent copies fit there if and only if $K$ is a Reuleaux triangle. Give an alternative proof for translates by showing that feasible translation vectors lie in $-K$ and must be pairwise at distance at least $w$.",
+      "hint_md": "For the two-copy construction, place each endpoint of a diameter at the origin in turn. For translations, combine the covering-center locus with the collision criterion.",
+      "prerequisites": [
+        "cw-unit-disk-packing",
+        "cw-covering-center-locus",
+        "cw-translate-collision"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "three-in-unit-disk",
+          "path": "figures/three-in-unit-disk.svg",
+          "caption_md": "Three translates share only the disk center O. Their tangent sectors have angle 120° and partition the full angle; the curved bodies leave gaps farther from O. Boundary contacts are allowed.",
+          "alt": "Three differently colored Reuleaux triangles in a unit-radius circle, touching at its center, with three dashed tangent rays and 120-degree angle marks."
+        },
+        {
+          "figure_id": "two-translates-in-disk",
+          "path": "figures/two-translates-in-disk.svg",
+          "caption_md": "Moving each endpoint of a diameter to O gives two translates in the unit disk. They lie on opposite sides of a common supporting line and touch only at O.",
+          "alt": "Two identical irregular Reuleaux pentagons, translated to touch at the center of a unit circle, with a dashed separating tangent line."
+        }
+      ]
+    },
+    {
+      "id": "cw-four-body-disk-radius",
+      "title": "An explicit gap before four bodies can fit",
+      "chapter_id": "06-shape-optimization",
+      "order": 12,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "packing",
+        "inradius",
+        "bounds"
+      ],
+      "statement_md": "Let $R_4$ be the infimum of radii of disks that contain four planar unit-width convex bodies with pairwise disjoint interiors. The four shapes may be different. Prove the explicit bounds\n$$(1+\\sqrt2)(1-1/\\sqrt3)\\leq R_4\\leq\\frac{1+\\sqrt2}{2}.$$\nThese are bounds, not a claim of an exact value. You may use the sharp inradius bound $r(K)\\geq1-1/\\sqrt3$.",
+      "hint_md": "Put an equal small disk inside each body. Among four nonzero center directions, two differ by at most $90^\\circ$.",
+      "prerequisites": [
+        "cw-inradius-extrema"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-lattice-translates-density",
+      "title": "The best lattice packing of a constant-width body",
+      "chapter_id": "06-shape-optimization",
+      "order": 13,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "packing",
+        "lattices",
+        "translations"
+      ],
+      "statement_md": "Fix a planar width-$w$ convex body $K$. A lattice packing consists of the translates $K+v$ for $v$ in a rank-two lattice $\\Lambda$, with pairwise disjoint interiors. Prove that the maximal density among such lattice packings is\n$$\\delta_{\\rm lattice}(K)=\\frac{2A(K)}{\\sqrt3w^2}.$$\nCompute this density for the disk and the Reuleaux triangle. Among width-$w$ bodies, which gives the largest lattice-packing density? Only lattice translates are considered here.",
+      "hint_md": "The shortest nonzero lattice vector must have length at least $w$. Reduce a lattice basis by subtracting integer multiples of its shortest vector.",
+      "prerequisites": [
+        "cw-translate-collision",
+        "cw-disk-maximizes-area",
+        "cw-triangle-measures"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-diameter-packing-counterexample",
+      "title": "Diameter one alone gives no finite packing bound",
+      "chapter_id": "06-shape-optimization",
+      "order": 14,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "packing",
+        "counterexamples",
+        "diameter"
+      ],
+      "statement_md": "Show that the unit-radius disk can contain arbitrarily many full-dimensional convex bodies of diameter exactly one with pairwise disjoint interiors. Explain why this does not contradict the three-body result for constant width one.",
+      "hint_md": "Use thin isosceles triangles whose equal sides run from the center to the unit circle.",
+      "prerequisites": [
+        "cw-unit-disk-packing"
+      ],
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": []
+    }
+  ]
+}

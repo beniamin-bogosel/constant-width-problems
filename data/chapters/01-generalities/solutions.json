@@ -1,0 +1,511 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "01-generalities",
+  "solutions": [
+    {
+      "problem_id": "cw-distance-function-basics",
+      "kind": "proof",
+      "body_md": "For any $y\\in E$, $|x-y|\\leq|x-z|+|z-y|$. Taking the infimum over $y$ gives $d_E(x)\\leq|x-z|+d_E(z)$; reverse $x,z$ for the Lipschitz estimate. Taking the infimum over the closure gives the same value by continuity of $y\\mapsto|x-y|$. A point has zero distance precisely when points of $E$ approach it, proving the zero-set identity. Inclusion enlarges the set over which the infimum is taken, so $E\\subset F$ implies $d_E\\geq d_F$. Conversely, if that inequality holds, every $x\\in E$ has $d_F(x)=0$, hence lies in closed $F$. The infimum over a union is the smaller of the two infima. Finally an open ball and its closure have the same closure, so their distance functions coincide.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "§2.2.3.1, Definition 2.2.7, p. 30; proof of Theorem 2.2.25, p. 44; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-hausdorff-distance-functions",
+      "kind": "proof",
+      "body_md": "Write $\\delta=d_H(K,L)$. Choose $y\\in L$ nearest to $x$ and $z\\in K$ nearest to $y$. Then $d_K(x)\\leq|x-y|+|y-z|\\leq d_L(x)+\\delta$. Reversing the sets proves the global upper bound. On $K$, $|d_K-d_L|=d_L$; on $L$, it equals $d_K$. Maximizing there recovers the defining $\\delta$, proving both equalities. The uniform norm triangle inequality gives the metric triangle inequality; symmetry and nonnegativity are immediate, and zero distance implies equality of the closed zero sets. Finally $L+\\varepsilon B=\\{d_L\\leq\\varepsilon\\}$ by attainment of nearest points, so the two inclusions are precisely the two directed distance bounds. In the maximum on $K\\cup L$ we mean a pointwise supremum, not a Lebesgue essential supremum on a possibly null set.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Proposition 2.2.27 and equation (2.28), p. 43; equation (2.15), p. 33; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-support-calculus",
+      "kind": "proof",
+      "body_md": "A linear functional takes its maximum on the ball in direction $u$ at $c+ru/|u|$, giving $c\\cdot u+r|u|$ (also valid for $u=0$). On a segment its maximum is $\\max(a\\cdot u,b\\cdot u)$; on a convex hull it is $\\max_i v_i\\cdot u$, because a convex combination cannot exceed that maximum. Finally maximize $(x+y)\\cdot u$ independently over $K,L$. The same convex-combination argument gives the union formula. For the half-space representation, every point of $K$ satisfies every displayed inequality. If $z\\notin K$, a separating hyperplane supplies a unit $u$ with $z\\cdot u>h_K(u)$, excluding $z$ from the intersection. Inclusion plainly implies support inequalities; conversely, those inequalities place every point of $K$ in every supporting half-space of $L$, hence in $L$. In particular, equality of support functions determines the convex set uniquely.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§1.7; outline Exercises 1.1, 1.4(i), 1.5",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-hausdorff-support",
+      "kind": "proof",
+      "body_md": "The condition $d_H(K,L)\\leq\\varepsilon$ is equivalent to $K\\subset L+\\varepsilon B$ and $L\\subset K+\\varepsilon B$. By separation, inclusion of convex sets is equivalent to the corresponding support-function inequalities. The support of $L+\\varepsilon B$ is $h_L+\\varepsilon$ on the unit sphere. Thus the two inclusions are exactly $|h_K-h_L|\\leq\\varepsilon$. Width is $h(u)+h(-u)$, so the triangle inequality gives the stated bound. The equality with the uniform distance-function difference holds even without convexity, by the distance-function exercise. For the unit circle $S^1$ and closed unit disk $B\\subset\\mathbb R^2$, the support functions are both identically one on $S^1$, but $d_H(S^1,B)=1$, attained by the distance of the origin to the circle. Thus support functions encode the convex hull and cannot recover holes in a general compact set.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§1.8; outline Exercise 1.7",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Proposition 2.2.27, p. 43, for the distance-function equality; support-function equality retained from Schneider §1.8",
+          "relationship": "background"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-distance-from-support",
+      "kind": "proof",
+      "body_md": "For $y\\in K$ and unit $u$, $x\\cdot u-h_K(u)\\leq(x-y)\\cdot u\\leq|x-y|$, so every expression is at most $d_K(x)$. If $x\\notin K$, let $p$ be a nearest point. Convexity and minimality give $(x-p)\\cdot(y-p)\\leq0$ for every $y\\in K$: differentiate $|x-p-t(y-p)|^2$ at $t=0+$. Thus $u=(x-p)/|x-p|$ supports $K$ at $p$, and $x\\cdot u-h_K(u)=|x-p|$, attaining the bound. If $x\\in K$ all terms are nonpositive, proving the first formula. For an interior point, $B(x,r)\\subset K$ is equivalent to $x\\cdot u+r\\leq h_K(u)$ for every unit $u$. Thus the largest contained centered ball has radius $\\min_u(h_K(u)-x\\cdot u)$. This is exactly $\\operatorname{dist}(x,\\partial K)$: every smaller centered ball stays inside, while a larger one passes beyond a nearest boundary point along the ray from $x$. Negating gives the second formula; boundary points have value zero.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Distance-function framework, §2.2.6.1, pp. 43–44; convex support-function companion; English edition (2018), printed pages",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-hausdorff-sequential",
+      "kind": "proof",
+      "body_md": "Hausdorff convergence and the distance-function bound give the first condition, while nearest points in $K_n$ give the second. Conversely, if $\\max_{x\\in K_n}d_K(x)$ stays above some $\\eta>0$ along a subsequence, choose maximizing points and extract a convergent subsequence in $Q$. Its limit lies in $K$ by condition 1, a contradiction. If the reverse directed distance stays positive, choose $y_j\\in K$ witnessing it and pass to $y_j\\to y\\in K$. Condition 2 gives $z_n\\in K_n$ with $z_n\\to y$, so $d_{K_{n_j}}(y_j)\\leq|y_j-y|+|y-z_{n_j}|\\to0$, another contradiction.\n\nFor inclusion, approximate $x\\in A$ by $x_n\\in A_n\\subset B_n$ and apply condition 1 for $B_n\\to B$. For convexity, approximate $x,y\\in K$ by $x_n,y_n\\in K_n$; each $(1-t)x_n+ty_n$ lies in convex $K_n$, so its limit lies in $K$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "§2.2.3.2, properties (3)–(4), pp. 32–33; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-hausdorff-set-operations",
+      "kind": "proof",
+      "body_md": "The union inequality follows immediately from the two neighborhood inclusions for each pair. For the hulls, compactness follows from Carathéodory: every point is a convex combination of at most $d+1$ points, so the hull is the continuous image of the compact product $K^{d+1}$ times the coefficient simplex. If $\\delta=d_H(K,L)$, replace each $x_i\\in K$ in a convex combination by $y_i\\in L$ with $|x_i-y_i|\\leq\\delta$. The resulting combination moves by at most $\\delta$. Reversing the roles proves the estimate.\n\nFor the counterexample in the plane, take $K_n=K=[-1,1]\\times\\{0\\}$ and $L_n=\\{(t,t/n):-1\\leq t\\leq1\\}$. Then $d_H(L_n,K)\\leq1/n$, but $K_n\\cap L_n=\\{0\\}$ for every $n$, whereas $K\\cap K=K$. The Hausdorff distance between these intersections is one. Thus convexity alone does not make intersection continuous.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.5, p. 63; compact-set Hausdorff properties in §2.2.3.2; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-nested-compact-limits",
+      "kind": "proof",
+      "body_md": "For the decreasing case, compactness of $K_1$ and the finite-intersection property give a nonempty compact intersection $K$. Any limit of $x_j\\in K_{n_j}$ lies in every closed $K_m$, since eventually $n_j\\geq m$; and every $x\\in K$ belongs to all $K_n$. The sequential criterion applies.\n\nFor the increasing case the closure $K$ of the union is compact under confinement, and any cluster point stays in $K$. Given $x\\in K$ and $\\varepsilon>0$, choose $y\\in K_m$ with $|x-y|<\\varepsilon$. Then $d_{K_n}(x)<\\varepsilon$ for every $n\\geq m$, so nearest points supply the other sequential condition. Without confinement, $K_n=[-n,n]$ has no compact Hausdorff limit.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "§2.2.3.2, compact-set properties (1)–(2), p. 32; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-hausdorff-selection",
+      "kind": "proof",
+      "body_md": "The restrictions $d_{K_n}|_Q$ are uniformly bounded by $\\operatorname{diam}Q$ and 1-Lipschitz. Arzelà–Ascoli gives a uniformly convergent subsequence with limit $f\\geq0$. Put $K=\\{x\\in Q:f(x)=0\\}$. Choose $y_n\\in K_n$ and pass to a convergent subsequence; uniform convergence and Lipschitz continuity show its limit belongs to $K$, so $K$ is nonempty and compact. The 1-Lipschitz property gives $f(x)\\leq d_K(x)$ for $x\\in Q$.\n\nFix $x\\in Q$ and choose nearest points $z_n\\in K_n$. Along a subsequence $z_n\\to z\\in Q$. Uniform convergence gives $f(z)=0$, while $f(x)=\\lim|x-z_n|=|x-z|\\geq d_K(x)$. Therefore $f=d_K$ on $Q$. Finally the Hausdorff distance equals the supremum of the distance-function difference already on $K_n\\cup K\\subset Q$, so uniform convergence on $Q$ proves the claimed Hausdorff convergence. Convexity of the sets is not needed.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Theorem 2.2.25 and Proposition 2.2.27, pp. 42–44; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-complementary-hausdorff",
+      "kind": "proof",
+      "body_md": "For $x\\in Q\\setminus\\Omega$, both $d_{Q\\setminus\\Omega}(x)$ and $q_\\Omega(x)$ are zero. If $x\\in\\Omega$, the nearest point of its full complement lies on $\\partial\\Omega\\subset Q\\setminus\\Omega$, so the two distances again coincide. The distance-function characterization of $d_H$ may take its supremum on $Q$, because both compact complements lie there. Outside $Q$ both $q$ functions vanish, giving the displayed equality and independence of the containing ball. The positive set of $q_\\Omega$ is precisely $\\Omega$, so this is a metric on bounded open sets, including the empty set.\n\nSince $q_\\varnothing=0$, the distance to the empty set is $\\sup q_\\Omega$, the largest possible clearance from the boundary, equivalently the supremal contained-ball radius. For $U$, $q_U(x)=(1-|x|)_+$. Inside the punctured ball the clearance is $\\min(|x|,1-|x|)$, with value zero at $0$. At $0$ the two clearances differ by one, and nowhere can they differ by more than one. Hence $d_H^c(U,U\\setminus\\{0\\})=1$, even though the compact closures have Hausdorff distance zero.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Definitions 2.2.8–2.2.10, pp. 30–31; Lemma 2.2.12 and Remarks 2.2.11–2.2.14, pp. 31–32; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-domain-interior-persistence",
+      "kind": "proof",
+      "body_md": "The assertion is automatic if $F$ is empty. Otherwise, by compactness, $a=\\min_F q_\\Omega>0$. Uniform convergence of the clearance functions gives $q_{\\Omega_n}\\geq a/2$ on $F$ for large $n$, hence $F\\subset\\Omega_n$. In particular every fixed $x\\in\\Omega$ eventually lies in $\\Omega_n$. Thus $1_{\\Omega\\setminus\\Omega_n}\\to0$ pointwise and is dominated by the integrable indicator of the containing ball. Dominated convergence gives the first measure assertion. Since $|\\Omega_n|\\geq|\\Omega|-|\\Omega\\setminus\\Omega_n|$, the lower-semicontinuity assertion follows. Apply the first argument to the compact support of the function for the final statement. Nothing here controls the extra measure in $\\Omega_n\\setminus\\Omega$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Proposition 2.2.17 and Remark 2.2.18, p. 35; Proposition 2.2.23, pp. 41–42; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-grid-topology-counterexample",
+      "kind": "proof",
+      "body_md": "Every point of $[0,1]$ is within $1/(2n)$ of $G_n$, with equality at the grid-interval midpoints; the reverse directed distance is zero. This proves the first formula. With containing ball (interval) $Q=[0,1]$, the complements of $\\Omega_n$ and $\\varnothing$ are $G_n$ and $[0,1]$, giving the second formula. Each grid has measure zero but its compact Hausdorff limit has measure one. Conversely $|\\Omega_n|=1$ while its complementary Hausdorff limit is empty. Removing finitely many points changes neither the closure of the open interval nor its indicator almost everywhere. The same sequence therefore records different information under compact-closure convergence, convergence of indicators, and complementary Hausdorff convergence.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "§2.2.5, third counterexample and equation (2.24), pp. 40–41; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-compact-domain-convergence",
+      "kind": "proof",
+      "body_md": "A compact subset of either candidate limit is contained in $U$, hence in every $\\Omega_n$. Both candidates have closure $\\overline U$. A compact $G$ outside $\\overline U$ has a positive distance from it, so for large $n$ it is outside $\\overline{\\Omega_n}$. Thus both distinct open sets are limits under this definition. The complement of the closure in the second condition is essential; replacing it by the complement of the open set would give a different convergence notion.\n\nFor the measure claim, a point of $\\Omega$ eventually belongs to every $\\Omega_n$, and a point outside $\\overline\\Omega$ eventually belongs to none. The indicators therefore converge pointwise away from $\\partial\\Omega$. That boundary has measure zero. On any bounded region, dominated convergence applies to $|1_{\\Omega_n}-1_\\Omega|^p\\leq1$, proving local $L^p$ convergence. If all sets lie in one bounded region, the convergence is global in $L^p$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Definition 2.2.21, p. 38; §2.2.5, first counterexample, p. 39; Exercise 2.7, p. 63; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-indicator-set-distance",
+      "kind": "proof",
+      "body_md": "The function $|1_E-1_F|$ is the indicator of $E\\triangle F$, so every positive finite power has the same integral. The triangle inequality follows from $E\\triangle G\\subset(E\\triangle F)\\cup(F\\triangle G)$; zero distance means equality modulo null sets. The essential supremum is one precisely when the symmetric difference has positive measure.\n\nUnder weak-* convergence, testing against $1$ and $1_E$, both integrable on $Q$, gives $|E_n|\\to|E|$ and $|E_n\\cap E|\\to|E|$. Thus\n$$|E_n\\triangle E|=|E_n|+|E|-2|E_n\\cap E|\\to0.$$\nThe first formula gives every finite $L^p$ convergence. Select a subsequence with $|E_{n_j}\\triangle E|\\leq2^{-j}$. The sum of these indicator differences is integrable, hence finite almost everywhere, so outside a null set membership differs only finitely often. This proves subsequential almost-everywhere convergence without making a claim about the full sequence.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Proposition 2.2.1 and Remarks 2.2.4–2.2.5, pp. 27–29; Exercise 2.10(1)–(2), p. 64; English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-oscillating-indicators",
+      "kind": "proof",
+      "body_md": "For continuous $\\varphi$, the integral of $1_{E_n}-1/2$ over each cell is zero. Subtracting the left-endpoint value of $\\varphi$ on each cell bounds the total integral against $\\varphi$ by its modulus of continuity at $1/n$, which tends to zero. The functions $1_{E_n}-1/2$ are uniformly bounded, so approximation in $L^1$ extends convergence to every $L^1$ test function. This is weak-* convergence to the constant density $1/2$.\n\nHowever $|1_{E_n}-1/2|=1/2$ almost everywhere, so its $L^p$ norm is always $1/2$. Any strong limit would also be the weak limit $1/2$, which is impossible. Each component interval of $E_n$ has length $1/(2n)$, so the largest clearance is $1/(4n)$. Hence $d_H^c(E_n,\\varnothing)=1/(4n)\\to0$. The fractional weak limit of indicators and the empty domain limit describe different phenomena.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.1, p. 61; Proposition 2.2.28, p. 45 (uniform-cell variant); English edition (2018), printed pages",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-convex-hausdorff-volume",
+      "kind": "proof",
+      "body_md": "The support-distance identity gives $h_K-\\delta_n\\leq h_{K_n}\\leq h_K+\\delta_n$. Since $h_K\\geq r$, this implies\n$$(1-\\delta_n/r)h_K\\leq h_{K_n}\\leq(1+\\delta_n/r)h_K,$$\nwhich is the claimed pair of inclusions. Both $K_n$ and $K$ lie between the same inner and outer dilates, so\n$$|K_n\\triangle K|\\leq\\big[(1+\\delta_n/r)^d-(1-\\delta_n/r)^d\\big]|K|\\to0.$$\nVolume convergence follows as well. For a nonempty compact $F\\subset\\operatorname{int}K$ (the empty case is automatic), there is a uniform support margin $\\eta=\\min_{x\\in F,u\\in\\mathbb S^{d-1}}(h_K(u)-x\\cdot u)>0$. When $\\delta_n<\\eta$, every point of $F$ has positive support margin in $K_n$, proving the interior inclusion.\n\nIf instead the Hausdorff limit is lower-dimensional, the volume still tends to zero: all $K_n\\subset K+\\delta_nB$, whose volume tends to $|K|=0$: for every fixed $\\varepsilon>0$ the inclusion $K_n\\subset K+\\varepsilon B$ holds eventually, and $|K+\\varepsilon B|\\downarrow|K|$ as $\\varepsilon\\downarrow0$. This uses continuity from above of finite Lebesgue measure and does not require $\\delta_n$ to decrease monotonically. The multiplicative sandwich itself requires the interior ball and is not asserted in that case.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.2, p. 61; volume counterexamples in §2.2.3.2, p. 37; convex specialization; English edition (2018), printed pages",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-convex-boundary-distance",
+      "kind": "proof",
+      "body_md": "Put $\\delta=d_H(K,L)=\\max_u|h_K(u)-h_L(u)|$. Since $s_K(x)=\\max_u(x\\cdot u-h_K(u))$, the elementary bound for the difference of two maxima gives $|s_K(x)-s_L(x)|\\leq\\delta$. At $x\\in\\partial K$, $s_K(x)=0$ and $|s_L(x)|=\\operatorname{dist}(x,\\partial L)$; hence that distance is at most $\\delta$. Reverse the roles to obtain $d_H(\\partial K,\\partial L)\\leq\\delta$.\n\nEvery compact convex body is the convex hull of its boundary (an interior point lies on a chord with boundary endpoints). Nonexpansiveness of convex hull gives $d_H(K,L)\\leq d_H(\\partial K,\\partial L)$, proving equality. For a finite grid in the real line, $\\partial G_n=G_n$, whereas $\\partial[0,1]=\\{0,1\\}$. Along even $n$, the distance between these boundaries is $1/2$, although $d_H(G_n,[0,1])=1/(2n)\\to0$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.4(1)–(2), p. 62; convex specialization; English edition (2018), printed pages",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-hausdorff-geometric-stability",
+      "kind": "proof",
+      "body_md": "Write $\\delta=d_H(K,L)$. Given $x,y\\in K$, choose $x',y'\\in L$ within $\\delta$ of them. Then $|x-y|\\leq|x'-y'|+2\\delta$. Take suprema and reverse the roles for the diameter bound. If $L\\subset B(c,R)$, then $K\\subset L+\\delta B\\subset B(c,R+\\delta)$; taking infima over enclosing balls and reversing the roles proves the radius bound.\n\nFor convex bodies, a ball $B(c,r)$ contained in $K$ gives $h_K(u)\\geq c\\cdot u+r$. The support-distance estimate implies $h_L(u)\\geq c\\cdot u+r-\\delta$, hence $B(c,r-\\delta)\\subset L$ when $r\\geq\\delta$. If $r<\\delta$ the required inequality $r(L)\\geq r-\\delta$ is automatic. Optimize over inscribed balls and reverse roles. Concentric balls whose radii differ by $\\delta$ attain all three constants.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Exercise 2.2, p. 61; compact-set topology in §2.2.3.2; radius companions; English edition (2018), printed pages",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-intersection-trap",
+      "kind": "proof",
+      "body_md": "Inclusion gives the inequality. Take unit disks with centers $(-a,0),(a,0)$, where $0<a<1$. Both support functions equal $1$ in direction $(0,1)$. In their lens, adding the inequalities $(x\\pm a)^2+y^2\\leq1$ gives $y^2\\leq1-a^2-x^2$. The uppermost point is $(0,\\sqrt{1-a^2})$, so the intersection support is strictly below $1$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "outline",
+          "locator": "Exercise 1.4(ii), corrected",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-difference-body",
+      "kind": "proof",
+      "body_md": "The support function of $-K$ at $u$ is $h_K(-u)$. Hence the support of $K+(-K)$ on the sphere is precisely the width function. A convex body is determined by its support function, and $h_{wB}=w$. More explicitly, if $K_i$ has width $w_i$ and $\\lambda_i\\geq0$, then $h_{\\sum_i\\lambda_iK_i}(u)+h_{\\sum_i\\lambda_iK_i}(-u)=\\sum_i\\lambda_iw_i$. Whenever this sum is positive, the resulting body has that constant width; the all-zero combination degenerates to a point.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercises 7-15 and 7-16, printed p. 75",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-binormals",
+      "kind": "proof",
+      "body_md": "For distinct $x,y\\in K$, choose $u=(x-y)/|x-y|$; then $|x-y|\\leq h_K(u)+h_K(-u)=w$. Choose contact points $x$ and $y$ for normals $u,-u$. Their projection difference is $w$, while their distance is at most $w$, so equality forces $x-y=wu$. Fixing $y$ shows that there is only one possible $x$, and conversely. The opposite contact chord has length $w$, so the diameter bound is attained. Thus all support faces are singletons and $K$ is strictly convex. Strict convexity rules out boundary segments; it does not rule out corners, where one contact point has several supporting normals.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercises 7-3–7-5, printed pp. 73–74",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-central-symmetry",
+      "kind": "proof",
+      "body_md": "Translate the symmetry center to zero. Then $K=-K$, so $h_K(u)=h_K(-u)$ and the width condition gives $h_K=w/2$. This is the support function of $(w/2)B$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercise 7-7, printed p. 74",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-projections",
+      "kind": "proof",
+      "body_md": "For a unit vector $u\\in E$, $(\\operatorname{proj}_E x)\\cdot u=x\\cdot u$, so the projected support function is the restriction of $h_K$ to $E$. The opposite-direction sum remains $w$. Barbier’s theorem applied in each plane gives $\\pi w$. Equal shadow perimeters do not assert equal shadow areas.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§3.3, Theorem 3.3.1, printed p. 67",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-concentric-balls",
+      "kind": "proof",
+      "body_md": "For any center $c$, write $H_c(u)=h_K(u)-c\\cdot u$. The smallest enclosing radius about $c$ is $R_c=\\max_u H_c(u)=\\max_{x\\in K}|x-c|$. Since $H_c(u)+H_c(-u)=w$, its minimum is $w-R_c$. If this minimum is positive, it is the largest inscribed radius about $c$, by the support criterion for inclusion. A body of positive constant width has interior: otherwise an orthogonal direction to its affine hull has width zero. An interior center therefore has $R_c<w$. Therefore the minimum of $R_c$ is strictly less than $w$. At a minimizing center $c_*$, the positive quantity $w-R_{c_*}$ is a contained-ball radius. For any other inscribed ball $B(c,r)$, the support inequalities give $r\\leq\\min_u H_c(u)=w-R_c\\leq w-R_{c_*}$. Thus this ball is a largest inball, the same center gives a smallest enclosing ball, and $r(K)+R(K)=w$. Existence of a minimum follows because $R_c\\to\\infty$ as $|c|\\to\\infty$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§3.4; Yaglom Exercise 7-13",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-ball-intersection",
+      "kind": "proof",
+      "body_md": "The diameter bound gives the forward inclusion. If $z\\notin K$, separate it by a support plane: $z\\cdot u>h_K(u)$. Let $y$ be the contact point for $-u$. Then $(z-y)\\cdot u>w$, so $z\\notin B(y,w)$. For the spindle statement, every ball in the displayed representation contains the chosen two points; the intersection over all balls containing them is a subset of this particular intersection.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§6.1; outline Exercise 1.19",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-support-parametrization",
+      "kind": "proof",
+      "body_md": "For any contact point $X$ with outer normal $n(\\theta)$, the support inequality gives $h(\\theta+s)\\geq X\\cdot n(\\theta+s)$, with equality at $s=0$. Differentiating this scalar inequality at its minimum yields $X\\cdot t(\\theta)=h^{\\prime}(\\theta)$; also $X\\cdot n(\\theta)=h(\\theta)$. Thus the contact point is unique and\n$$X(\\theta)=h(\\theta)n(\\theta)+h^{\\prime}(\\theta)t(\\theta).$$\nEvery boundary point lies on some supporting line, so this parametrization covers the boundary. Differentiate with $n^{\\prime}=t$ and $t^{\\prime}=-n$ to obtain $X^{\\prime}=(h+h^{\\prime\\prime})t=\\rho t$. Since $\\rho>0$, increasing $\\theta$ traverses the boundary counterclockwise once, and $ds=\\rho\\,d\\theta$. Periodicity gives\n$$P=\\int_0^{2\\pi}\\rho\\,d\\theta=\\int_0^{2\\pi}h\\,d\\theta.$$\nGreen’s formula and $\\det(n,t)=1$ give\n$$A=\\frac12\\int_0^{2\\pi}\\det(X,X^{\\prime})\\,d\\theta=\\frac12\\int_0^{2\\pi}h(h+h^{\\prime\\prime})\\,d\\theta.$$\nPeriodic integration by parts yields $A=\\frac12\\int_0^{2\\pi}(h^2-(h^{\\prime})^2)\\,d\\theta$. This derivation does not assume in advance that the unknown contact-point map is differentiable.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§§1.7, 2.5; outline Exercise 1.2 (area factor corrected)",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-barbier",
+      "kind": "proof",
+      "body_md": "For a convex polygon, traverse its boundary once. The total variation of the scalar projection onto $u(\\theta)$ is twice the width, because the projection increases along one boundary chain and decreases along the other. An edge of length $\\ell$ and direction $\\alpha$ contributes $\\ell|\\cos(\\theta-\\alpha)|$. Integrate over $0\\leq\\theta\\leq\\pi$: each edge contributes $2\\ell$. Thus $P=\\int_0^\\pi w_K(\\theta)\\,d\\theta$. Approximation gives the formula for every convex body, and constant width gives $P=\\pi w$.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§5.1.2; Yaglom Exercise 7-11",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-odd-harmonics",
+      "kind": "proof",
+      "body_md": "The antipodal sum is $w$, because $m$ is odd. The candidate curvature radius is\n$$\\rho=h+h^{\\prime\\prime}=\\frac w2-(m^2-1)a\\cos(m\\theta).$$\nA $C^2$ support function necessarily satisfies $h+h^{\\prime\\prime}\\geq0$: if $X$ is a contact point at angle $\\theta$, then $h(\\theta+s)-X\\cdot n(\\theta+s)$ has a local minimum zero at $s=0$, and its second derivative there is $h^{\\prime\\prime}(\\theta)+h(\\theta)$. Thus necessarily\n$$|a|\\leq\\frac{w}{2(m^2-1)}.$$\nFor completeness this condition is also sufficient here. Define the periodic curve $X=hn+h^{\\prime} t$, so $X^{\\prime}=\\rho t$. For any fixed $\\alpha$ and $\\theta\\in[\\alpha,\\alpha+\\pi]$,\n$$(X(\\theta)-X(\\alpha))\\cdot n(\\alpha)=\\int_\\alpha^\\theta\\rho(s)\\sin(\\alpha-s)\\,ds\\leq0.$$\nFor $\\theta\\in[\\alpha+\\pi,\\alpha+2\\pi]$, integrate backwards from $X(\\alpha+2\\pi)=X(\\alpha)$; the same inequality follows because $\\sin(\\alpha-s)\\geq0$ on that second half. Hence every point of the curve lies in the supporting half-plane $x\\cdot n(\\alpha)\\leq h(\\alpha)$, and $X(\\alpha)$ attains equality. The convex hull of the curve therefore has support function exactly $h$.\n\nFor strict inequality in the range, $\\rho>0$ and the support-parametrization area formula applies. Orthogonality gives\n$$\\int_0^{2\\pi}h^2=\\frac{\\pi w^2}{2}+\\pi a^2,\\qquad \\int_0^{2\\pi}(h^{\\prime})^2=\\pi m^2a^2,$$\nso $A=\\pi w^2/4-\\pi(m^2-1)a^2/2$. At either endpoint of the allowed range, replace $a$ by $(1-\\varepsilon)a$ and pass to the limit using uniform support convergence and convex-volume continuity. This justifies the formula even where $\\rho$ vanishes. Nonzero $a$ does not give a disk, whose support has only a constant term and first harmonics. Evenness gives reflection in the horizontal axis. Choosing uncountably many positive $a$ in the allowed interval even gives distinct areas, hence uncountably many mutually noncongruent examples.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Derived from the planar support criterion; cf. Martini §5.1",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-corner-angle",
+      "kind": "proof",
+      "body_md": "Let $p$ be a corner, with interior angle $\\alpha\\in(0,\\pi)$ and outward normal interval of length $\\beta=\\pi-\\alpha\\in(0,\\pi)$. For every normal $u$ in this interval, the opposite contact point is $p-wu$ by the binormal identity. These points form a radius-$w$ arc in the boundary. Its endpoints $q,r$ satisfy\n$$|q-r|=2w\\sin(\\beta/2)\\leq w.$$\nSince $0\\leq\\beta/2\\leq\\pi/2$, sine is increasing here, so $\\beta\\leq\\pi/3$ and $\\alpha\\geq2\\pi/3$.\n\nAt equality, $p,q,r$ form an equilateral triangle of side $w$. The diameter bound puts $K$ inside $T=B(p,w)\\cap B(q,w)\\cap B(r,w)$. To recall why $T$ has width $w$, consider its circular boundary arc centered at $p$. At a point $x$ of this arc the outer normal is $u=(x-p)/w$. The opposite supporting point is $p$. Indeed, $z\\in T\\subset B(q,w)$ gives $2(z-p)\\cdot(q-p)\\geq|z-p|^2\\geq0$, and the disk centered at $r$ gives the same inequality with $r-p$. The vector $u$ is a nonnegative linear combination of $q-p$ and $r-p$, so $(z-p)\\cdot u\\geq0$ for every $z\\in T$. The disk centered at $p$ gives the other supporting line, so the separation is $w$. The same reasoning for all three arcs gives normal intervals of $60^\\circ$ each; these intervals and their opposites cover all directions. Thus $T$ has constant width $w$.\n\nFinally $K\\subset T$ gives $f(u)=h_T(u)-h_K(u)\\geq0$. Equal widths give $f(u)+f(-u)=0$, forcing $f\\equiv0$ and hence $K=T$. This last argument is the useful general fact that nested convex bodies of the same constant width must coincide.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "yaglom",
+          "locator": "§7, Exercises 7-8–7-9, printed p. 74",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-pal-hexagon",
+      "kind": "proof",
+      "body_md": "Write $h(\\theta)=w/2+g(\\theta)$, where $g(\\theta+\\pi)=-g(\\theta)$. Choose $c\\in\\mathbb R^2$ to solve $c\\cdot n(\\theta)=g(\\theta)$ and $c\\cdot n(\\theta+2\\pi/3)=g(\\theta+2\\pi/3)$. The third equality at $\\theta+4\\pi/3$ holds exactly when $F(\\theta)=\\sum_{j=0}^2g(\\theta+2j\\pi/3)=0$, since the three normals sum to zero. The continuous function $F$ satisfies $F(\\theta+\\pi)=-F(\\theta)$, hence has a zero. At this angle $h(\\theta+2j\\pi/3)-c\\cdot n(\\theta+2j\\pi/3)=w/2$ for $j=0,1,2$. Antipodal symmetry gives the same equality at the opposite three normals. These six normals are spaced by $\\pi/3$, so the six supporting lines have distance $w/2$ from $c$. Their contact points belong to $K$ and thus satisfy all six half-plane inequalities; consequently each hexagon side really touches $K$. Their intersection is the desired regular hexagon. Its apothem is $w/2$, hence its side length is $w/\\sqrt3$ and its area is $\\sqrt3w^2/2$. Its vertex-direction width is $2w/\\sqrt3$, so it is not a constant-width body.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "blog-hexagon",
+          "locator": "2013 post, reformulated with support functions",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "martini",
+          "locator": "Theorem 15.2.3 (Pál); Theorem 12.1.5 uses it in the mixed-area proof",
+          "relationship": "background"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-packing-two",
+      "kind": "proof",
+      "body_md": "The two copies are full-dimensional convex bodies with disjoint interiors, so a weak separating line exists: for some unit normal $u$ and number $a$, $K_1\\subset\\{x:x\\cdot u\\leq a\\}$ and $K_2\\subset\\{x:x\\cdot u\\geq a\\}$. Contact on the line is allowed. In its normal direction their projection intervals have disjoint interiors and both lie in the projection interval of $K$. If the similarity ratios are $\\lambda_1,\\lambda_2$, their widths are $\\lambda_1w,\\lambda_2w$, independently of rotation. Hence $(\\lambda_1+\\lambda_2)w\\leq w$. Perimeter scales by the similarity ratio, giving the result.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§3.2, Theorem 3.2.3, printed pp. 66–67",
+          "relationship": "adapted"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-compactness",
+      "kind": "proof",
+      "body_md": "The class is nonempty because it contains the ball of radius $w/2$, and volumes are nonnegative, so choose a sequence whose volumes tend to the infimum. Translate each member $K_n$ to contain the origin; translation preserves both width and volume. Its diameter is $w$, hence $K_n\\subset wB$.\n\nHausdorff selection yields a subsequence converging to a nonempty compact $K\\subset wB$. Convexity is preserved under this convergence. The support-distance identity gives uniform convergence $h_{K_n}\\to h_K$, so\n$$h_K(u)+h_K(-u)=\\lim_n\\big(h_{K_n}(u)+h_{K_n}(-u)\\big)=w$$\nfor every unit $u$. This limit has nonempty interior: otherwise its affine hull would lie in a proper hyperplane, and a direction orthogonal to that hyperplane would have width zero. Thus $K$ is an admissible width-$w$ convex body. Volume continuity now gives $|K|=\\lim_n|K_n|$, equal to the infimum. The translation step is essential to obtain a bounded family before applying compactness.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "schneider",
+          "locator": "§1.8; outline Exercises 1.8–1.9 (compactness added)",
+          "relationship": "adapted"
+        },
+        {
+          "source_id": "henrot-pierre",
+          "locator": "Theorem 2.2.25, pp. 42–44, for compact-set selection; constant-width specialization",
+          "relationship": "background"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-enclosing-ball-core",
+      "kind": "proof",
+      "body_md": "After translating $c$ to zero, containment gives $h_K(u)\\leq R$ for every unit vector. Constant width gives $h_K(u)=w-h_K(-u)\\geq w-R$. The support inequalities therefore sandwich the body between $(w-R)B$ and $RB$, proving the inclusion. If $R<w$, every such body contains the same positive-radius ball, so any two have intersecting interiors. At $R=w$ the conclusion is only the common point $c$, which is compatible with a packing.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-farthest-nearest-duality",
+      "kind": "proof",
+      "body_md": "Maximizing first over unit directions yields $F(c)=\\max_u(h_K(u)-c\\cdot u)$. The antipodal support identity transforms this into\n$$F(c)=w+\\max_u(c\\cdot u-h_K(u)).$$\nIf $c\\notin K$, the maximum on the right is $\\operatorname{dist}(c,K)$. Indeed, every term is at most that distance, and equality holds for the outward direction from the nearest point of $K$ to $c$, whose perpendicular hyperplane supports $K$. If $c\\in K$, the minimum of $h_K(u)-c\\cdot u$ is the radius of the largest ball centered at $c$ contained in $K$, namely $\\operatorname{dist}(c,\\partial K)$. This gives the other branch, including zero boundary distance. Both distance terms are strictly positive away from the boundary in their respective regions.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ]
+    },
+    {
+      "problem_id": "cw-covering-center-locus",
+      "kind": "proof",
+      "body_md": "The condition $K\\subset B(c,R)$ is equivalent to $h_K(u)-c\\cdot u\\leq R$ for all unit $u$. Replacing $u$ by $-u$ and using $h_K(-u)=w-h_K(u)$ rewrites it as\n$$c\\cdot u\\leq h_K(u)+R-w\\quad\\hbox{for every }u.$$\nFor $R\\leq w$ these are exactly the inequalities $c+(w-R)B\\subset K$, defining the erosion. For $R\\geq w$ the right-hand side is the support function of $K+(R-w)B$, defining that outer parallel body. At $R=w$ the inequalities define $K$ itself. This identifies a locus of centers, not the union of all covering balls.",
+      "proof_status": "checked-draft",
+      "checked_by": "ChatGPT 6 Astra; mathematical and exposition review, 2026-10-15; human mathematical review pending",
+      "sources": [
+        {
+          "source_id": "packing-discussion",
+          "locator": "Companion exercise developed from the author’s disk-packing question; no novelty claim",
+          "relationship": "original-exercise"
+        }
+      ]
+    }
+  ]
+}

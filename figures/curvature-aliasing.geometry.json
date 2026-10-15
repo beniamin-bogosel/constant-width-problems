@@ -1,0 +1,8 @@
+{
+  "grid_size": 8,
+  "frequency": 19,
+  "witness_angle": 0.24802047265182578,
+  "witness_curvature": -1.1772815716257412,
+  "max_sample_error": 5.512148557436266e-15,
+  "qualification": "Analytic aliasing identity; dense samples used only to draw the graph."
+}

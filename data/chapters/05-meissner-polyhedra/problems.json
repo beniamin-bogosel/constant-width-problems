@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0",
+  "chapter_id": "05-meissner-polyhedra",
+  "problems": [
+    {
+      "id": "cw-reuleaux-tetra-not-width",
+      "title": "The Reuleaux tetrahedron does not have constant width",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 1,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "reuleaux-tetrahedron",
+        "counterexample"
+      ],
+      "statement_md": "Take regular tetrahedron vertices $(a,a,a),(a,-a,-a),(-a,a,-a),(-a,-a,a)$ with $a=1/(2\\sqrt2)$, and intersect their unit balls. Exhibit two points of the intersection at distance $\\sqrt3-1/\\sqrt2>1$, even though its width in a vertex-to-opposite-face direction is one.",
+      "hint_md": "Look for the two exceptional points on the horizontal coordinate axis, equidistant from the relevant pairs of tetrahedral vertices.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "martini",
+          "locator": "§8.2, Reuleaux tetrahedron; coordinate exercise",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-dual-edge-coordinates",
+      "title": "Helper midpoints for a dual edge pair",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 2,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "dual-edges",
+        "helper-points",
+        "three-dimensional"
+      ],
+      "statement_md": "Four points satisfy $|a-c|=|a-d|=|b-c|=|b-d|=1$, $|a-b|=2u$, $|c-d|=2v$, with $0<u,v\\leq1/2$. Show that, up to a rigid motion, they have coordinates $a=(0,0,-u)$, $b=(0,0,u)$, $c=(-v,h,0)$, $d=(v,h,0)$, $h=\\sqrt{1-u^2-v^2}$. Use the edge midpoints as helper points.",
+      "hint_md": "Place the midpoint of $ab$ at the origin. Points equidistant from $a,b$ lie in its perpendicular bisector plane; then use the midpoint of chord $cd$.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "intermediary",
+          "locator": "Section Dual spindle–wedge cells, opening coordinate construction",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "dual-edge-helpers",
+          "path": "figures/dual-edge-helpers.png",
+          "caption_md": "The midpoints O and H reduce the four cross-distance constraints to h²+u²+v²=1.",
+          "alt": "Three-dimensional diagram of two perpendicular opposite edges, their midpoints, and four dashed unit cross edges."
+        }
+      ]
+    },
+    {
+      "id": "cw-dual-dihedral",
+      "title": "A dihedral angle from two helper triangles",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 3,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "dual-edges",
+        "helper-points"
+      ],
+      "statement_md": "Let $|a-c|=|a-d|=|b-c|=|b-d|=1$, $|a-b|=2u$, $|c-d|=2v$, with $0<u,v\\leq1/2$. Put $s=2\\arcsin u$ and $t=2\\arcsin v$. Let $\\phi_{ab}$ be the angle between the half-planes $abc$ and $abd$ about the line $ab$ toward $c,d$. Prove $\\phi_{ab}=2\\arcsin(v/\\sqrt{1-u^2})$ and derive the analogous formula for $\\phi_{cd}$.",
+      "hint_md": "Cut perpendicular to the edge axis through its midpoint. The opening angle becomes the vertex angle of an isosceles triangle.",
+      "prerequisites": [
+        "cw-dual-edge-coordinates"
+      ],
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "§2, dual-edge geometry; equations for dihedral angles",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "dual-edge-helpers",
+          "path": "figures/dual-edge-helpers.png",
+          "caption_md": "The midpoints O and H reduce the four cross-distance constraints to h²+u²+v²=1.",
+          "alt": "Three-dimensional diagram of two perpendicular opposite edges, their midpoints, and four dashed unit cross edges."
+        }
+      ]
+    },
+    {
+      "id": "cw-spindle-area",
+      "title": "Area of a spindle patch by a one-dimensional integral",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 4,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "surface-area",
+        "spindles",
+        "integration"
+      ],
+      "statement_md": "Let $0<\\theta\\leq\\pi/3$ and $0<\\phi\\leq2\\pi$. All angles are in radians. Rotate $y(x)=\\sqrt{1-x^2}-\\cos(\\theta/2)$, for $|x|\\leq\\sin(\\theta/2)$, through an angle $\\phi$ about the $x$-axis. Prove that the area of the curved surface is $2\\phi[\\sin(\\theta/2)-(\\theta/2)\\cos(\\theta/2)]$.",
+      "hint_md": "Write a surface-of-revolution parametrization. The factor $\\sqrt{1+y\\prime(x)^2}$ cancels part of the square root in the profile.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "§3.2, Proposition labelled prop:spindle-area",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "spindle-generator",
+          "path": "figures/spindle-generator.svg",
+          "caption_md": "Rotate the minor arc AB around its chord; the distance from C to the chord is cos(θ/2).",
+          "alt": "Unit circle center below a horizontal chord, with two unit radii and the central angle marked."
+        }
+      ]
+    },
+    {
+      "id": "cw-spherical-helper",
+      "title": "Spherical face area by an auxiliary interior point",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 5,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "advanced-undergraduate",
+      "tags": [
+        "spherical-geometry",
+        "helper-points",
+        "computation"
+      ],
+      "statement_md": "A convex geodesic polygon lies in an open hemisphere of the unit sphere and has cyclic vertices $v_1,\\ldots,v_m$. Choose an interior unit point $q$. Using the solid-angle identity $E(a,b,c)=2\\operatorname{atan2}(\\det(a,b,c),1+a\\cdot b+b\\cdot c+c\\cdot a)$ for an oriented spherical triangle, prove an area formula for the polygon and show it is independent of $q$. Explain how to handle a spherical face on a sphere centered at $p$.",
+      "hint_md": "Join the helper point to each boundary vertex by a minor geodesic. Sum the oriented triangle areas rather than averaging them.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "editorial",
+          "locator": "Auxiliary-point triangulation of the geodesic face decomposition in Volume_Meissner.tex §3",
+          "relationship": "original-exercise"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "spherical-helper",
+          "path": "figures/spherical-helper.png",
+          "caption_md": "An auxiliary interior point divides the spherical octant into three geodesic triangles.",
+          "alt": "Spherical octant with its three coordinate-axis vertices and geodesic spokes from an interior helper point."
+        }
+      ]
+    },
+    {
+      "id": "cw-meissner-tetra-volume",
+      "title": "Exact volume of either Meissner tetrahedron",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 6,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "meissner-tetrahedron",
+        "volume",
+        "computation"
+      ],
+      "statement_md": "You may use the Meissner surface-area formula $S=2\\pi-2\\sum_{i=1}^{m-1}f(s_i,t_i)$ for unit width, where $f(s,t)=t\\cos(t/2)\\arcsin(\\sin(s/2)/\\cos(t/2))$. Compute the area and volume for either Meissner tetrahedron, whose three dual pairs all have $s_i=t_i=\\pi/3$.",
+      "hint_md": "All three summands coincide. Relate $\\arcsin(1/\\sqrt3)$ to $\\arccos(1/3)$ by a half-angle identity, then apply Blaschke’s relation.",
+      "prerequisites": [
+        "cw-blaschke-volume"
+      ],
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "§3.3, Theorem surface-Meissner and following corollary",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "meissner-two-types",
+          "path": "figures/meissner-two-types.png",
+          "caption_md": "Spherical patches are blue, wedges pale green, and spindle patches orange. Both choices have the same exact area and volume. Triangulated illustrations.",
+          "alt": "Side-by-side rendered Meissner tetrahedra with the star and face choices of smoothed edges."
+        }
+      ]
+    },
+    {
+      "id": "cw-meissner-summand",
+      "title": "Convexity and superadditivity of an edge contribution",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 7,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "convexity",
+        "dual-edges",
+        "inequalities"
+      ],
+      "statement_md": "For $f(s,t)=t\\cos(t/2)\\arcsin(\\sin(s/2)/\\cos(t/2))$ on $[0,\\pi/3]^2$, prove $f(0,t)=0$, $f(s,t)\\geq st/2$, and, for $a,b\\geq0$ with $a+b\\leq\\pi/3$, $f(a,t)+f(b,t)\\leq f(a+b,t)$.",
+      "hint_md": "With $t$ fixed, compute the first two derivatives with respect to $s$. Convexity together with a zero value at the origin gives the splitting inequality.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "Appendix A, first-variable derivatives; superadditivity derived here",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-extremal-bookkeeping",
+      "title": "Counting the diameters added by helper points",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 8,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "diameter-graphs",
+        "helper-points",
+        "combinatorics"
+      ],
+      "statement_md": "A finite unit-diameter set $X\\subset\\mathbb R^3$ is called extremal when it has $2|X|-2$ unit-distance pairs. Suppose $Y\\subsetneq X$ is also extremal, $Z=X\\setminus Y$ has $k$ points, and $q$ of the unit-distance pairs have both endpoints in $Z$. Prove that exactly $2k$ new pairs appear and that $\\sum_{z\\in Z}\\deg_X(z)=2k+q$. If every vertex of $X$ has degree at least three, prove $k\\geq3$ and characterize $k=3$.",
+      "hint_md": "Subtract the extremal pair counts. In the degree sum over the new points, internal pairs are counted twice and crossing pairs once.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "intermediary",
+          "locator": "Proposition prop:edge-count, exact bookkeeping",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "dual-edge-helpers",
+          "path": "figures/dual-edge-helpers.png",
+          "caption_md": "The midpoints O and H reduce the four cross-distance constraints to h²+u²+v²=1.",
+          "alt": "Three-dimensional diagram of two perpendicular opposite edges, their midpoints, and four dashed unit cross edges."
+        }
+      ]
+    },
+    {
+      "id": "cw-dangling-delete",
+      "title": "Deleting a degree-two point preserves extremality",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 9,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "diameter-graphs",
+        "combinatorics"
+      ],
+      "statement_md": "Let $X$ be an extremal unit-diameter set in $\\mathbb R^3$ with at least five points. Show that deleting a point of degree two leaves an extremal unit-diameter set. Explain why this counting argument alone does not compare the volumes of the corresponding Meissner bodies.",
+      "hint_md": "Count how many unit-distance pairs disappear. Then distinguish information about the graph from information about geometric area contributions.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "intermediary",
+          "locator": "§1; compare the 2026 dangling-point paper",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "cw-tetra-smoothings",
+      "title": "Why a tetrahedron has two smoothing types",
+      "chapter_id": "05-meissner-polyhedra",
+      "order": 10,
+      "status": "solved",
+      "editorial_status": "ready-for-review",
+      "level": "undergraduate",
+      "tags": [
+        "combinatorics",
+        "meissner-tetrahedron"
+      ],
+      "statement_md": "Choose one edge from each of the three pairs of opposite edges of a tetrahedron. Prove that the three chosen edges form either a vertex star or a triangular face. Count the choices of each type.",
+      "hint_md": "View the selected edges as a graph on four vertices. If no vertex has degree three, rule out a three-edge path using the opposite-edge restriction.",
+      "prerequisites": [],
+      "sources": [
+        {
+          "source_id": "meissner-volume",
+          "locator": "§2, discussion of the two Meissner tetrahedra",
+          "relationship": "adapted"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "meissner-two-types",
+          "path": "figures/meissner-two-types.png",
+          "caption_md": "Spherical patches are blue, wedges pale green, and spindle patches orange. Both choices have the same exact area and volume. Triangulated illustrations.",
+          "alt": "Side-by-side rendered Meissner tetrahedra with the star and face choices of smoothed edges."
+        }
+      ]
+    }
+  ]
+}

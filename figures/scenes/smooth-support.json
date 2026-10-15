@@ -1,0 +1,19 @@
+{
+  "title": "A smooth noncircular body of width one",
+  "bodies": [
+    {
+      "type": "support",
+      "harmonics": [
+        [
+          3,
+          0.045,
+          0
+        ]
+      ],
+      "supports": [
+        0,
+        1.05
+      ]
+    }
+  ]
+}
